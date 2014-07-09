@@ -137,21 +137,23 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 8. CASE statements MAY either be written using the previous rule or on a single line:
     1. split lines
 
-    ```sql
-    SELECT
-       CASE
-           WHEN ap_gender = 'M' THEN 'male'
-           WHEN ap_gender = 'F' THEN 'female'
-           ELSE 'unknown'
-       END
-   ```
+        ```sql
+        SELECT
+           CASE
+               WHEN ap_gender = 'M' THEN 'male'
+               WHEN ap_gender = 'F' THEN 'female'
+               ELSE 'unknown'
+           END
+       ```
+   
     2. concisely
 
-    ```sql
-    SELECT
-       CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
-    FROM account_profile
-    ```
+        ```sql
+        SELECT
+           CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
+        FROM account_profile
+        ```
+    
 9. Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the FROM clause, and the closing brace MUST be on its own line along with the subquery alias:
 
     ```sql
