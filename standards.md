@@ -37,7 +37,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     1. MUST NOT modify the value of variables.
     2. MUST NOT reference static class properties, methods or constants.
     3. SHOULD NOT reference instance properties or methods, with the exception of the View instance.
-    4. MAY reference PHP functions except where this conflicts with 4.1.
+    4. MAY reference PHP functions except where this conflicts with 4.i.
 
 ## Images
 
@@ -153,7 +153,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
            CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
         FROM account_profile
         ```
-    
 9. Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the FROM clause, and the closing brace MUST be on its own line along with the subquery alias:
 
     ```sql
