@@ -2,7 +2,7 @@
 
 This document describes the coding standards of Graze across its common languages to be adhered to and enforced by the Graze tech team, any violation of standards must be justified by the developer and exceptions are allowed for cases where it is unavoidable, such as in the case of third-party integrations.
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in (RFC 2119)[http://www.ietf.org/rfc/rfc2119.txt].
 
 ## General
 
@@ -13,9 +13,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## PHP
 
-1. All PHP code MUST adhere to the PSR-2 Coding Standard (which MUST follow the PSR-1 Coding Standard).
+1. All PHP code MUST adhere to the (PSR-2 Coding Standard)[http://www.php-fig.org/psr/psr-2/] (which MUST follow the (PSR-1 Coding Standard)[http://www.php-fig.org/psr/psr-1/]).
 2. Short array syntax ([] instead of array()) SHOULD be used.
-3. All PHP code MUST adhere to the PSR-4 Autoloading Standard.
+3. All PHP code MUST adhere to the (PSR-4 Autoloading)[http://www.php-fig.org/psr/psr-4/] Standard.
 4. Variable names MUST be camelCase and not snake_case or StUdLyCaSe or UpperCamelCase.
 5. Scripts MUST be named in camelCase describing their primary function.
 6. Non-static functions MUST NOT be called statically.
