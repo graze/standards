@@ -153,6 +153,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
            CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
         FROM account_profile
         ```
+
 9. Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the FROM clause, and the closing brace MUST be on its own line along with the subquery alias:
 
     ```sql
