@@ -37,11 +37,12 @@ class Example
         Foo $foo,
         $bar,
         $baz,
-        $bat = null
-        $bat = null
-        $bat = null
-        $bat = null
-        $bat = null
+        $bat = null,
+        $bak = null,
+        $bas = null,
+        $bab = null,
+        $bap = null,
+        $bad = null
     ) {
         // delcare a method with too many arguments for one line
     }
