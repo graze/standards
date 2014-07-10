@@ -38,6 +38,10 @@ class Example
         $bar,
         $baz,
         $bat = null
+        $bat = null
+        $bat = null
+        $bat = null
+        $bat = null
     ) {
         // delcare a method with too many arguments for one line
     }
