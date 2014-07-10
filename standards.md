@@ -135,8 +135,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     ```
 
 8. CASE statements MAY either be written using the previous rule or on a single line:
-    1. split lines
-
+    * split lines
         ```sql
         SELECT
            CASE
@@ -145,10 +144,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
                ELSE 'unknown'
            END
        ```
-   
-    2. concisely
 
-        ```sql
+    * concisely
+    ```sql
         SELECT
            CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
         FROM account_profile
