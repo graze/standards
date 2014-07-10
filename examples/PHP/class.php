@@ -46,12 +46,17 @@ class Example
     {
         // no leading hyphen for protected method names
 
-        // calling a method with too many arguments for one line
+        // calling a method with too many arguments for an 80 character line
         $this->methodWithManyArguments(
             new Foo(),
             'bar',
             'baz',
-            'bat'
+            'bat',
+            'bak',
+            'bas',
+            'bab',
+            'bap',
+            'bad'
         );
     }
 
