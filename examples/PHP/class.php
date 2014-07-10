@@ -7,12 +7,12 @@ use Graze\Lib\Foo; // use statements with blank line above
 class Example
 {
     /**
-     * @var \Graze\Lib\Foo
+     * @var Foo
      */
     protected $foo;
 
     /**
-     * @param \Graze\Lib\Foo $foo
+     * @param Foo $foo
      */
     public function __construct(Foo $foo)
     {
@@ -20,7 +20,7 @@ class Example
     }
 
     /**
-     * @return \Graze\Lib\Foo
+     * @return Foo
      */
     public function getFoo()
     {
