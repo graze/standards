@@ -30,11 +30,11 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 15. If statements which need to span multiple lines should be split as follows:
 
 ```php
-if ($longVariableNameNumber1 &&
-  $longVariableNameNumber2 &&
-  $longVariableNameNumber3 &&
-  $longVariableNameNumber4 ||
-  $longVariableNameNumber5) {
+if ($longVariableNameNumber1
+  && $longVariableNameNumber2
+  && $longVariableNameNumber3
+  && $longVariableNameNumber4
+  || $longVariableNameNumber5) {
   // body of control structure
 }
 ```
