@@ -39,6 +39,14 @@ if ($longVariableNameNumber1
 }
 ```
 
+16. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
+
+```php
+if ($nutritionPlan = NutritionPlan::get(NutritionPlan::ID_NIBBLE)) {
+  // not allowed
+}
+```
+
 ## Views
 
 1. MUST use the .phtml extension.
