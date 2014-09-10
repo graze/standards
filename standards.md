@@ -29,15 +29,23 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 14. PHP file encoding must be UTF-8.
 15. If statements which need to span multiple lines should be split as follows:
 
-```php
-if ($longVariableNameNumber1
-  && $longVariableNameNumber2
-  && $longVariableNameNumber3
-  && $longVariableNameNumber4
-  || $longVariableNameNumber5) {
-  // body of control structure
-}
-```
+  ```php
+  if ($longVariableNameNumber1
+    && $longVariableNameNumber2
+    && $longVariableNameNumber3
+    && $longVariableNameNumber4
+    || $longVariableNameNumber5) {
+    // body of control structure
+  }
+  ```
+
+16. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
+
+  ```php
+  if ($nutritionPlan = NutritionPlan::get(NutritionPlan::ID_NIBBLE)) {
+    // not allowed
+  }
+  ```
 
 ## Views
 
