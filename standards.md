@@ -47,6 +47,15 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   }
   ```
 
+17. If statements should check for type as well as what you are searching for.
+
+  ```php
+  if ($a === $b) {
+    // Then do something
+  }
+  ```
+
+
 ## Views
 
 1. MUST use the .phtml extension.
