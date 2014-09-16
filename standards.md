@@ -11,6 +11,10 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 3. All files MUST use the Unix LF (linefeed) line ending.
 4. There MUST NOT be trailing whitespace.
 
+## Git
+
+1. Repo names MUST be all lowercase with hyphens (-) to separate words where appropriate.
+
 ## PHP
 
 1. All PHP code MUST adhere to the [PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/) (which MUST follow the [PSR-1 Coding Standard](http://www.php-fig.org/psr/psr-1/)).
