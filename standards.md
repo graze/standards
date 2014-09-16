@@ -46,6 +46,18 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     // not allowed
   }
   ```
+17. Abstract class names MUST begin with `Abstract`.
+
+  ```php
+  abstract class AbstractGenerator {
+  }
+  ```
+18. Interface names MUST end with `Interface`.
+
+  ```php
+  interface GeneratorInterface {
+  }
+  ```
 
 ## Views
 
