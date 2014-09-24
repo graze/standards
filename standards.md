@@ -102,7 +102,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Python
 
-1. Python code SHOULD conform to the PEP8 and PEP257 guides.
+1. Python code SHOULD conform to the PEP8 and PEP257 guides
+2. Exceptions:
+    1. 160 column limit
 
 
 ## SQL
