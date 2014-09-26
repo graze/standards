@@ -47,7 +47,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   }
   ```
 
-17. If statements should check for type as well as what you are searching for.
+17. Equality in if statements SHOULD use the triple equals operator (===) for type checking.
 
   ```php
   if ($a === $b) {
