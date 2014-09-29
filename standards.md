@@ -111,10 +111,58 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 1. JavaScript files / libraries MUST only depend on data attributes in the DOM.
 2. Inline JavaScript inside a view MAY depend on the DOM.
 3. JavaScript files / libraries MUST be under the Graze namespace and use sub-namespaces sensibly.
-4. The dependencies of all JavaScript MUST be injected (jQuery, window, document etc).
+4. The dependencies of all JavaScript MUST be injected using parens (jQuery, window, document etc).
 5. JavaScript files MUST be named with words separated with hyphens (-).
 6. JavaScript code MUST adhere to the Google JavaScript Style Guide.
-7. JavaScript code MUST use the “use strict” mode.
+7. JavaScript code MUST use the "use strict" mode.
+
+**Examples:**
+Dependency injection and self invoking function example:
+
+    (function setupControl($, window) {
+      "use strict";
+
+      $('selector').someJqueryMethod();
+
+      ... other code ...
+
+    })(jQuery, window);
+
+Variable style guide
+
+As a rule, variables should be defined at the top of a function scope:
+
+    function foo(param) {
+      var bar;
+      ... some code ...
+      if (param) {
+        bar = param;
+      }
+
+    }
+
+Variables should be defined using a single key word and indented like so:
+
+    var a = 1,
+        b = 2,
+        c = a + b,
+        d = Math.random();
+
+NOT:
+
+    var a = 1;
+    var b = 2;
+    var c = a + b;
+    var d = Math.random();
+
+Variables should adhere to a few simple rules for clarity:
+
+    var CONSTANTS = 'Should always bee capitalised and separated with an underscore',
+        Namespaces = {
+          rule: 'Should always use Pascal Case (Uppercase first letter)'
+        },
+        $jQueryObjects = $('should-always-start-with-a-$'),
+        allOtherVars = ['should', ' ', 'use', ' ', 'camelCase'].join();
 
 ## Python
 
