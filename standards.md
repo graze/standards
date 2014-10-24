@@ -62,6 +62,15 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   interface GeneratorInterface {
   }
   ```
+19. A DAL entity SHOULD NOT be at the top-level of Graze\Lib\Entity namespace, for example:
+  - `Graze\Lib\Entity\Account\Account` instead of `Graze\Lib\Entity\Account`
+
+20. DAL repository classes MUST match the namespacing pattern of their respective entity, examples:
+  - `Graze\Lib\Entity\Account\Account` -> `Graze\Lib\Repository\Account\AccountRepository`
+  - `Graze\Lib\Entity\Account\Profile` -> `Graze\Lib\Repository\Account\ProfileRepository`
+  - `Graze\Lib\Entity\Account\StatusMap` -> `Graze\Lib\Repository\Account\StatusMapRepository`
+  - `Graze\Lib\Entity\Account\Profile\Group` -> `Graze\Lib\Repository\Account\Profile\GroupRepository`
+  - `Graze\Lib\Entity\Account\Profile\GroupMap` -> `Graze\Lib\Repository\Account\Profile\GroupMapRepository`
 
 ## Views
 
