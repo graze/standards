@@ -72,6 +72,15 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   - `Graze\Lib\Entity\Account\Profile\Group` -> `Graze\Lib\Repository\Account\Profile\GroupRepository`
   - `Graze\Lib\Entity\Account\Profile\GroupMap` -> `Graze\Lib\Repository\Account\Profile\GroupMapRepository`
 
+17. Equality in if statements SHOULD use the triple equals operator (===) for type checking.
+
+  ```php
+  if ($a === $b) {
+    // Then do something
+  }
+  ```
+
+
 ## Views
 
 1. MUST use the .phtml extension.
