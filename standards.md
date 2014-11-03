@@ -72,6 +72,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   - `Graze\Lib\Entity\Account\Profile\Group` -> `Graze\Lib\Repository\Account\Profile\GroupRepository`
   - `Graze\Lib\Entity\Account\Profile\GroupMap` -> `Graze\Lib\Repository\Account\Profile\GroupMapRepository`
 
+21. Methods within a class SHOULD be ordered with `public` methods at the top, then `protected` methods and `private` methods at the bottom.
+
 ## Views
 
 1. MUST use the .phtml extension.
