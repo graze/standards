@@ -35,10 +35,10 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
   ```php
   if ($longVariableNameNumber1
-    && $longVariableNameNumber2
-    && $longVariableNameNumber3
-    && $longVariableNameNumber4
-    || $longVariableNameNumber5) {
+      && $longVariableNameNumber2
+      && $longVariableNameNumber3
+      && $longVariableNameNumber4
+      || $longVariableNameNumber5) {
     // body of control structure
   }
   ```
