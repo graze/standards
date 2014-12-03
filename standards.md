@@ -72,6 +72,17 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   - `Graze\Lib\Entity\Account\Profile\Group` -> `Graze\Lib\Repository\Account\Profile\GroupRepository`
   - `Graze\Lib\Entity\Account\Profile\GroupMap` -> `Graze\Lib\Repository\Account\Profile\GroupMapRepository`
 
+21. A line based coding style MUST be adhered to, in order to make changes to git history more visible. For example:
+
+```php
+    public function foo(
+        $bar,
+        $baz
+    )
+    {
+    }
+```
+
 ## Views
 
 1. MUST use the .phtml extension.
