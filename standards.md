@@ -208,23 +208,24 @@ Variables should adhere to a few simple rules for clarity:
 5. When a statement is written within a string in PHP:
     1. The query MUST start on a new line, indented once
     2. A semicolon MUST NOT be added at the end of the statement
-6. All JOINs MUST be written as such:
+6. All joins MUST be written like:
 
     ```sql
     INNER JOIN table_name
         ON condition1
         AND condition2
     ```
+    Joins MUST NOT use the unqualified JOIN keyword.
 
 7. Functions MAY be split across multiple lines, where each subsequent line is indented once. When doing so, the first item in the list MUST be on the next line, and there MUST be only one argument per line.
 
     ```sql
     SELECT
-       CONCAT(
-           ap_first_name,
-           ' ',
-           ap_last_name
-       ) full_name
+        CONCAT(
+            ap_first_name,
+            ' ',
+            ap_last_name
+        ) full_name
     FROM account_profile
     ```
 
@@ -232,17 +233,17 @@ Variables should adhere to a few simple rules for clarity:
     * split lines
         ```sql
         SELECT
-           CASE
-               WHEN ap_gender = 'M' THEN 'male'
-               WHEN ap_gender = 'F' THEN 'female'
-               ELSE 'unknown'
-           END
+            CASE
+                WHEN ap_gender = 'M' THEN 'male'
+                WHEN ap_gender = 'F' THEN 'female'
+                ELSE 'unknown'
+            END
        ```
 
     * concisely
     ```sql
         SELECT
-           CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
+            CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
         FROM account_profile
         ```
 
@@ -250,12 +251,12 @@ Variables should adhere to a few simple rules for clarity:
 
     ```sql
     SELECT
-       my_subquery.*
+        my_subquery.*
     FROM (
-       SELECT
-           ap_first_name first_name,
-           COUNT(*) count_names
-       FROM account_profile
-       GROUP BY ap_first_name
+        SELECT
+            ap_first_name first_name,
+            COUNT(*) count_names
+        FROM account_profile
+        GROUP BY ap_first_name
     ) my_subquery
     ```
