@@ -221,11 +221,11 @@ Variables should adhere to a few simple rules for clarity:
 
     ```sql
     SELECT
-       CONCAT(
-           ap_first_name,
-           ' ',
-           ap_last_name
-       ) full_name
+        CONCAT(
+            ap_first_name,
+            ' ',
+            ap_last_name
+        ) full_name
     FROM account_profile
     ```
 
@@ -233,17 +233,17 @@ Variables should adhere to a few simple rules for clarity:
     * split lines
         ```sql
         SELECT
-           CASE
-               WHEN ap_gender = 'M' THEN 'male'
-               WHEN ap_gender = 'F' THEN 'female'
-               ELSE 'unknown'
-           END
+            CASE
+                WHEN ap_gender = 'M' THEN 'male'
+                WHEN ap_gender = 'F' THEN 'female'
+                ELSE 'unknown'
+            END
        ```
 
     * concisely
     ```sql
         SELECT
-           CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
+            CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
         FROM account_profile
         ```
 
@@ -251,12 +251,12 @@ Variables should adhere to a few simple rules for clarity:
 
     ```sql
     SELECT
-       my_subquery.*
+        my_subquery.*
     FROM (
-       SELECT
-           ap_first_name first_name,
-           COUNT(*) count_names
-       FROM account_profile
-       GROUP BY ap_first_name
+        SELECT
+            ap_first_name first_name,
+            COUNT(*) count_names
+        FROM account_profile
+        GROUP BY ap_first_name
     ) my_subquery
     ```
