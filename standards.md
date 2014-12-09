@@ -28,7 +28,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 9. Comments SHOULD use single-line style for a single line, multi-line style for multiple lines and docblocks where appropriate. For example:
 
   ```php
-  // This is a single line comment
+  // This is the single line comment style
 
   /* This is the multiple line comment style. This is the multiple line comment style. This is the multiple line
      comment style. This is the multiple line comment style. */
