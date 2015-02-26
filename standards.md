@@ -26,13 +26,28 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 6. Non-static functions MUST NOT be called statically.
 7. Static functions MUST NOT be called non-statically.
 8. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
-9. Docblocks for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the docblock is up-to-date.
-10. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a docblock explaining how to use the function / method / class.
-11. Code ‘hacks’ (code that is intended to be temporary and handles very specific cases) SHOULD NOT exist but should they have to occur with no way around them then the code that is ‘hacky’ MUST be accompanied with a comment explaining that it is a hack and explaining why it has to be there, including a @todo tag to explain what the developer needs to do to resolve the hack.
-12. Standard library code MUST be as generic as possible and not application-specific.
-13. Nested ternary operators MUST NOT be used.
-14. PHP file encoding must be UTF-8.
-15. If statements which need to span multiple lines should be split as follows:
+9. Comments SHOULD use single-line style for a single line, multi-line style for multiple lines and docblocks where appropriate. For example:
+
+  ```php
+  // This is the single line comment style
+
+  /* This is the multiple line comment style. This is the multiple line comment style. This is the multiple line
+     comment style. This is the multiple line comment style. */
+
+  /**
+   * This is the docblock comment style.
+   */
+  public fooBar function()
+  {
+      ...
+  ```
+10. Docblocks for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the docblock is up-to-date.
+11. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a docblock explaining how to use the function / method / class.
+12. Code ‘hacks’ (code that is intended to be temporary and handles very specific cases) SHOULD NOT exist but should they have to occur with no way around them then the code that is ‘hacky’ MUST be accompanied with a comment explaining that it is a hack and explaining why it has to be there, including a @todo tag to explain what the developer needs to do to resolve the hack.
+13. Standard library code MUST be as generic as possible and not application-specific.
+14. Nested ternary operators MUST NOT be used.
+15. PHP file encoding must be UTF-8.
+16. If statements which need to span multiple lines should be split as follows:
 
   ```php
   if ($longVariableNameNumber1
@@ -44,29 +59,29 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   }
   ```
 
-16. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
+17. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
 
   ```php
   if ($nutritionPlan = NutritionPlan::get(NutritionPlan::ID_NIBBLE)) {
     // not allowed
   }
   ```
-17. Abstract class names SHOULD begin with `Abstract`.
+18. Abstract class names SHOULD begin with `Abstract`.
 
   ```php
   abstract class AbstractGenerator {
   }
   ```
-18. Interface names SHOULD end with `Interface`.
+19. Interface names SHOULD end with `Interface`.
 
   ```php
   interface GeneratorInterface {
   }
   ```
-19. A DAL entity SHOULD NOT be at the top-level of Graze\Lib\Entity namespace, for example:
+20. A DAL entity SHOULD NOT be at the top-level of Graze\Lib\Entity namespace, for example:
   - `Graze\Lib\Entity\Account\Account` instead of `Graze\Lib\Entity\Account`
 
-20. DAL repository classes MUST match the namespacing pattern of their respective entity, examples:
+21. DAL repository classes MUST match the namespacing pattern of their respective entity, examples:
   - `Graze\Lib\Entity\Account\Account` -> `Graze\Lib\Repository\Account\AccountRepository`
   - `Graze\Lib\Entity\Account\Profile` -> `Graze\Lib\Repository\Account\ProfileRepository`
   - `Graze\Lib\Entity\Account\StatusMap` -> `Graze\Lib\Repository\Account\StatusMapRepository`
@@ -209,24 +224,23 @@ Variables should adhere to a few simple rules for clarity:
 5. When a statement is written within a string in PHP:
     1. The query MUST start on a new line, indented once
     2. A semicolon MUST NOT be added at the end of the statement
-6. All joins MUST be written like:
+6. All JOINs MUST be written as such:
 
     ```sql
     INNER JOIN table_name
         ON condition1
         AND condition2
     ```
-    Joins MUST NOT use the unqualified JOIN keyword.
 
 7. Functions MAY be split across multiple lines, where each subsequent line is indented once. When doing so, the first item in the list MUST be on the next line, and there MUST be only one argument per line.
 
     ```sql
     SELECT
-        CONCAT(
-            ap_first_name,
-            ' ',
-            ap_last_name
-        ) full_name
+       CONCAT(
+           ap_first_name,
+           ' ',
+           ap_last_name
+       ) full_name
     FROM account_profile
     ```
 
@@ -234,17 +248,17 @@ Variables should adhere to a few simple rules for clarity:
     * split lines
         ```sql
         SELECT
-            CASE
-                WHEN ap_gender = 'M' THEN 'male'
-                WHEN ap_gender = 'F' THEN 'female'
-                ELSE 'unknown'
-            END
+           CASE
+               WHEN ap_gender = 'M' THEN 'male'
+               WHEN ap_gender = 'F' THEN 'female'
+               ELSE 'unknown'
+           END
        ```
 
     * concisely
     ```sql
         SELECT
-            CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
+           CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
         FROM account_profile
         ```
 
@@ -252,12 +266,12 @@ Variables should adhere to a few simple rules for clarity:
 
     ```sql
     SELECT
-        my_subquery.*
+       my_subquery.*
     FROM (
-        SELECT
-            ap_first_name first_name,
-            COUNT(*) count_names
-        FROM account_profile
-        GROUP BY ap_first_name
+       SELECT
+           ap_first_name first_name,
+           COUNT(*) count_names
+       FROM account_profile
+       GROUP BY ap_first_name
     ) my_subquery
     ```
