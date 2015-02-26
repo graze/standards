@@ -14,6 +14,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 ## Git
 
 1. Repo names SHOULD be all lowercase with hyphens (-) to separate words where appropriate.
+2. Internal-only libraries SHOULD be prefixed with "graze-".
 
 ## PHP
 
