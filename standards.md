@@ -118,61 +118,32 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## JavaScript
 
-1. JavaScript files / libraries MUST only depend on data attributes in the DOM.
-2. Inline JavaScript inside a view MAY depend on the DOM.
-3. JavaScript files / libraries MUST be under the Graze namespace and use sub-namespaces sensibly.
-4. The dependencies of all JavaScript MUST be injected using parens (jQuery, window, document etc).
-5. JavaScript files MUST be named with words separated with hyphens (-).
-6. JavaScript code MUST adhere to the Google JavaScript Style Guide.
-7. JavaScript code MUST use the "use strict" mode.
+Please refer to the [airbnb style guide](https://github.com/airbnb/javascript) for styling standards, **in particular**:
 
-**Examples:**
-Dependency injection and self invoking function example:
+ - [Variables](https://github.com/airbnb/javascript#variables)
+ - [jQuery](https://github.com/airbnb/javascript#jquery)
+ - [Commas](https://github.com/airbnb/javascript#commas)
+ - [Objects](https://github.com/airbnb/javascript#objects)
+ - [Arrays](https://github.com/airbnb/javascript#arrays)
+ - [Strings](https://github.com/airbnb/javascript#strings)
+ - [Functions](https://github.com/airbnb/javascript#functions)
 
-    (function setupControl($, window) {
-      "use strict";
+### Immediately-invoked function expressions (IIFE)
 
-      $('selector').someJqueryMethod();
+ 1. MUST NOT be used for CommonJS exporting modules (built with Browserify)
+ 2. MUST be used in inline scripts and non Browserify compiled JS to avoid populating the global scope
 
-      ... other code ...
+**Example of usage in non CommonJS modules:**
 
-    })(jQuery, window);
+```javascript
+(function($) {
+    console.log($);
+    // Defined as long as global jQuery object is available
+})(jQuery);
 
-Variable style guide
-
-As a rule, variables should be defined at the top of a function scope:
-
-    function foo(param) {
-      var bar;
-      ... some code ...
-      if (param) {
-        bar = param;
-      }
-
-    }
-
-Variables should be defined using a single key word and indented like so:
-
-    var a = 1,
-        b = 2,
-        c = a + b,
-        d = Math.random();
-
-NOT:
-
-    var a = 1;
-    var b = 2;
-    var c = a + b;
-    var d = Math.random();
-
-Variables should adhere to a few simple rules for clarity:
-
-    var CONSTANTS = 'Should always bee capitalised and separated with an underscore',
-        Namespaces = {
-          rule: 'Should always use Pascal Case (Uppercase first letter)'
-        },
-        $jQueryObjects = $('should-always-start-with-a-$'),
-        allOtherVars = ['should', ' ', 'use', ' ', 'camelCase'].join();
+console.log($);
+// Undefined
+```
 
 ## Python
 
