@@ -15,6 +15,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 1. Repo names SHOULD be all lowercase with hyphens (-) to separate words where appropriate.
 2. Internal-only libraries SHOULD be prefixed with "graze-".
+3. It is RECOMMENDED to follow the style guide mantained in [agis-/git-style-guide](https://github.com/agis-/git-style-guide).
 
 ## PHP
 
