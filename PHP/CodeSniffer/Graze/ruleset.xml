@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<ruleset name="Graze">
+
+    <description>The graze PHP coding standard as defined in graze/standards.</description>
+
+    <!-- Include all sniffs in the PSR2 standard. -->
+    <rule ref="PSR2">
+        <exclude name="Generic.Files.LineLength" />
+    </rule>
+
+    <!-- Some general good things to check. -->
+    <rule ref="Generic.CodeAnalysis">
+        <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found" />
+        <exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCATCH" />
+        <exclude name="Generic.CodeAnalysis.ForLoopWithTestFunctionCall.NotAllowed" />
+    </rule>
+
+    <rule ref="Squiz.NamingConventions.ValidVariableName">
+        <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
+        <exclude name="Squiz.NamingConventions.ValidVariableName.PublicHasUnderscore" />
+    </rule>
+
+    <!-- Code MUST be correctly commented. -->
+    <!--<rule ref="Squiz.Commenting.VariableComment" />-->
+    <!--<rule ref="Squiz.Commenting.FunctionComment">-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.EmptyThrows" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.InvalidReturn" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.MissingShort" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.ParameterCommentsNotAligned" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.ParameterNamesNotAligned" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.ShortSingleLine" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterLongName" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParams" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.MissingReturn" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.ParamCommentNotCapital" />-->
+        <!--<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />-->
+    <!--</rule>-->
+
+    <!-- Code MUST NOT contain trailing whitespace and the like. -->
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+
+    <!-- PHP code MUST use only UTF-8 without BOM. -->
+    <rule ref="Generic.Files.ByteOrderMark"/>
+
+    <!-- Code must have unix line endings. -->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+
+    <!-- Code MUST use an indent of 4 spaces. -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="ignoreIndentationTokens" type="array" value="T_COMMENT,T_DOC_COMMENT"/>
+        </properties>
+    </rule>
+
+    <!-- Code MUST NOT use tabs for indenting. -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+
+    <!--<rule ref="Squiz.PHP.CommentedOutCode" />-->
+    <rule ref="Squiz.PHP.DiscouragedFunctions" />
+    <rule ref="Squiz.Scope.StaticThisUsage" />
+    <rule ref="Squiz.Scope.MemberVarScope" />
+    <rule ref="Squiz.Scope.MethodScope" />
+
+    <rule ref="Generic.PHP.LowerCaseKeyword" />
+    <rule ref="Generic.PHP.DeprecatedFunctions" />
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+    <!--<rule ref="Generic.Formatting.SpaceAfterCast" />-->
+    <rule ref="Generic.Functions.CallTimePassByReference" />
+
+    <!-- Graze Sniffs -->
+    <rule ref="Graze.Naming.AbstractClassNaming" />
+    <rule ref="Graze.Naming.InterfaceNaming" />
+    <rule ref="Graze.ControlStructures.IfVariableAssignment" />
+    <rule ref="Graze.ControlStructures.NestedTernary" />
+    <rule ref="Graze.Files.DoubleBlankLine" />
+
+</ruleset>
