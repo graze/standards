@@ -1,0 +1,10 @@
+{
+    "name": "graze/standards",
+    "authors": [
+        {
+            "name": "Will Pillar",
+            "email": "will.pillar@graze.com"
+        }
+    ],
+    "require": {}
+}
