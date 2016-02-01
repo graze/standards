@@ -20,7 +20,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 ## PHP
 
 1. All PHP code MUST adhere to the [PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/) (which MUST follow the [PSR-1 Coding Standard](http://www.php-fig.org/psr/psr-1/)).
-2. Short array syntax (`[]` instead of `array()`) SHOULD be used.
+2. Short array syntax (`[]` instead of `array()`) MUST be used.
 3. All PHP code MUST adhere to the [PSR-4 Autoloading](http://www.php-fig.org/psr/psr-4/) Standard.
 4. Variable names MUST be camelCase and not snake_case or StUdLyCaSe or UpperCamelCase.
 5. Scripts MUST be named in camelCase describing their primary function.
@@ -64,13 +64,13 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     // not allowed
   }
   ```
-18. Abstract class names SHOULD begin with `Abstract`.
+18. Abstract class names MUST begin with `Abstract`.
 
   ```php
   abstract class AbstractGenerator {
   }
   ```
-19. Interface names SHOULD end with `Interface`.
+19. Interface names MUST end with `Interface`.
 
   ```php
   interface GeneratorInterface {
