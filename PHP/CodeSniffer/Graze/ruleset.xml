@@ -95,8 +95,8 @@
     <rule ref="Graze.ControlStructures.NestedTernary" />
     <rule ref="Graze.Files.DoubleBlankLine" />
 
-    <rule ref="GrazeWeb.Commenting">
-        <exclude name="GrazeWeb.Commenting.InlineVariableComment" />
+    <rule ref="Graze.Commenting">
+        <exclude name="Graze.Commenting.InlineVariableComment" />
     </rule>
 
 </ruleset>
