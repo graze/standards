@@ -8,6 +8,12 @@
         <exclude name="Generic.Files.LineLength" />
     </rule>
 
+    <!-- We want this to be an error -->
+    <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
+        <message>Usage of ELSE IF is not allowed; use ELSEIF instead</message>
+        <type>error</type>
+    </rule>
+
     <!-- Some general good things to check. -->
     <rule ref="Generic.CodeAnalysis">
         <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found" />
@@ -21,24 +27,31 @@
     </rule>
 
     <!-- Code MUST be correctly commented. -->
-    <!--<rule ref="Squiz.Commenting.VariableComment" />-->
-    <!--<rule ref="Squiz.Commenting.FunctionComment">-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.EmptyThrows" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.InvalidReturn" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.MissingShort" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.ParameterCommentsNotAligned" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.ParameterNamesNotAligned" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.ShortSingleLine" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterLongName" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParams" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.MissingReturn" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.ParamCommentNotCapital" />-->
-        <!--<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />-->
-    <!--</rule>-->
+    <rule ref="Squiz.Commenting.VariableComment">
+        <exclude name="Squiz.Commenting.VariableComment.IncorrectVarType" />
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionComment">
+        <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows" />
+        <exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName" />
+        <exclude name="Squiz.Commenting.FunctionComment.InvalidReturn" />
+        <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
+        <exclude name="Squiz.Commenting.FunctionComment.MissingShort" />
+        <exclude name="Squiz.Commenting.FunctionComment.ParameterCommentsNotAligned" />
+        <exclude name="Squiz.Commenting.FunctionComment.ParameterNamesNotAligned" />
+        <exclude name="Squiz.Commenting.FunctionComment.ShortSingleLine" />
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterLongName" />
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParams" />
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType" />
+        <exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop" />
+        <exclude name="Squiz.Commenting.FunctionComment.MissingReturn" />
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentNotCapital" />
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
+        <exclude name="Squiz.Commenting.FunctionComment.ThrowsNotCapital" />
+
+        <!-- Ones to customise before inclusion -->
+        <exclude name="Squiz.Commenting.FunctionComment.Missing" />
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamName" />
+    </rule>
 
     <!-- Code MUST NOT contain trailing whitespace and the like. -->
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
@@ -81,5 +94,9 @@
     <rule ref="Graze.ControlStructures.IfVariableAssignment" />
     <rule ref="Graze.ControlStructures.NestedTernary" />
     <rule ref="Graze.Files.DoubleBlankLine" />
+
+    <rule ref="GrazeWeb.Commenting">
+        <exclude name="GrazeWeb.Commenting.InlineVariableComment" />
+    </rule>
 
 </ruleset>
