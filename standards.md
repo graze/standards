@@ -27,25 +27,11 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 6. Non-static functions MUST NOT be called statically.
 7. Static functions MUST NOT be called non-statically.
 8. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
-9. Docblocks for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the docblock is up-to-date.
-10. Docblocks MUST be present for class member variables, in the following format:
-
-  ```php
-  class Foo
-  {
-      /**
-       * @var Bar
-       */
-      private $bar;
-  }
-  ```
-
-11. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a docblock explaining how to use the function / method / class.
-12. Code ‘hacks’ (code that is intended to be temporary and handles very specific cases) SHOULD NOT exist but should they have to occur with no way around them then the code that is ‘hacky’ MUST be accompanied with a comment explaining that it is a hack and explaining why it has to be there, including a @todo tag to explain what the developer needs to do to resolve the hack.
-13. Standard library code MUST be as generic as possible and not application-specific.
-14. Nested ternary operators MUST NOT be used.
-15. PHP file encoding must be UTF-8.
-16. If statements which need to span multiple lines should be split as follows:
+11. Code ‘hacks’ (code that is intended to be temporary and handles very specific cases) SHOULD NOT exist but should they have to occur with no way around them then the code that is ‘hacky’ MUST be accompanied with a comment explaining that it is a hack and explaining why it has to be there, including a @todo tag to explain what the developer needs to do to resolve the hack.
+12. Standard library code MUST be as generic as possible and not application-specific.
+13. Nested ternary operators MUST NOT be used.
+14. PHP file encoding must be UTF-8.
+15. If statements which need to span multiple lines should be split as follows:
 
   ```php
   if ($longVariableNameNumber1
@@ -86,7 +72,41 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   - `Graze\Lib\Entity\Account\Profile\Group` -> `Graze\Lib\Repository\Account\Profile\GroupRepository`
   - `Graze\Lib\Entity\Account\Profile\GroupMap` -> `Graze\Lib\Repository\Account\Profile\GroupMapRepository`
 
-22. Doc block types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float` (not double)
+### PHP DocBlock
+1. DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the DocBlock is up-to-date.
+2. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a DocBlock explaining how to use the function / method / class.
+3. DocBlock presenting the type MUST be present for class member variables.
+4. When a description is necessary for class member variables, the DocBlock MUST be multiline:
+
+  ```php
+  class Foo
+  {
+      /** @var int */
+      protected $id;
+      
+      /**
+       * The Bar used to fight the foo
+       * @var Bar
+       */
+      private $bar;
+  }
+  ```
+
+4. DocBlock types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float` (not double)
+5. DocBlock types for parameters/return values that are arrays of a single type MUST be written as: `Type[]`.
+
+**example of a method's DocBlock:**
+```
+    /**
+     * Foos the bars
+     *
+     * @param int $barId Some number
+     * @param Bar[] $allTheBars Collection of Bar objects
+     * @return string[] List of messages
+     *
+     */
+    public function barFooer($barId, array $allTheBars) {}
+```
 
 ## Views
 
