@@ -27,11 +27,11 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 6. Non-static functions MUST NOT be called statically.
 7. Static functions MUST NOT be called non-statically.
 8. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
-11. Code ‘hacks’ (code that is intended to be temporary and handles very specific cases) SHOULD NOT exist but should they have to occur with no way around them then the code that is ‘hacky’ MUST be accompanied with a comment explaining that it is a hack and explaining why it has to be there, including a @todo tag to explain what the developer needs to do to resolve the hack.
-12. Standard library code MUST be as generic as possible and not application-specific.
-13. Nested ternary operators MUST NOT be used.
-14. PHP file encoding must be UTF-8.
-15. If statements which need to span multiple lines should be split as follows:
+9. Code ‘hacks’ (code that is intended to be temporary and handles very specific cases) SHOULD NOT exist but should they have to occur with no way around them then the code that is ‘hacky’ MUST be accompanied with a comment explaining that it is a hack and explaining why it has to be there, including a @todo tag to explain what the developer needs to do to resolve the hack.
+10. Standard library code MUST be as generic as possible and not application-specific.
+11. Nested ternary operators MUST NOT be used.
+12. PHP file encoding must be UTF-8.
+13. If statements which need to span multiple lines should be split as follows:
 
   ```php
   if ($longVariableNameNumber1
@@ -43,29 +43,29 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   }
   ```
 
-17. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
+14. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
 
   ```php
   if ($nutritionPlan = NutritionPlan::get(NutritionPlan::ID_NIBBLE)) {
     // not allowed
   }
   ```
-18. Abstract class names MUST begin with `Abstract`.
+15. Abstract class names MUST begin with `Abstract`.
 
   ```php
   abstract class AbstractGenerator {
   }
   ```
-19. Interface names MUST end with `Interface`.
+16. Interface names MUST end with `Interface`.
 
   ```php
   interface GeneratorInterface {
   }
   ```
-20. A DAL entity SHOULD NOT be at the top-level of Graze\Lib\Entity namespace, for example:
+17. A DAL entity SHOULD NOT be at the top-level of Graze\Lib\Entity namespace, for example:
   - `Graze\Lib\Entity\Account\Account` instead of `Graze\Lib\Entity\Account`
 
-21. DAL repository classes MUST match the namespacing pattern of their respective entity, examples:
+18. DAL repository classes MUST match the namespacing pattern of their respective entity, examples:
   - `Graze\Lib\Entity\Account\Account` -> `Graze\Lib\Repository\Account\AccountRepository`
   - `Graze\Lib\Entity\Account\Profile` -> `Graze\Lib\Repository\Account\ProfileRepository`
   - `Graze\Lib\Entity\Account\StatusMap` -> `Graze\Lib\Repository\Account\StatusMapRepository`
@@ -92,10 +92,10 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   }
   ```
 
-4. DocBlock types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float` (not double).
-5. DocBlock types for parameters/return values that are arrays of a single type MUST be written as: `Type[]`. If the variable is a multi-dimensional array, it MUST be represented with one set of `[]` per depth (`int[][]` for an array of array of ints)
-6. If the parameter/return value is an array of several types, it MUST be described in the DocBlock as `mixed[]`.
-7. If the parameter/return value is an array that is sometimes empty, it MUST still be written as above (NOT `Type[]|[]`)
+5. DocBlock types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float` (not double).
+6. DocBlock types for parameters/return values that are arrays of a single type MUST be written as: `Type[]`. If the variable is a multi-dimensional array, it MUST be represented with one set of `[]` per depth (`int[][]` for an array of array of ints)
+7. If the parameter/return value is an array of several types, it MUST be described in the DocBlock as `mixed[]`.
+8. If the parameter/return value is an array that is sometimes empty, it MUST still be written as above (NOT `Type[]|[]`)
 
 **example of a method's DocBlock:**
 ```
