@@ -86,6 +86,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   - `Graze\Lib\Entity\Account\Profile\Group` -> `Graze\Lib\Repository\Account\Profile\GroupRepository`
   - `Graze\Lib\Entity\Account\Profile\GroupMap` -> `Graze\Lib\Repository\Account\Profile\GroupMapRepository`
 
+22. Valid scalar doc block types: `bool`, `int`, `string`, `float`
+
 ## Views
 
 1. MUST use the .phtml extension.
