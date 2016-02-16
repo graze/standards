@@ -90,7 +90,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 **example of a method's DocBlock:**
 ```
     /**
-     * Foos the bars
+     * Foos the bars.
      *
      * @param int $barId Some number
      * @param Bar[] $allTheBars Collection of Bar objects
