@@ -170,27 +170,27 @@ console.log($);
 ## SQL
 
 ### Query Writing
-1. Keywords and functions MUST be uppercase (SELECT, WHERE, MAX)
+1. Keywords and functions MUST be uppercase (SELECT, WHERE, MAX, AND)
 2. Column aliases MUST be lower snake_case
 3. When the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after the keyword, indented once:
 
     ```sql
     SELECT
-        ap_first_name,
-        ap_last_name
-    FROM account_profile
+        first_name,
+        last_name
+    FROM users
     WHERE
-        ap_id = 321142
-        AND ap_email <> 'bill@microsoft.com'
+        username = 'sxybill9'
+        AND email <> 'bill@microsoft.com'
     ```
 4. When a SELECT, WHERE, GROUP BY or ORDER clause only contains one element, it MAY all be written on the same line for brevity:
 
     ```sql
     SELECT
-        ap_first_name,
-        ap_last_name
-    FROM account_profile
-    WHERE ap_id = 321142
+        first_name,
+        last_name
+    FROM users
+    WHERE id = 321142
     ```
 5. When a statement is written within a string in PHP:
     1. The query MUST start on a new line, indented once
@@ -209,11 +209,11 @@ console.log($);
     ```sql
     SELECT
         CONCAT(
-            ap_first_name,
+            first_name,
             ' ',
-            ap_last_name
+            last_name
         ) full_name
-    FROM account_profile
+    FROM users
     ```
 
 8. CASE statements MAY either be written using the previous rule or on a single line:
@@ -221,17 +221,17 @@ console.log($);
         ```sql
         SELECT
             CASE
-                WHEN ap_gender = 'M' THEN 'male'
-                WHEN ap_gender = 'F' THEN 'female'
-                ELSE 'unknown'
+                WHEN gender = 'M' THEN 'male'
+                WHEN gender = 'F' THEN 'female'
+                ELSE 'not provided'
             END
        ```
 
     * concisely
     ```sql
         SELECT
-            CASE WHEN ap_gender = 'M' THEN 'male' ELSE 'female' END
-        FROM account_profile
+            CASE WHEN gender = 'M' THEN 'male' ELSE 'female' END
+        FROM users
         ```
 
 9. Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the FROM clause, and the closing brace MUST be on its own line along with the subquery alias:
@@ -241,9 +241,9 @@ console.log($);
         my_subquery.*
     FROM (
         SELECT
-            ap_first_name first_name,
+            prenom first_name,
             COUNT(*) count_names
-        FROM account_profile
-        GROUP BY ap_first_name
+        FROM users
+        GROUP BY prenom
     ) my_subquery
     ```
