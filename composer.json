@@ -1,5 +1,13 @@
 {
     "name": "graze/standards",
+    "description": "Graze coding standards",
+    "keywords": [
+        "graze",
+        "coding",
+        "standards"
+    ],
+    "homepage": "https://github.com/graze/standards",
+    "license": "MIT",
     "authors": [
         {
             "name": "Will Pillar",
