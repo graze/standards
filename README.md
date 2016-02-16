@@ -58,7 +58,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 15. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
 
   ```php
-  if ($nutritionPlan = NutritionPlan::get(NutritionPlan::ID_NIBBLE)) {
+  if ($response = $request->getResponse()) {
     // not allowed
   }
   ```
