@@ -85,7 +85,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 5. DocBlock types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float` (not double).
 6. DocBlock types for parameters/return values that are arrays of a single type MUST be written as: `Type[]`. If the variable is a multi-dimensional array, it MUST be represented with one set of `[]` per depth (`int[][]` for an array of array of ints)
 7. If the parameter/return value is an array of several types, it MUST be described in the DocBlock as `mixed[]`.
-8. If the parameter/return value is an array that is sometimes empty, it MUST still be written as above (NOT `Type[]|[]`)
+8. If the parameter/return value is an array that is sometimes empty, it MUST still be written as in 6) (NOT `Type[]|[]`)
 
 **example of a method's DocBlock:**
 ```
