@@ -41,10 +41,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   ```
 
 11. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a docblock explaining how to use the function / method / class.
-12. Code ‘hacks’ (code that is intended to be temporary and handles very specific cases) SHOULD NOT exist but should they have to occur with no way around them then the code that is ‘hacky’ MUST be accompanied with a comment explaining that it is a hack and explaining why it has to be there, including a @todo tag to explain what the developer needs to do to resolve the hack.
-13. Nested ternary operators MUST NOT be used.
-14. PHP file encoding must be UTF-8.
-15. If statements which need to span multiple lines should be split as follows:
+12. Nested ternary operators MUST NOT be used.
+13. PHP file encoding must be UTF-8.
+14. If statements which need to span multiple lines should be split as follows:
 
   ```php
   if ($longVariableNameNumber1
@@ -56,36 +55,36 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   }
   ```
 
-16. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
+15. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
 
   ```php
   if ($nutritionPlan = NutritionPlan::get(NutritionPlan::ID_NIBBLE)) {
     // not allowed
   }
   ```
-17. Abstract class names MUST begin with `Abstract`.
+16. Abstract class names MUST begin with `Abstract`.
 
   ```php
   abstract class AbstractGenerator {
   }
   ```
-18. Interface names MUST end with `Interface`.
+17. Interface names MUST end with `Interface`.
 
   ```php
   interface GeneratorInterface {
   }
   ```
-19. A DAL entity SHOULD NOT be at the top-level of Graze\Lib\Entity namespace, for example:
+18. A DAL entity SHOULD NOT be at the top-level of Graze\Lib\Entity namespace, for example:
   - `Graze\Lib\Entity\Account\Account` instead of `Graze\Lib\Entity\Account`
 
-20. DAL repository classes MUST match the namespacing pattern of their respective entity, examples:
+19. DAL repository classes MUST match the namespacing pattern of their respective entity, examples:
   - `Graze\Lib\Entity\Account\Account` -> `Graze\Lib\Repository\Account\AccountRepository`
   - `Graze\Lib\Entity\Account\Profile` -> `Graze\Lib\Repository\Account\ProfileRepository`
   - `Graze\Lib\Entity\Account\StatusMap` -> `Graze\Lib\Repository\Account\StatusMapRepository`
   - `Graze\Lib\Entity\Account\Profile\Group` -> `Graze\Lib\Repository\Account\Profile\GroupRepository`
   - `Graze\Lib\Entity\Account\Profile\GroupMap` -> `Graze\Lib\Repository\Account\Profile\GroupMapRepository`
 
-21. Doc block types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float` (not double)
+20. Doc block types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float` (not double)
 
 ## Views
 
