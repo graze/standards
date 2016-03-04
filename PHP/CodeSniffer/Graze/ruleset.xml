@@ -8,8 +8,13 @@
         <exclude name="Generic.Files.LineLength" />
     </rule>
     
-    <!-- We want to error for underscored prefixed methods -->
+    <!-- We want to error for underscore prefixed methods -->
     <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
+        <type>error</type>
+    </rule>
+    
+    <!-- We want to error for underscore prefixed properties -->
+    <rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
         <type>error</type>
     </rule>
 
