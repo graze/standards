@@ -7,6 +7,11 @@
     <rule ref="PSR2">
         <exclude name="Generic.Files.LineLength" />
     </rule>
+    
+    <!-- We want to error for underscored prefixed methods -->
+    <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
+        <type>error</type>
+    </rule>
 
     <!-- We want this to be an error -->
     <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
