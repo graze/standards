@@ -22,14 +22,17 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 1. All PHP code MUST adhere to the [PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/) (which MUST follow the [PSR-1 Coding Standard](http://www.php-fig.org/psr/psr-1/)).
 2. Short array syntax (`[]` instead of `array()`) MUST be used.
 3. All PHP code MUST adhere to the [PSR-4 Autoloading](http://www.php-fig.org/psr/psr-4/) Standard.
-4. Variable names MUST be camelCase and not snake_case or StUdLyCaSe or UpperCamelCase.
-5. Scripts MUST be named in camelCase describing their primary function.
-6. Non-static functions MUST NOT be called statically.
-7. Static functions MUST NOT be called non-statically.
-8. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
-9. Nested ternary operators MUST NOT be used.
-10. PHP file encoding must be UTF-8.
-11. If statements which need to span multiple lines should be split as follows:
+4. Class names MUST be declared in UpperCamelCase.
+  1. Acronyms MUST be treated as normal words. `HttpException`, not `HTTPException`.
+5. Variable names MUST be declared in camelCase.
+  1. Acronyms MUST be treated as normal words. `xmlHttpRequest` not `XMLHTTPRequest`.
+6. Scripts MUST be named in camelCase describing their primary function.
+7. Non-static functions MUST NOT be called statically.
+8. Static functions MUST NOT be called non-statically.
+9. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
+10. Nested ternary operators MUST NOT be used.
+11. PHP file encoding must be UTF-8.
+12. If statements which need to span multiple lines should be split as follows:
 
   ```php
   if ($longVariableNameNumber1
@@ -41,20 +44,20 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   }
   ```
 
-12. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
+13. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
 
   ```php
   if ($response = $request->getResponse()) {
     // not allowed
   }
   ```
-13. Abstract class names MUST begin with `Abstract`.
+14. Abstract class names MUST begin with `Abstract`.
 
   ```php
   abstract class AbstractGenerator {
   }
   ```
-14. Interface names MUST end with `Interface`.
+15. Interface names MUST end with `Interface`.
 
   ```php
   interface GeneratorInterface {
