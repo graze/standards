@@ -22,14 +22,16 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 1. All PHP code MUST adhere to the [PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/) (which MUST follow the [PSR-1 Coding Standard](http://www.php-fig.org/psr/psr-1/)).
 2. Short array syntax (`[]` instead of `array()`) MUST be used.
 3. All PHP code MUST adhere to the [PSR-4 Autoloading](http://www.php-fig.org/psr/psr-4/) Standard.
-4. Variable names MUST be camelCase and not snake_case or StUdLyCaSe or UpperCamelCase.
+4. Class names MUST be declared in UpperCamelCase.
+  1. Acronyms MUST be treated as normal words. `HttpException`, not `HTTPException`.
+5. Variable names MUST be declared in camelCase.
   1. Acronyms MUST be treated as normal words. `xmlHttpRequest` not `XMLHTTPRequest`.
-5. Scripts MUST be named in camelCase describing their primary function.
-6. Non-static functions MUST NOT be called statically.
-7. Static functions MUST NOT be called non-statically.
-8. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
-9. Docblocks for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the docblock is up-to-date.
-10. Docblocks MUST be present for class member variables, in the following format:
+6. Scripts MUST be named in camelCase describing their primary function.
+7. Non-static functions MUST NOT be called statically.
+8. Static functions MUST NOT be called non-statically.
+9. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
+10. Docblocks for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the docblock is up-to-date.
+11. Docblocks MUST be present for class member variables, in the following format:
 
   ```php
   class Foo
