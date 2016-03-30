@@ -75,6 +75,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
       
       /**
        * The Bar used to fight the foo
+       * 
        * @var Bar
        */
       private $bar;
