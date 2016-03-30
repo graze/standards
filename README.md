@@ -27,10 +27,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 6. Non-static functions MUST NOT be called statically.
 7. Static functions MUST NOT be called non-statically.
 8. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
-9. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a docblock explaining how to use the function / method / class.
-10. Nested ternary operators MUST NOT be used.
-11. PHP file encoding must be UTF-8.
-12. If statements which need to span multiple lines should be split as follows:
+9. Nested ternary operators MUST NOT be used.
+10. PHP file encoding must be UTF-8.
+11. If statements which need to span multiple lines should be split as follows:
 
   ```php
   if ($longVariableNameNumber1
@@ -42,20 +41,20 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   }
   ```
 
-13. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
+12. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
 
   ```php
   if ($response = $request->getResponse()) {
     // not allowed
   }
   ```
-14. Abstract class names MUST begin with `Abstract`.
+13. Abstract class names MUST begin with `Abstract`.
 
   ```php
   abstract class AbstractGenerator {
   }
   ```
-15. Interface names MUST end with `Interface`.
+14. Interface names MUST end with `Interface`.
 
   ```php
   interface GeneratorInterface {
