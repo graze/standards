@@ -94,7 +94,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
      * @param int $barId Some number
      * @param Bar[] $allTheBars Collection of Bar objects
      * @return string[] List of messages
-     *
      */
     public function barFooer($barId, array $allTheBars) {}
 ```
