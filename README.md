@@ -32,7 +32,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 9. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
 10. Nested ternary operators MUST NOT be used.
 11. PHP file encoding must be UTF-8.
-12. If statements which need to span multiple lines should be split as follows:
+12. `if` statements which span multiple lines should be split as follows:
 
   ```php
   if ($longVariableNameNumber1
@@ -63,6 +63,10 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   interface GeneratorInterface {
   }
   ```
+16. 'Not' logical operators MUST NOT have whitespace between them and the subject being negated.
+  ```php
+  $true = !false;
+  ```
 
 ### PHP DocBlock
 1. DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the DocBlock is up-to-date.
@@ -75,10 +79,10 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   {
       /** @var int */
       protected $id;
-      
+
       /**
        * The Bar used to fight the foo
-       * 
+       *
        * @var Bar
        */
       private $bar;
