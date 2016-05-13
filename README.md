@@ -54,13 +54,25 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 14. Abstract class names MUST begin with `Abstract`.
 
   ```php
-  abstract class AbstractGenerator {
+  abstract class AbstractGenerator
+  {
   }
   ```
 15. Interface names MUST end with `Interface`.
 
   ```php
-  interface GeneratorInterface {
+  interface GeneratorInterface
+  {
+  }
+  ```
+16. Methods that return a bool MUST be prefixed with either `is` or `has`.
+
+  ```php
+  interface FooInterface
+  {
+      public function isFoo();
+      
+      public function hasFoo();
   }
   ```
 
