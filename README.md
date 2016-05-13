@@ -98,7 +98,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     }
     
     // better
-    public function IsAllowedToUse()
+    public function isAllowedToUse()
     {
     }
     
