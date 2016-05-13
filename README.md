@@ -65,14 +65,47 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   {
   }
   ```
-16. Methods that return a bool MUST be prefixed with either `is` or `has`.
+16. It is RECOMMENDED that bool methods be named using [auxillary verb](https://en.wikipedia.org/wiki/Auxiliary_verb#A_list_of_auxiliaries_in_English) prefixes where appropriate.
 
   ```php
-  interface FooInterface
+  class Foo
   {
-      public function isFoo();
-      
-      public function hasFoo();
+    private $on;
+
+    // bad
+    public function getOn()
+    {
+    }
+
+    // good
+    public function isOn()
+    {
+    }
+    
+    // not great
+    public function didItWork()
+    {
+    }
+    
+    // better
+    public function hasItWorked()
+    {
+    }
+    
+    // not great
+    public function allowedToUse()
+    {
+    }
+    
+    // better
+    public function IsAllowedToUse()
+    {
+    }
+    
+    // better still
+    public function canUse()
+    {
+    }
   }
   ```
 
