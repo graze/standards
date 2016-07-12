@@ -10,7 +10,7 @@ if ($expr1) {
 }
 
 // if with a negation
-if (! $expr1) {
+if (!$expr1) {
     // if  body
 }
 
