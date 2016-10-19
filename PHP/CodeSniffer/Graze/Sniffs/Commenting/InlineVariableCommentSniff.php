@@ -1,18 +1,24 @@
 <?php
 
-class Graze_Sniffs_Commenting_InlineVariableCommentSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
+namespace Graze\Sniffs\Commenting;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\AbstractVariableSniff;
+
+class InlineVariableCommentSniff extends AbstractVariableSniff
 {
+    const ERROR_CODE = 'graze.commenting.inlineVariableComment';
     /**
      * Called to process class member vars.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where this
+     * @param File $phpcsFile The PHP_CodeSniffer file where this
      *                                        token was found.
      * @param int $stackPtr The position where the token was found.
      *
      * @return void
      */
     protected function processMemberVar(
-        PHP_CodeSniffer_File $phpcsFile,
+        File $phpcsFile,
         $stackPtr
     ) {
         $tokens       = $phpcsFile->getTokens();
@@ -24,21 +30,21 @@ class Graze_Sniffs_Commenting_InlineVariableCommentSniff extends PHP_CodeSniffer
         $commentStart = $tokens[$commentEnd]['comment_opener'];
 
         if ($tokens[$commentEnd]['line'] === $tokens[$commentStart]['line']) {
-            $phpcsFile->addError('Member variable comment should not be inline', $stackPtr);
+            $phpcsFile->addError('Member variable comment should not be inline', $stackPtr, static::ERROR_CODE);
         }
     }
 
     /**
      * Called to process normal member vars.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where this
+     * @param File $phpcsFile The PHP_CodeSniffer file where this
      *                                        token was found.
      * @param int $stackPtr The position where the token was found.
      *
      * @return void
      */
     protected function processVariable(
-        PHP_CodeSniffer_File $phpcsFile,
+        File $phpcsFile,
         $stackPtr
     ) {
     }
@@ -48,7 +54,7 @@ class Graze_Sniffs_Commenting_InlineVariableCommentSniff extends PHP_CodeSniffer
      * Note that there may be more than one variable in the string, which will
      * result only in one call for the string or one call per line for heredocs.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where this
+     * @param File $phpcsFile The PHP_CodeSniffer file where this
      *                                        token was found.
      * @param int $stackPtr The position where the double quoted
      *                                        string was found.
@@ -56,7 +62,7 @@ class Graze_Sniffs_Commenting_InlineVariableCommentSniff extends PHP_CodeSniffer
      * @return void
      */
     protected function processVariableInString(
-        PHP_CodeSniffer_File $phpcsFile,
+        File $phpcsFile,
         $stackPtr
     ) {
     }

@@ -1,7 +1,13 @@
 <?php
 
-class Graze_Sniffs_Commenting_InvalidTypeSniff implements PHP_CodeSniffer_Sniff
+namespace Graze\Sniffs\Commenting;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+
+class InvalidTypeSniff implements Sniff
 {
+    const ERROR_CODE = 'graze.commenting.invalidType';
     /**
      * @var array
      */
@@ -31,10 +37,10 @@ class Graze_Sniffs_Commenting_InvalidTypeSniff implements PHP_CodeSniffer_Sniff
     }
 
     /**
-     * @param \PHP_CodeSniffer_File $phpcsFile
+     * @param File $phpcsFile
      * @param int $stackPtr
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
         $commentToken = [
@@ -61,7 +67,7 @@ class Graze_Sniffs_Commenting_InvalidTypeSniff implements PHP_CodeSniffer_Sniff
                 $type = array_shift($typeBits);
 
                 if (array_key_exists($type, static::$types)) {
-                    $fix = $phpcsFile->addFixableError('Type should be \'' . static::$types[$type] . '\' not \'' . $type . '\'', $tag);
+                    $fix = $phpcsFile->addFixableError('Type should be \'' . static::$types[$type] . '\' not \'' . $type . '\'', $tag, static::ERROR_CODE);
                     if ($fix) {
                         $content = trim(static::$types[$type] . ' ' . implode(' ', $typeBits));
                         $phpcsFile->fixer->replaceToken(($tag + 2), $content);

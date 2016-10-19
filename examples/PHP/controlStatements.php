@@ -22,10 +22,10 @@ if ($expr1 && $expr2) {
 }
 
 // if with long expression
-if ($expr1 &&
-    $expr2 &&
-    $expr3 &&
-    $expr4 &&) {
+if ($expr1
+    && $expr2
+    && $expr3
+    && $expr4) {
     // if  body
 }
 
@@ -65,3 +65,6 @@ try {
 } catch (OtherExceptionType $e) {
     // catch body
 }
+
+// casting
+$int = (int) $string;

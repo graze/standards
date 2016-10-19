@@ -1,7 +1,15 @@
 <?php
 
-class Graze_Sniffs_Commenting_MissingFunctionCommentSniff implements PHP_CodeSniffer_Sniff
+namespace Graze\Sniffs\Commenting;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Util\Tokens;
+
+class MissingFunctionCommentSniff implements Sniff
 {
+    const ERROR_CODE_RETURN = 'graze.commenting.missingFunctionComment.returnNoDoc';
+    const ERROR_CODE_PARAMETER = 'graze.commenting.missingFunctionComment.parameterNoDoc';
     /**
      * Registers the tokens that this sniff wants to listen for.
      * An example return value for a sniff that wants to listen for whitespace
@@ -24,14 +32,14 @@ class Graze_Sniffs_Commenting_MissingFunctionCommentSniff implements PHP_CodeSni
     }
 
     /**
-     * @param \PHP_CodeSniffer_File $phpcsFile
+     * @param File $phpcsFile
      * @param int $stackPtr
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
-        $find   = PHP_CodeSniffer_Tokens::$methodPrefixes;
+        $find   = Tokens::$methodPrefixes;
         $find[] = T_WHITESPACE;
 
         $commentEnd = $phpcsFile->findPrevious($find, ($stackPtr - 1), null, true);
@@ -50,23 +58,23 @@ class Graze_Sniffs_Commenting_MissingFunctionCommentSniff implements PHP_CodeSni
             && $tokens[$commentEnd]['code'] !== T_COMMENT
         ) {
             if (array_key_exists('scope_opener', $tokens[$stackPtr]) && $this->functionHasReturn($phpcsFile, $stackPtr)) {
-                $phpcsFile->addError('Function has return keyword but no doc block', $stackPtr);
+                $phpcsFile->addError('Function has return keyword but no doc block', $stackPtr, static::ERROR_CODE_RETURN);
                 return;
             }
 
             if ($this->functionHasParams($phpcsFile, $stackPtr)) {
-                $phpcsFile->addError('Function has parameters but no doc block', $stackPtr);
+                $phpcsFile->addError('Function has parameters but no doc block', $stackPtr, static::ERROR_CODE_PARAMETER);
             }
         }
     }
 
     /**
-     * @param \PHP_CodeSniffer_File $phpcsFile
+     * @param File $phpcsFile
      * @param int $stackPtr
      *
      * @return bool
      */
-    private function functionHasReturn(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    private function functionHasReturn(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
         $start = $tokens[$stackPtr]['scope_opener'];
@@ -88,12 +96,12 @@ class Graze_Sniffs_Commenting_MissingFunctionCommentSniff implements PHP_CodeSni
     }
 
     /**
-     * @param PHP_CodeSniffer_File $phpcsFile
+     * @param File $phpcsFile
      * @param $stackPtr
      *
      * @return bool
      */
-    private function functionHasParams(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    private function functionHasParams(File $phpcsFile, $stackPtr)
     {
         return (bool) $phpcsFile->getMethodParameters($stackPtr);
     }
