@@ -17,6 +17,37 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 2. Internal-only libraries SHOULD be prefixed with "graze-".
 3. It is RECOMMENDED to follow the style guide mantained in [agis-/git-style-guide](https://github.com/agis-/git-style-guide).
 
+## Logging
+
+1. Logs should be written to stderr and collected to a central store
+2. Application logs should be in [logfmt](https://brandur.org/logfmt) format in development and in logfmt or json for production `-- maybe always in logfmt?`
+
+  ```
+  msg="Request finished" tag=request_finish status=200
+    user=brandur@mutelight.org user_id=1234 app=mutelight app_id=1234
+  ```
+
+3. Logs in logfmt should have the following fields specified by default:
+  1. Generic
+    1. `app` - simple name of the application
+    1. `env` - environment it is running in (`dev`,`test`,`staging`,`integration`,`live`)
+    1. `module` - the area of the code this log is coming from
+    1. `tag` - a unique name associated with this specific log message
+    1. `level` - the log level (preferably using: `debug`,`info`,`error` but `warn`,`fatal` and `panic` are also valid)
+    1. `msg` - a textual description of the message
+    1. `transaction` - a unique transaction id for a particular request (if applicable)
+    1. `ts` - the current timestamp (in RFC3339 format)
+    1. `dur` - the time taken to complete an action (in fractional seconds)
+  1. Graze
+    1. `apid` - Account Profile Id
+    1. Other id's should be in the format `{item}_id`
+  1. REST requests
+    1. `method` - `GET`,`POST`, etc...
+    1. `path` - Path of request (without params)
+    1. `uri` - Full request path (with params)
+    1. `status` - Status Code returned
+    1. `protocol` - Protocol used for the request (`HTTP/1.1`, `HTTP/2.0`)
+
 ## PHP
 
 1. All PHP code MUST adhere to the [PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/) (which MUST follow the [PSR-1 Coding Standard](http://www.php-fig.org/psr/psr-1/)).
