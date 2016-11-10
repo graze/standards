@@ -20,7 +20,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 ## Logging
 
 1. Logs should be written to stderr and collected to a central store
-2. Application logs should be in [logfmt](https://brandur.org/logfmt) format in development and in logfmt or json for production `-- maybe always in logfmt?`
+2. Application logs should be in [logfmt](https://brandur.org/logfmt) format in development and production
 
   ```
   msg="Request finished" tag=request_finish status=200
@@ -33,20 +33,21 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     1. `env` - environment it is running in (`dev`,`test`,`staging`,`integration`,`live`)
     1. `module` - the area of the code this log is coming from
     1. `tag` - a unique name associated with this specific log message
-    1. `level` - the log level (preferably using: `debug`,`info`,`error` but `warn`,`fatal` and `panic` are also valid)
+    1. `level` - the log level (preferably limited to: `debug`,`info`,`error` but `warn`,`fatal` and `panic` are also valid)
     1. `msg` - a textual description of the message
     1. `transaction` - a unique transaction id for a particular request (if applicable)
-    1. `ts` - the current timestamp (in RFC3339 format)
+    1. `time` - the current timestamp (in RFC3339 format)
     1. `dur` - the time taken to complete an action (in fractional seconds)
   1. Graze
     1. `apid` - Account Profile Id
     1. Other id's should be in the format `{item}_id`
   1. REST requests
-    1. `method` - `GET`,`POST`, etc...
-    1. `path` - Path of request (without params)
-    1. `uri` - Full request path (with params)
-    1. `status` - Status Code returned
-    1. `protocol` - Protocol used for the request (`HTTP/1.1`, `HTTP/2.0`)
+    1. `http.method` - `GET`,`POST`, etc...
+    1. `http.path` - Path of request (without params)
+    1. `http.uri` - Full request path (with params)
+    1. `http.status` - Status Code returned
+    1. `http.protocol` - Protocol used for the request (`HTTP/1.1`, `HTTP/2.0`)
+    1. `http.user` - The IP of the users request
 
 ## PHP
 
