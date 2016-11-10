@@ -19,8 +19,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Logging
 
-1. Logs should be written to stderr and collected to a central store
-2. Application logs should be in [logfmt](https://brandur.org/logfmt) format in development and production
+1. Logs should be written to stderr and externally collected.
+2. Application logs should be in [logfmt](https://brandur.org/logfmt) format in development, and json when it is being collected into a log store.
 
   ```
   msg="Request finished" tag=request_finish status=200
@@ -36,7 +36,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     1. `level` - the log level (preferably limited to: `debug`,`info`,`error` but `warn`,`fatal` and `panic` are also valid)
     1. `msg` - a textual description of the message
     1. `transaction` - a unique transaction id for a particular request (if applicable)
-    1. `time` - the current timestamp (in RFC3339 format)
+    1. `time` - the current timestamp (in RFC3339 format [preferably UTC, but the format contains the timezone])
     1. `dur` - the time taken to complete an action (in fractional seconds)
   1. Graze
     1. `apid` - Account Profile Id
@@ -48,6 +48,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     1. `http.status` - Status Code returned
     1. `http.protocol` - Protocol used for the request (`HTTP/1.1`, `HTTP/2.0`)
     1. `http.user` - The IP of the users request
+    1. `http.time` - The time at the start of the http request (in RFC3339 format [preferably UTC, but the format contains the timezone])
 
 ## PHP
 
