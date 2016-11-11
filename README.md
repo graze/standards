@@ -184,6 +184,41 @@ console.log($);
 2. Exceptions:
     1. 160 column limit
 
+## AWS
+
+### DNS Names
+
+DNS Records MUST adhere to the following pattern
+```text
+(instance).aws_service.(az).(region).service.environment.namespace
+```
+1. instance SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.
+2. aws_service MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be as specified as in the Boto3 Library (https://boto3.readthedocs.io/en/latest/reference/services/index.html)
+3. az OPTIONALLY can refer to a specific Availability Zone. This may indicate a design problem in the service.
+4. region OPTIONALLY can refer to a specific region.
+3. service MUST refer to the specific service.
+6. environment MUST refer to the environment the service is deployed into.
+7. namespace MUST be a valid TLD
+
+Example DNS Records:
+```text
+exampledb.rds.eu-west-1.example_service.environment.example.com
+elasticache.us-west-1.second_service.environment.example.com
+````
+
+### Object Names in AWS
+
+1. The name of an Object in AWS must convey the same information at the DNS record, however availability zone and region SHOULD NOT be included.
+2. The Object name reverses the ordering of the components compared to the DNS record
+3. By convention the namespace is assumed to be the standard TLD, exceptions MAY be made for thirdy party services.
+4. Objects MUST be CamelCase and acronyms MUST be Capitalised
+
+Example Object Names:
+```text
+EnvironmentExampleServiceRDSExampleDB
+EnvironmentSecondServiceElastiCache
+ThirdPartyLiveMonitoringEC2
+```
 
 ## SQL
 
