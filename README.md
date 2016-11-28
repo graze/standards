@@ -202,8 +202,8 @@ DNS Records MUST adhere to the following pattern
 
 Example DNS Records:
 ```text
-exampledb.rds.eu-west-1.example_service.environment.example.com
-elasticache.us-west-1.second_service.environment.example.com
+exampledb.rds.eu-west-1.example-service.environment.example.com
+elasticache.us-west-1.second-service.environment.example.com
 ````
 
 ### Object Names in AWS
