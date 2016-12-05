@@ -67,6 +67,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   ```php
   $true = !false;
   ```
+17. There MUST be a single space between a type cast and the variable, e.g. `(int) $foo`.
 
 ### PHP DocBlock
 1. DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the DocBlock is up-to-date.
