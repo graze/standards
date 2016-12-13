@@ -21,13 +21,14 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 1. Logs should be written to stderr and externally collected.
 2. Application logs should be in [logfmt](https://brandur.org/logfmt) format in development, and json when it is being collected into a log store.
+  1. Structured log keys should be in `underscore_lower_case`
 
   ```
   msg="Request finished" tag=request_finish status=200
     user=brandur@mutelight.org user_id=1234 app=mutelight app_id=1234
   ```
 
-3. Logs in logfmt should have the following fields specified by default:
+3. Logs in logfmt/json should try and use the following field definitions:
   1. Generic
     1. `app` - simple name of the application
     1. `env` - environment it is running in (`dev`,`test`,`staging`,`integration`,`live`)
