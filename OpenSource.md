@@ -62,3 +62,8 @@ Checklist: http://phppackagechecklist.com/
 
 0. The project MUST be listed on Packagist.
 
+## Golang
+
+0. All code MUST be automatically formatted using `gofmt`.
+
+0. All code SHOULD pass the checks carried out by `go lint`.
