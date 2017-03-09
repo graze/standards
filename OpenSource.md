@@ -1,16 +1,6 @@
 # Open Source Project Standards
 
-Example skeleton project: https://github.com/thephpleague/skeleton
-
-League standards: http://thephpleague.com/#quality
-
-Checklist: http://phppackagechecklist.com/
-
-0. All code MUST adhere to the PSR-2 and PSR-4 standards.
-
-0. The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported PHP version (see https://php.net/supported-versions.php).
-
-0. The vendor name MUST be `graze`. The vendor namespace MUST be `Graze`.
+## Common
 
 0. The name of the project repository MUST be all lowercase and use hyphens to separate words.
 
@@ -35,6 +25,22 @@ Checklist: http://phppackagechecklist.com/
 
 0. The project MUST contain a CHANGELOG file, following the conventions laid out here: http://keepachangelog.com/
 
+0. The project SHOULD use Travis CI to automatically run unit tests on branches and PRs.
+
+## PHP
+
+Example skeleton project: https://github.com/graze/skeleton-projects
+
+League standards: http://thephpleague.com/#quality
+
+Checklist: http://phppackagechecklist.com/
+
+0. All code MUST adhere to the PSR-2 and PSR-4 standards.
+
+0. The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported PHP version (see https://php.net/supported-versions.php).
+
+0. The vendor name MUST be `graze`. The vendor namespace MUST be `Graze`.
+
 0. The project MUST contain a composer.json file.
 	0. It MUST contain:
 		0. The name of the project, this MUST match the name of the repository.
@@ -46,8 +52,7 @@ Checklist: http://phppackagechecklist.com/
 
 0. All tests MUST be a in a directory named `tests/`.
 
-0. The project SHOULD use Travis CI to automatically run unit tests on branches and PRs.
-
 0. The project SHOULD use Scrutinizer to check and fix standards and flag code quality issues.
 
 0. The project MUST be listed on Packagist.
+
