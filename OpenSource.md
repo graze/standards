@@ -4,7 +4,7 @@
 
 0. The name of the project repository MUST be all lowercase and use hyphens to separate words.
 
-0. The project MUST contain a README file.
+0. The project MUST contain a README.md file.
    0. It MUST contain:
 		0. A description of the project.
 		0. Installation instructions.
@@ -15,7 +15,7 @@
 	0. It COULD contain:
 		0. Badges to show other relevant project statuses such as project version, code coverage, etc.
 
-0. The project MUST contain a CONTRIBUTING file.
+0. The project MUST contain a CONTRIBUTING.md file.
 	0. It MUST contain:
 		0. How to report an issue.
 		0. How to open a PR.
@@ -23,11 +23,11 @@
 		0. How to setup a development environment.
 		0. How to run tests.
 
-0. The project MUST contain a LICENSE file.
+0. The project MUST contain a LICENSE.md file.
 
 0. Source code SHOULD begin with a copyright message and link to the LICENSE file.
 
-0. The project MUST contain a CHANGELOG file, following the conventions laid out here: http://keepachangelog.com/
+0. The project MUST contain a CHANGELOG.md file, following the conventions laid out here: http://keepachangelog.com/
 
 0. The project SHOULD use Travis CI to automatically run unit tests on branches and PRs.
 
