@@ -27,6 +27,8 @@
 
 0. The project SHOULD use Travis CI to automatically run unit tests on branches and PRs.
 
+0. The project SHOULD use Docker for development, testing and execution.
+
 ## PHP
 
 Example skeleton project: https://github.com/graze/skeleton-projects
