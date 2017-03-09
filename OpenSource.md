@@ -10,6 +10,10 @@
 		0. Installation instructions.
 		0. Usage instructions.
 		0. License information.
+	0. It SHOULD contain:
+		0. Badge to show current build status.
+	0. It COULD contain:
+		0. Badges to show other relevant project statuses such as project version, code coverage, etc.
 
 0. The project MUST contain a CONTRIBUTING file.
 	0. It MUST contain:
