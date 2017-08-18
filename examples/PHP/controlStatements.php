@@ -1,11 +1,5 @@
 <?php
 
-$expr = 0;
-$expr1 = true;
-$expr2 = false;
-$expr3 = true;
-$expr4 = true;
-
 // basic if - else
 if ($expr1) {
     echo 'if body';
