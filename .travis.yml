@@ -23,6 +23,7 @@ before_install:
 
 before_script:
   - travis_retry composer update --no-interaction
+  - mkdir -p cache
 
 script:
   - vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/ examples/
