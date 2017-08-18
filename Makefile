@@ -6,6 +6,7 @@ build:
 		graze/composer install
 
 lint:
+	@mkdir -p cache
 	@docker run --rm -it -v $$(pwd):/srv:cached graze/php-alpine:test vendor/bin/phpcs \
 		-p --warning-severity=0 --cache=cache/phpcs --parallel=10 \
 		PHP/ examples/
