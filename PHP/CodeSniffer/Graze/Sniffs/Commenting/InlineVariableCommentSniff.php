@@ -22,10 +22,10 @@ class InlineVariableCommentSniff extends AbstractVariableSniff
         $stackPtr
     ) {
         $tokens       = $phpcsFile->getTokens();
-        $commentToken = array(
+        $commentToken = [
             T_COMMENT,
             T_DOC_COMMENT_CLOSE_TAG,
-        );
+        ];
         $commentEnd = $phpcsFile->findPrevious($commentToken, $stackPtr);
         $commentStart = $tokens[$commentEnd]['comment_opener'];
 

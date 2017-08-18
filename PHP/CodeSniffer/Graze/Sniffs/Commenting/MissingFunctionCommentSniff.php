@@ -10,6 +10,7 @@ class MissingFunctionCommentSniff implements Sniff
 {
     const ERROR_CODE_RETURN = 'graze.commenting.missingFunctionComment.returnNoDoc';
     const ERROR_CODE_PARAMETER = 'graze.commenting.missingFunctionComment.parameterNoDoc';
+
     /**
      * Registers the tokens that this sniff wants to listen for.
      * An example return value for a sniff that wants to listen for whitespace
@@ -21,25 +22,28 @@ class MissingFunctionCommentSniff implements Sniff
      *            T_COMMENT,
      *           );
      * </code>
+     *
      * @return int[]
      * @see    Tokens.php
      */
     public function register()
     {
         return [
-            T_FUNCTION
+            T_FUNCTION,
         ];
     }
 
     /**
      * @param File $phpcsFile
-     * @param int $stackPtr
+     * @param int  $stackPtr
+     *
+     * @return int|void
      */
     public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
-        $find   = Tokens::$methodPrefixes;
+        $find = Tokens::$methodPrefixes;
         $find[] = T_WHITESPACE;
 
         $commentEnd = $phpcsFile->findPrevious($find, ($stackPtr - 1), null, true);
@@ -57,7 +61,8 @@ class MissingFunctionCommentSniff implements Sniff
         if ($tokens[$commentEnd]['code'] !== T_DOC_COMMENT_CLOSE_TAG
             && $tokens[$commentEnd]['code'] !== T_COMMENT
         ) {
-            if (array_key_exists('scope_opener', $tokens[$stackPtr]) && $this->functionHasReturn($phpcsFile, $stackPtr)) {
+            if (array_key_exists('scope_opener', $tokens[$stackPtr])
+                && $this->functionHasReturn($phpcsFile, $stackPtr)) {
                 $phpcsFile->addError('Function has return keyword but no doc block', $stackPtr, static::ERROR_CODE_RETURN);
                 return;
             }
@@ -70,7 +75,7 @@ class MissingFunctionCommentSniff implements Sniff
 
     /**
      * @param File $phpcsFile
-     * @param int $stackPtr
+     * @param int  $stackPtr
      *
      * @return bool
      */
@@ -87,7 +92,7 @@ class MissingFunctionCommentSniff implements Sniff
             }
 
             // if we hit a return keyword that isn't immediately followed by a semicolon, we need a doc block
-            if ($tokens[$i]['code'] === T_RETURN && $tokens[$i+1]['code'] !== T_SEMICOLON) {
+            if ($tokens[$i]['code'] === T_RETURN && $tokens[$i + 1]['code'] !== T_SEMICOLON) {
                 return true;
             }
         }
@@ -97,12 +102,13 @@ class MissingFunctionCommentSniff implements Sniff
 
     /**
      * @param File $phpcsFile
-     * @param $stackPtr
+     * @param int  $stackPtr
      *
      * @return bool
+     * @throws \PHP_CodeSniffer\Exceptions\TokenizerException
      */
     private function functionHasParams(File $phpcsFile, $stackPtr)
     {
-        return (bool) $phpcsFile->getMethodParameters($stackPtr);
+        return (bool)$phpcsFile->getMethodParameters($stackPtr);
     }
 }
