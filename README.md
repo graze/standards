@@ -33,6 +33,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 1. Nested ternary operators MUST NOT be used.
 1. PHP file encoding must be UTF-8.
 1. `if` statements which span multiple lines should be split as follows:
+
     ```php
     if ($longVariableNameNumber1
         && $longVariableNameNumber2
@@ -42,22 +43,29 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
         // body of control structure
     }
     ```
+
 1. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
+
     ```php
     if ($response = $request->getResponse()) {
         // not allowed
     }
     ```
+
 1. Abstract class names MUST begin with `Abstract`.
+
     ```php
     abstract class AbstractGenerator {
     }
     ```
+
 1. Interface names MUST end with `Interface`.
+
     ```php
     interface GeneratorInterface {
     }
     ```
+
 1. 'Not' logical operators MUST NOT have whitespace between them and the subject being negated.
 
     ```php
@@ -192,13 +200,13 @@ DNS Records MUST adhere to the following pattern
 (instance).aws_service.(az).(region).service.environment.namespace
 ```
 
-1. instance SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.
-1. aws_service MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be as specified as in the Boto3 Library (https://boto3.readthedocs.io/en/latest/reference/services/index.html)
-1. az OPTIONALLY can refer to a specific Availability Zone. This may indicate a design problem in the service.
-1. region OPTIONALLY can refer to a specific region.
-1. service MUST refer to the specific service.
-1. environment MUST refer to the environment the service is deployed into (`dev`, `stage`, `test`, `live`)
-1. namespace MUST be a valid TLD
+1. `instance` SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.
+1. `aws_service` MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be as specified as in the Boto3 Library (https://boto3.readthedocs.io/en/latest/reference/services/index.html)
+1. `az` OPTIONALLY can refer to a specific Availability Zone. This may indicate a design problem in the service.
+1. `region` OPTIONALLY can refer to a specific region.
+1. `service` MUST refer to the specific service.
+1. `environment` MUST refer to the environment the service is deployed into (`dev`, `stage`, `test`, `live`)
+1. `namespace` MUST be a valid TLD
 
 Example DNS Records:
 
@@ -276,6 +284,7 @@ ThirdPartyLiveMonitoringEC2
 
 1. CASE statements MAY either be written using the previous rule or on a single line:
     - split lines
+
         ```sql
         SELECT
             CASE
@@ -286,6 +295,7 @@ ThirdPartyLiveMonitoringEC2
        ```
 
     - concisely
+
         ```sql
         SELECT
             CASE WHEN gender = 'M' THEN 'male' ELSE 'female' END
