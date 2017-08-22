@@ -201,7 +201,7 @@ DNS Records MUST adhere to the following pattern
 ```
 
 1. `instance` SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.
-1. `aws_service` MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be as specified as in the Boto3 Library (https://boto3.readthedocs.io/en/latest/reference/services/index.html)
+1. `aws_service` MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be as specified as in the [Boto3 Library](https://boto3.readthedocs.io/en/latest/reference/services/index.html)
 1. `az` OPTIONALLY can refer to a specific Availability Zone. This may indicate a design problem in the service.
 1. `region` OPTIONALLY can refer to a specific region.
 1. `service` MUST refer to the specific service.
