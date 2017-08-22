@@ -213,14 +213,14 @@ Example DNS Records:
 ```text
 exampledb.rds.eu-west-1.example-service.environment.example.com
 elasticache.us-west-1.second-service.environment.example.com
-````
+```
 
 ### Object Names in AWS
 
 1. The name of an Object in AWS must convey the same information at the DNS record, however availability zone and region SHOULD NOT be included as this information is conveyed by interaction with the object.
 1. The Object name is ordered naturally so that it is read from left to right (inverse of the DNS name).
-1. By convention the namespace is assumed to be the standard TLD, exceptions MAY be made for thirdy party services.
-1. Objects MUST be UpperCamelCase and acronyms MUST be Capitalised
+1. By convention the namespace is assumed to be the standard TLD. Exceptions MAY be made for third party services.
+1. Objects MUST be UpperCamelCase and acronyms MUST be Capitalised.
 
 Example Object Names:
 
