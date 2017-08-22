@@ -169,8 +169,8 @@ Please refer to the [airbnb style guide](https://github.com/airbnb/javascript) f
 
 ### Immediately-invoked function expressions (IIFE)
 
-1. MUST NOT be used for CommonJS exporting modules (built with Browserify)
-1. MUST be used in inline scripts and non Browserify compiled JS to avoid populating the global scope
+1. MUST NOT be used for CommonJS exporting modules (built with Browserify).
+1. MUST be used in inline scripts and non Browserify compiled JS to avoid populating the global scope.
 
 **Example of usage in non CommonJS modules:**
 
@@ -201,12 +201,12 @@ DNS Records MUST adhere to the following pattern
 ```
 
 1. `instance` SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.
-1. `aws_service` MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be as specified as in the [Boto3 Library](https://boto3.readthedocs.io/en/latest/reference/services/index.html)
+1. `aws_service` MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be as specified as in the [Boto3 Library](https://boto3.readthedocs.io/en/latest/reference/services/index.html).
 1. `az` OPTIONALLY can refer to a specific Availability Zone. This may indicate a design problem in the service.
 1. `region` OPTIONALLY can refer to a specific region.
 1. `service` MUST refer to the specific service.
-1. `environment` MUST refer to the environment the service is deployed into (`dev`, `stage`, `test`, `live`)
-1. `namespace` MUST be a valid TLD
+1. `environment` MUST refer to the environment the service is deployed into (`dev`, `stage`, `test`, `live`).
+1. `namespace` MUST be a valid TLD.
 
 Example DNS Records:
 
@@ -234,8 +234,8 @@ ThirdPartyLiveMonitoringEC2
 
 ### Query Writing
 
-1. Keywords and functions MUST be uppercase (SELECT, WHERE, MAX, AND)
-1. Column aliases MUST be lower snake_case
+1. Keywords and functions MUST be uppercase (SELECT, WHERE, MAX, AND).
+1. Column aliases MUST be lower snake_case.
 1. When the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after the keyword, indented once:
 
     ```sql
@@ -259,8 +259,8 @@ ThirdPartyLiveMonitoringEC2
     ```
 
 1. When a statement is written within a string in PHP:
-    1. The query MUST start on a new line, indented once
-    1. A semicolon MUST NOT be added at the end of the statement
+    1. The query MUST start on a new line, indented once.
+    1. A semicolon MUST NOT be added at the end of the statement.
 1. All joins MUST be written like:
 
     ```sql
