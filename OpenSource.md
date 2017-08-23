@@ -22,25 +22,26 @@
         1. How to run tests.
 1. The project MUST contain a LICENSE.md file.
 1. Source code SHOULD begin with a copyright message and link to the LICENSE file.
-1. The project MUST contain a CHANGELOG.md file, following the conventions laid out here: http://keepachangelog.com/
+1. The project MUST contain a CHANGELOG.md file, following the conventions laid out here:
+   [keepachangelog](http://keepachangelog.com/)
 1. The project SHOULD use Travis CI to automatically run unit tests on branches and PRs.
 1. The project SHOULD use Docker for development, testing and execution.
 
 ## PHP
 
-Example skeleton project: https://github.com/graze/skeleton-projects
-
-League standards: http://thephpleague.com/#quality
-
-Checklist: http://phppackagechecklist.com/
+* [Example skeleton project](https://github.com/graze/skeleton-projects)
+* [League standards](http://thephpleague.com/#quality)
+* [Checklist](http://phppackagechecklist.com/)
 
 1. All code MUST adhere to the PSR-2 and PSR-4 standards.
-1. The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported PHP version (see https://php.net/supported-versions.php).
+1. The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported
+   PHP version (see [versions](https://php.net/supported-versions.php)).
 1. The vendor name MUST be `graze`. The vendor namespace MUST be `Graze`.
 1. The project MUST contain a composer.json file.
     1. It MUST contain:
         1. The name of the project, this MUST match the name of the repository.
-        1. The name of the maintainer in the `authors` section, along with the generic `Graze Developers <developers@graze.com>` author.
+        1. The name of the maintainer in the `authors` section, along with the generic
+           `Graze Developers <developers@graze.com>` author.
     1. It MUST NOT contain:
         1. The version of the project.
 1. All library code MUST be in a directory named `src/`.

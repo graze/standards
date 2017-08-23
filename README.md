@@ -1,8 +1,11 @@
 # Graze Coding Standards
 
-This document describes the coding standards of Graze across its common languages to be adhered to and enforced by the Graze tech team, any violation of standards must be justified by the developer and exceptions are allowed for cases where it is unavoidable, such as in the case of third-party integrations.
+This document describes the coding standards of Graze across its common languages to be adhered to and enforced by the
+Graze tech team, any violation of standards must be justified by the developer and exceptions are allowed for cases
+where it is unavoidable, such as in the case of third-party integrations.
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt).
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
+"OPTIONAL" in this document are to be interpreted as described in [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt).
 
 ## General
 
@@ -19,7 +22,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## PHP
 
-1. All PHP code MUST adhere to the [PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/) (which MUST follow the [PSR-1 Coding Standard](http://www.php-fig.org/psr/psr-1/)).
+1. All PHP code MUST adhere to the [PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/) (which MUST follow the
+   [PSR-1 Coding Standard](http://www.php-fig.org/psr/psr-1/)).
 1. Short array syntax (`[]` instead of `array()`) MUST be used.
 1. All PHP code MUST adhere to the [PSR-4 Autoloading](http://www.php-fig.org/psr/psr-4/) Standard.
 1. Class names MUST be declared in UpperCamelCase.
@@ -29,7 +33,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 1. Scripts MUST be named in camelCase describing their primary function.
 1. Non-static functions MUST NOT be called statically.
 1. Static functions MUST NOT be called non-statically.
-1. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way to make the code simpler or self-documenting.
+1. Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way
+   to make the code simpler or self-documenting.
 1. Nested ternary operators MUST NOT be used.
 1. PHP file encoding must be UTF-8.
 1. `if` statements which span multiple lines should be split as follows:
@@ -74,8 +79,11 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ### PHP DocBlock
 
-1. DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (`@param`, `@return`) to denote that. Developers making modifications to a function / method are tasked with ensuring that the DocBlock is up-to-date.
-1. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a DocBlock explaining how to use the function / method / class.
+1. DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use
+   the appropriate tags (`@param`, `@return`) to denote that. Developers making modifications to a function / method are
+   tasked with ensuring that the DocBlock is up-to-date.
+1. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a DocBlock
+   explaining how to use the function / method / class.
 1. DocBlock presenting the type MUST be present for class member variables.
 1. When a description is necessary for class member variables, the DocBlock MUST be multiline:
 
@@ -94,12 +102,16 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     }
     ```
 
-1. DocBlock types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float` (not double).
-1. DocBlock types for parameters/return values that are arrays of a single type MUST be written as: `Type[]`. If the variable is a multi-dimensional array, it MUST be represented with one set of `[]` per depth (`int[][]` for an array of array of ints)
+1. DocBlock types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float`
+   (not double).
+1. DocBlock types for parameters/return values that are arrays of a single type MUST be written as: `Type[]`. If the
+   variable is a multi-dimensional array, it MUST be represented with one set of `[]` per depth (`int[][]` for an array
+   of array of ints)
 1. If the parameter/return value is an array of several types, it MUST be described in the DocBlock as `mixed[]`.
-1. If the parameter/return value is an array that is sometimes empty, it MUST still be written as in 6) (NOT `Type[]|[]`)
+1. If the parameter/return value is an array that is sometimes empty, it MUST still be written as in 6)
+   (NOT `Type[]|[]`)
 
-**example of a method's DocBlock:**
+#### example of a method's DocBlock
 
 ```php
     /**
@@ -116,7 +128,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 1. MUST use the .phtml extension.
 1. MUST be named in camelCase.
-1. SHOULD be named after the controller action that they are the view for. E.g. the view for graze.com/account/payments must be in views/graze/en/account/payments.phtml.
+1. SHOULD be named after the controller action that they are the view for. E.g. the view for graze.com/account/payments
+   must be in views/graze/en/account/payments.phtml.
 1. PHP in views:
     1. MUST NOT modify the value of variables.
     1. MUST NOT reference static class properties, methods or constants.
@@ -145,15 +158,20 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 1. Words in file names MUST be separated with hyphens (-).
 1. CSS3 is RECOMMENDED.
 1. Selectors MUST be in hyphen case. (.button-blue).
-1. Selectors MUST be on a single line, with a space after the last selector, followed by an opening brace. A selector MUST end with a closing brace that is un-indented and on a separate line. A blank line MUST be placed between each block of selectors.
+1. Selectors MUST be on a single line, with a space after the last selector, followed by an opening brace. A selector
+   MUST end with a closing brace that is un-indented and on a separate line. A blank line MUST be placed between each
+   block of selectors.
 1. There MUST only be one property:value pair per line.
 1. CSS blocks SHOULD adhere to the CSS Property Order.
 1. There MUST always be a space after a property's colon (e.g., display: block; and not display:block;).
 1. Property declaration lines MUST end with a semi-colon.
 1. For multiple, comma-separated selectors, each selector MUST be on its own line.
-1. Attribute selectors, like input[type="text"] MUST always wrap the attribute's value in double quotes, for consistency and safety.
-1. Attribute selectors MUST only be used where absolutely necessary (e.g., form controls) and MUST be avoided on custom components for performance and explicitness.
-1. Series of classes for a component MUST include a base class (e.g., .component) and use the base class as a prefix for modifier and sub-components (e.g., .component-lg).
+1. Attribute selectors, like input[type="text"] MUST always wrap the attribute's value in double quotes, for
+   consistency and safety.
+1. Attribute selectors MUST only be used where absolutely necessary (e.g., form controls) and MUST be avoided on custom
+   components for performance and explicitness.
+1. Series of classes for a component MUST include a base class (e.g., .component) and use the base class as a prefix
+   for modifier and sub-components (e.g., .component-lg).
 
 ## JavaScript
 
@@ -172,7 +190,7 @@ Please refer to the [airbnb style guide](https://github.com/airbnb/javascript) f
 1. MUST NOT be used for CommonJS exporting modules (built with Browserify).
 1. MUST be used in inline scripts and non Browserify compiled JS to avoid populating the global scope.
 
-**Example of usage in non CommonJS modules:**
+#### Example of usage in non CommonJS modules
 
 ```javascript
 (function($) {
@@ -201,7 +219,8 @@ DNS Records MUST adhere to the following pattern
 ```
 
 1. `instance` SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.
-1. `aws_service` MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be as specified as in the [Boto3 Library](https://boto3.readthedocs.io/en/latest/reference/services/index.html).
+1. `aws_service` MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be
+   as specified as in the [Boto3 Library](https://boto3.readthedocs.io/en/latest/reference/services/index.html).
 1. `az` OPTIONALLY can refer to a specific Availability Zone. This may indicate a design problem in the service.
 1. `region` OPTIONALLY can refer to a specific region.
 1. `service` MUST refer to the specific service.
@@ -217,7 +236,8 @@ elasticache.us-west-1.second-service.environment.example.com
 
 ### Object Names in AWS
 
-1. The name of an Object in AWS must convey the same information at the DNS record, however availability zone and region SHOULD NOT be included as this information is conveyed by interaction with the object.
+1. The name of an Object in AWS must convey the same information at the DNS record, however availability zone and
+   region SHOULD NOT be included as this information is conveyed by interaction with the object.
 1. The Object name is ordered naturally so that it is read from left to right (inverse of the DNS name).
 1. By convention the namespace is assumed to be the standard TLD. Exceptions MAY be made for third party services.
 1. Objects MUST be UpperCamelCase and acronyms MUST be Capitalised.
@@ -236,7 +256,8 @@ ThirdPartyLiveMonitoringEC2
 
 1. Keywords and functions MUST be uppercase (SELECT, WHERE, MAX, AND).
 1. Column aliases MUST be lower snake_case.
-1. When the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after the keyword, indented once:
+1. When the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after
+   the keyword, indented once:
 
     ```sql
     SELECT
@@ -270,7 +291,8 @@ ThirdPartyLiveMonitoringEC2
     ```
     Joins MUST NOT use the unqualified JOIN keyword.
 
-1. Functions MAY be split across multiple lines, where each subsequent line is indented once. When doing so, the first item in the list MUST be on the next line, and there MUST be only one argument per line.
+1. Functions MAY be split across multiple lines, where each subsequent line is indented once. When doing so, the first
+   item in the list MUST be on the next line, and there MUST be only one argument per line.
 
     ```sql
     SELECT
@@ -302,7 +324,8 @@ ThirdPartyLiveMonitoringEC2
         FROM users
         ```
 
-1. Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the FROM clause, and the closing brace MUST be on its own line along with the subquery alias:
+1. Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the
+   FROM clause, and the closing brace MUST be on its own line along with the subquery alias:
 
     ```sql
     SELECT
