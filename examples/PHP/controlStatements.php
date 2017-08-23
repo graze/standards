@@ -2,31 +2,32 @@
 
 // basic if - else
 if ($expr1) {
-    // if body
+    echo 'if body';
 } elseif ($expr2) {
-    // elseif body
+    echo 'elseif body';
 } else {
-    // else body;
+    echo 'else body';
 }
 
 // if with a negation
 if (!$expr1) {
     // if  body
+    echo 'negative if body';
 }
 
 // if with an operand
 if ($expr1 && $expr2) {
-    // if body
+    echo 'if body';
 } else {
-    // else body;
+    echo 'else body';
 }
 
 // if with long expression
-if ($expr1 &&
-    $expr2 &&
-    $expr3 &&
-    $expr4 &&) {
-    // if  body
+if ($expr1
+    && $expr2
+    && $expr3
+    && $expr4) {
+    echo 'if body';
 }
 
 // switch statement
@@ -49,19 +50,22 @@ switch ($expr) {
 
 // for loop
 for ($i = 0; $i < 10; $i++) {
-    // for body
+    echo 'for body ' . $i;
 }
 
 // foreach loop
 foreach ($iterable as $key => $value) {
-    // foreach body
+    echo 'foreach body';
 }
 
 // try - catch
 try {
-    // try body
+    echo 'try body';
 } catch (FirstExceptionType $e) {
-    // catch body
+    echo 'catch body';
 } catch (OtherExceptionType $e) {
-    // catch body
+    echo 'other catch body';
 }
+
+// casting
+$int = (int) $string;

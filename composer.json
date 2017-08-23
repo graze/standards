@@ -10,9 +10,12 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Will Pillar",
-            "email": "will.pillar@graze.com"
+            "name": "Graze Developers",
+            "email": "developers@graze.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.0"
+    }
 }

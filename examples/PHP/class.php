@@ -2,7 +2,8 @@
 
 namespace Graze\Example; // namespace declaration with blank line above
 
-use Graze\Lib\Foo; // use statements with blank line above
+// use statements with blank line above
+use Foo;
 
 class Example
 {
@@ -28,10 +29,15 @@ class Example
     }
 
     /**
-     * @param Foo $foo
-     * @param string $bar
-     * @param string $baz
-     * @param string $bat
+     * @param Foo         $foo
+     * @param string      $bar
+     * @param string      $baz
+     * @param string      $bat
+     * @param string|null $bak
+     * @param string|null $bas
+     * @param string|null $bab
+     * @param string|null $bap
+     * @param string|null $bad
      */
     public function methodWithManyArguments(
         Foo $foo,
