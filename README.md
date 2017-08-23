@@ -69,7 +69,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   ```
 
 ### PHP DocBlock
-1. DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Developers making modifications to a function / method are tasked with ensuring that the DocBlock is up-to-date.
+1. DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use the appropriate tags (@param, @return) to denote that. Given a function / method does not return anything the @return tag MUST still be used with a value of void. Developers making modifications to a function / method are tasked with ensuring that the DocBlock is up-to-date.
 2. Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a DocBlock explaining how to use the function / method / class.
 3. DocBlock presenting the type MUST be present for class member variables.
 4. When a description is necessary for class member variables, the DocBlock MUST be multiline:
