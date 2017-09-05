@@ -55,4 +55,4 @@ Checklist: http://phppackagechecklist.com/
 
 ## Python
 
-1. Python code SHOULD conform to the PEP8 and PEP257 guides
+1. All code SHOULD conform to the PEP8 and PEP257 guides
