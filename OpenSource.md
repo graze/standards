@@ -52,3 +52,7 @@ Checklist: http://phppackagechecklist.com/
 
 1. All code MUST be automatically formatted using `gofmt`.
 1. All code SHOULD pass the checks carried out by `go lint`.
+
+## Python
+
+1. Python code SHOULD conform to the PEP8 and PEP257 guides
