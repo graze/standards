@@ -55,4 +55,4 @@ Checklist: http://phppackagechecklist.com/
 
 ## Python
 
-1. All code SHOULD conform to the [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) guides
+1. All code SHOULD conform to the [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) guides.
