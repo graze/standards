@@ -34,7 +34,7 @@ League standards: http://thephpleague.com/#quality
 
 Checklist: http://phppackagechecklist.com/
 
-1. All code MUST adhere to the PSR-2 and PSR-4 standards.
+1. All code MUST adhere to the [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) and [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md) standards.
 1. The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported PHP version (see https://php.net/supported-versions.php).
 1. The vendor name MUST be `graze`. The vendor namespace MUST be `Graze`.
 1. The project MUST contain a composer.json file.
@@ -52,3 +52,7 @@ Checklist: http://phppackagechecklist.com/
 
 1. All code MUST be automatically formatted using `gofmt`.
 1. All code SHOULD pass the checks carried out by `go lint`.
+
+## Python
+
+1. All code SHOULD conform to the [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) guides.
