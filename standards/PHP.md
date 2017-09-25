@@ -108,7 +108,8 @@
 * [League standards](http://thephpleague.com/#quality)
 * [Checklist](http://phppackagechecklist.com/)
 
-1. All code MUST adhere to the PSR-2 and PSR-4 standards.
+1. All code MUST adhere to the [PSR-2](http://www.php-fig.org/psr/psr-2/)
+   and [PSR-4](http://www.php-fig.org/psr/psr-4/) standards.
 1. The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported
    PHP version (see [versions](https://php.net/supported-versions.php)).
 1. The vendor name MUST be `graze`. The vendor namespace MUST be `Graze`.

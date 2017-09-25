@@ -4,21 +4,22 @@ Based on the [Docker guidelines](https://docs.docker.com/engine/userguide/eng-im
 
 ## General
 
-1. You SHOULD use a `.dockerignore` file - This will ensure the amount of data sent to the docker daemon will be minimal.
+1. A `.dockerignore` file SHOULD be used - This will ensure the amount of data sent to the docker daemon will be minimal.
 1. Each container SHOULD have a single concern.
 
 ## Dockerfile
 
-1. You SHOULD sort multi-line arguments.
-1. You SHOULD minimize the number of layers.
-    1. Use `\` and `&&` for multiple commands:
+1. Multi-line arguments SHOULD be sorted.
+1. The number of layers SHOULD be kept to a minimum.
+1. A single `RUN` command can contain many commands:
+    1. Use `\` and `&&` for multiple commands, with `&&` on the new line:
 
         ```Dockerfile
         RUN cmd \
             && cmd2
         ```
 
-    1. When adding build time packages, remove them in the same `RUN` command
+    1. When adding build time packages, remove them in the same `RUN` command:
 
         ```Dockerfile
         RUN apk add --virtual .deps \
@@ -44,11 +45,11 @@ Based on the [Docker guidelines](https://docs.docker.com/engine/userguide/eng-im
         license="MIT"
     ```
 
-1. You SHOULD not use the `MAINTAINER` command (use `LABEL maintainer` instead).
-1. You SHOULD not use the `LICENCE` command (use `LABEL license` instead).
-1. You SHOULD use [Label Schema](label-schema.org) labels.
-    1. If using, you MUST use a `org.label-schema.schema-version` field.
-    1. You SHOULD include the `vendor`, `name`, `description` and `vcs-url` fields.
+1. The `MAINTAINER` command SHOULD not be used (use `LABEL maintainer` instead).
+1. The `LICENSE` command SHOULD not be used (use `LABEL license` instead).
+1. [Label Schema](label-schema.org) labels SHOULD be used.
+    1. If using, a `org.label-schema.schema-version` label MUST be defined.
+    1. The `vendor`, `name`, `description` and `vcs-url` labels SHOULD be defined.
 
         ```Dockerfile
         LABEL org.label-schema.schema-version="1.0" \
@@ -58,7 +59,7 @@ Based on the [Docker guidelines](https://docs.docker.com/engine/userguide/eng-im
             org.label-schema.vcs-url="https://github.com/graze/docker-project-name"
         ```
 
-    1. You SHOULD generate the `vcs-ref` and `build-date` fields. Example:
+    1. The `vcs-ref` and `build-date` labels SHOULD be generated. Example:
 
         ```Dockerfile
         ARG BUILD_DATE
@@ -74,7 +75,7 @@ Based on the [Docker guidelines](https://docs.docker.com/engine/userguide/eng-im
               -t graze/project-name .
         ```
 
-1. You SHOULD use `COPY` instead of `ADD` to add simple files.
-1. You SHOULD define an `CMD` using the brackets notation `["executable", "param1", "param2", ...]`.
-1. You SHOULD add `EXPOSE` commands for any ports that are opened.
-1. You SHOULD add `VOLUME` commands for any volumes that are mutable or user-servicable.
+1. `COPY` SHOULD be used instead of `ADD` for simple files.
+1. `CMD` SHOULD be used with the array syntax: `["executable", "param1", "param2", ...]`.
+1. All ports SHOULD be included with `EXPOSE` commands.
+1. Any volumes that are mutable or user-servicable SHOULD use a `VOLUME` command.
