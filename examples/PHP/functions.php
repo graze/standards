@@ -61,3 +61,16 @@ $foo->bar(
     },
     $arg3
 );
+
+function first()
+{
+    /**
+     * @return bool
+     */
+    function second()
+    {
+        return true;
+    }
+
+    second();
+}
