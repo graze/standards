@@ -86,7 +86,7 @@ class MissingFunctionCommentSniff implements Sniff
         $end = $tokens[$stackPtr]['scope_closer'];
 
         for ($i = $start; $i <= $end; $i++) {
-            if ($tokens[$i]['code'] === T_CLOSURE) {
+            if ($tokens[$i]['code'] === T_CLOSURE || $tokens[$i]['code'] === T_FUNCTION) {
                 // skip over closures within our function
                 $i = $tokens[$i]['scope_closer'];
             }
