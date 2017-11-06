@@ -63,6 +63,7 @@ $foo->bar(
 );
 
 // no doc comment required for non returning functions
+
 function first()
 {
     /**
