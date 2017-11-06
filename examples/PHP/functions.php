@@ -62,8 +62,9 @@ $foo->bar(
     $arg3
 );
 
-// no doc comment required for non returning functions
-
+/**
+ * no return needed when its a child function return
+ */
 function first()
 {
     /**
