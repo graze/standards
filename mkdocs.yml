@@ -1,0 +1,22 @@
+site_name: Graze Standards
+docs_dir: standards
+theme: material
+
+pages:
+- Home: 'index.md'
+- Languages:
+  - 'PHP': 'languages/PHP.md'
+  - 'HTML': 'languages/HTML.md'
+  - 'Javascript': 'languages/Javascript.md'
+  - 'Python': 'languages/Python.md'
+  - 'SQL': 'languages/SQL.md'
+  - 'CSS/Less': 'languages/CSS.md'
+  - 'Markdown': 'languages/Markdown.md'
+  - 'Golang': 'languages/Golang.md'
+- Open Source:
+  - 'Project': 'open-source/OpenSource.md'
+- Infrastructure:
+  - 'AWS': 'infrastructure/AWS.md'
+  - 'Docker': 'infrastructure/Docker.md'
+- Visual:
+  - 'Images': 'visual/Images.md'

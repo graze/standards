@@ -1,11 +1,8 @@
 language: php
-
 dist: trusty
-
 cache:
   directories:
-    - $HOME/.composer/cache/files
-
+  - "$HOME/.composer/cache/files"
 php:
   - 5.5
   - 5.6
@@ -17,14 +14,18 @@ php:
 
 matrix:
   fast_finish: true
-
 before_install:
-  - sudo apt-get update
-  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
-
+- sudo apt-get update
+- sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
 before_script:
-  - travis_retry composer update --no-interaction
-  - mkdir -p cache
-
+- travis_retry composer update --no-interaction
+- mkdir -p cache
 script:
-  - vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/ examples/
+- vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/
+  examples/
+
+jobs:
+  include:
+    - stage: deploy
+      php: 7.1
+      script: make docs-deploy

@@ -4,6 +4,15 @@ build:
 		-v ~/.composer:/tmp:delegated \
 		composer install
 
+docs-test: ## Run docs test server
+	docker run --rm -it -p 8000:8000 -v $$(pwd):/docs squidfunk/mkdocs-material
+
+docs-build:
+	docker run --rm -it -v $$(pwd):/docs squidfunk/mkdocs-material build
+
+docs-deploy:
+	docker run --rm -it -v ~/.ssh:/root/.ssh -v $$(pwd):/docs squidfunk/mkdocs-material gh-deploy
+
 lint: ## Check the validness of markdown/php
 lint: lint-md lint-php
 

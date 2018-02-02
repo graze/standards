@@ -22,25 +22,25 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Languages
 
-1. [PHP](standards/languages/PHP.md)
-1. [HTML](standards/languages/HTML.md)
-1. [Javascript](standards/languages/Javascript.md)
-1. [Python](standards/languages/Python.md)
-1. [SQL](standards/languages/SQL.md)
-1. [CSS/Less](standards/languages/CSS.md)
-1. [Markdown](standards/languages/Markdown.md)
-1. [Golang](standards/languages/Golang.md)
+1. [PHP](languages/PHP.md)
+1. [HTML](languages/HTML.md)
+1. [Javascript](languages/Javascript.md)
+1. [Python](languages/Python.md)
+1. [SQL](languages/SQL.md)
+1. [CSS/Less](languages/CSS.md)
+1. [Markdown](languages/Markdown.md)
+1. [Golang](languages/Golang.md)
 
 ## Open Source
 
-1. [Project](standards/open-source/OpenSource.md)
-1. [PHP](standards/languages/PHP.md#open-source)
+1. [Project](open-source/OpenSource.md)
+1. [PHP](languages/PHP.md#open-source)
 
-## Environment
+## Infrastructure
 
-1. [AWS](standards/infrastructure/AWS.md)
-1. [Docker](standards/infrastructure/Docker.md)
+1. [AWS](infrastructure/AWS.md)
+1. [Docker](infrastructure/Docker.md)
 
 ## Visual
 
-1. [Images](standards/visual/Images.md)
+1. [Images](visual/Images.md)
