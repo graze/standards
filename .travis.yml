@@ -22,11 +22,13 @@ before_script:
 script:
 - vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/ examples/
 - make lint-md
+stages:
+  - test
+  - name: deploy
+    if: branch = master
 jobs:
   include:
   - stage: deploy
-    on:
-      branch: master
     script: make docs-build
     deploy:
       provider: pages
