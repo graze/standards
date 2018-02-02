@@ -1,0 +1,749 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.0">
+    
+    
+      
+        <title>PHP - Graze Standards</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.aa3de92b.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#php-standards" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Graze Standards" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Graze Standards
+              </span>
+              <span class="md-header-nav__topic">
+                PHP
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Graze Standards
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Languages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        PHP
+      </label>
+    
+    <a href="./" title="PHP" class="md-nav__link md-nav__link--active">
+      PHP
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#php-docblock" title="PHP DocBlock" class="md-nav__link">
+    PHP DocBlock
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-methods-docblock" title="example of a method's DocBlock" class="md-nav__link">
+    example of a method's DocBlock
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source" title="Open Source" class="md-nav__link">
+    Open Source
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../HTML/" title="HTML" class="md-nav__link">
+      HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Javascript/" title="Javascript" class="md-nav__link">
+      Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SQL/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CSS/" title="CSS/Less" class="md-nav__link">
+      CSS/Less
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Open Source
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Open Source
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../open-source/OpenSource/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/AWS/" title="AWS" class="md-nav__link">
+      AWS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/Docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Visual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Visual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../visual/Images/" title="Images" class="md-nav__link">
+      Images
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#php-docblock" title="PHP DocBlock" class="md-nav__link">
+    PHP DocBlock
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-methods-docblock" title="example of a method's DocBlock" class="md-nav__link">
+    example of a method's DocBlock
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source" title="Open Source" class="md-nav__link">
+    Open Source
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="php-standards">PHP Standards</h1>
+<ol>
+<li>All PHP code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-2/">PSR-2 Coding Standard</a> (which MUST follow the
+   <a href="http://www.php-fig.org/psr/psr-1/">PSR-1 Coding Standard</a>).</li>
+<li>Short array syntax (<code>[]</code> instead of <code>array()</code>) MUST be used.</li>
+<li>All PHP code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 Autoloading</a> Standard.</li>
+<li>Class names MUST be declared in UpperCamelCase.<ol>
+<li>Acronyms MUST be treated as normal words. <code>HttpException</code>, not <code>HTTPException</code>.</li>
+</ol>
+</li>
+<li>Variable names MUST be declared in camelCase.<ol>
+<li>Acronyms MUST be treated as normal words. <code>xmlHttpRequest</code> not <code>XMLHTTPRequest</code>.</li>
+</ol>
+</li>
+<li>Scripts MUST be named in camelCase describing their primary function.</li>
+<li>Non-static functions MUST NOT be called statically.</li>
+<li>Static functions MUST NOT be called non-statically.</li>
+<li>Comments SHOULD be used to provide explanation for “why” rather than “how” and SHOULD be used when there isn’t a way
+   to make the code simpler or self-documenting.</li>
+<li>Nested ternary operators MUST NOT be used.</li>
+<li>PHP file encoding must be UTF-8.</li>
+<li>
+<p><code>if</code> statements which span multiple lines should be split as follows:</p>
+<p><code>php
+if ($longVariableNameNumber1
+    &amp;&amp; $longVariableNameNumber2
+    &amp;&amp; $longVariableNameNumber3
+    &amp;&amp; $longVariableNameNumber4
+    || $longVariableNameNumber5) {
+    // body of control structure
+}</code></p>
+</li>
+<li>
+<p>There MUST NOT be any assignment or modification of variables in the expressions of <code>if</code> statements.</p>
+<p><code>php
+if ($response = $request-&gt;getResponse()) {
+    // not allowed
+}</code></p>
+</li>
+<li>
+<p>Abstract class names MUST begin with <code>Abstract</code>.</p>
+<p><code>php
+abstract class AbstractGenerator {
+}</code></p>
+</li>
+<li>
+<p>Interface names MUST end with <code>Interface</code>.</p>
+<p><code>php
+interface GeneratorInterface {
+}</code></p>
+</li>
+<li>
+<p>'Not' logical operators MUST NOT have whitespace between them and the subject being negated.</p>
+<p><code>php
+$true = !false;</code></p>
+</li>
+</ol>
+<h2 id="php-docblock">PHP DocBlock</h2>
+<ol>
+<li>DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use
+   the appropriate tags (<code>@param</code>, <code>@return</code>) to denote that. Developers making modifications to a function / method are
+   tasked with ensuring that the DocBlock is up-to-date.</li>
+<li>Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a DocBlock
+   explaining how to use the function / method / class.</li>
+<li>DocBlock presenting the type MUST be present for class member variables.</li>
+<li>
+<p>When a description is necessary for class member variables, the DocBlock MUST be multiline:</p>
+<p>```php
+class Foo
+{
+    /*<em> @var int </em>/
+    protected $id;</p>
+<pre><code>/**
+* The Bar used to fight the foo
+*
+* @var Bar
+*/
+private $bar;
+</code></pre>
+<p>}
+```</p>
+</li>
+<li>
+<p>DocBlock types for scalar values MUST be one of: <code>bool</code> (not boolean), <code>int</code> (not integer), <code>string</code>, <code>float</code>
+   (not double).</p>
+</li>
+<li>DocBlock types for parameters/return values that are arrays of a single type MUST be written as: <code>Type[]</code>. If the
+   variable is a multi-dimensional array, it MUST be represented with one set of <code>[]</code> per depth (<code>int[][]</code> for an array
+   of array of ints)</li>
+<li>If the parameter/return value is an array of several types, it MUST be described in the DocBlock as <code>mixed[]</code>.</li>
+<li>If the parameter/return value is an array that is sometimes empty, it MUST still be written as in 6)
+   (NOT <code>Type[]|[]</code>)</li>
+</ol>
+<h3 id="example-of-a-methods-docblock">example of a method's DocBlock</h3>
+<pre><code class="php">    /**
+     * Foos the bars.
+     *
+     * @param int $barId Some number
+     * @param Bar[] $allTheBars Collection of Bar objects
+     * @return string[] List of messages
+     */
+    public function barFooer($barId, array $allTheBars) {}
+</code></pre>
+
+<h2 id="open-source">Open Source</h2>
+<ul>
+<li><a href="https://github.com/graze/skeleton-projects">Example skeleton project</a></li>
+<li><a href="http://thephpleague.com/#quality">League standards</a></li>
+<li>
+<p><a href="http://phppackagechecklist.com/">Checklist</a></p>
+</li>
+<li>
+<p>All code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>
+   and <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> standards.</p>
+</li>
+<li>The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported
+   PHP version (see <a href="https://php.net/supported-versions.php">versions</a>).</li>
+<li>The vendor name MUST be <code>graze</code>. The vendor namespace MUST be <code>Graze</code>.</li>
+<li>The project MUST contain a composer.json file.<ol>
+<li>It MUST contain:<ol>
+<li>The name of the project, this MUST match the name of the repository.</li>
+<li>The name of the maintainer in the <code>authors</code> section, along with the generic
+   <code>Graze Developers &lt;developers@graze.com&gt;</code> author.</li>
+</ol>
+</li>
+<li>It MUST NOT contain:<ol>
+<li>The version of the project.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>All library code MUST be in a directory named <code>src/</code>.</li>
+<li>All tests MUST be a in a directory named <code>tests/</code>.</li>
+<li>The project SHOULD use Scrutinizer to check and fix standards and flag code quality issues.</li>
+<li>The project MUST be listed on Packagist.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../HTML/" title="HTML" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                HTML
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9fb73e57.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

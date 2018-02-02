@@ -1,0 +1,214 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Graze Coding Standards\n\n\nThis document describes the coding standards of Graze across its common languages to be adhered to and enforced by the\nGraze tech team, any violation of standards must be justified by the developer and exceptions are allowed for cases\nwhere it is unavoidable, such as in the case of third-party integrations.\n\n\nThe key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\", \"SHALL NOT\", \"SHOULD\", \"SHOULD NOT\", \"RECOMMENDED\",  \"MAY\", and\n\"OPTIONAL\" in this document are to be interpreted as described in \nRFC 2119\n.\n\n\nGeneral\n\n\n\n\nIndent size MUST be 4 space characters and MUST NOT be the tab character.\n\n\nAll files MUST end with a blank new line (the new line character).\n\n\nAll files MUST use the Unix LF (linefeed) line ending.\n\n\nThere MUST NOT be trailing whitespace.\n\n\n\n\nGit\n\n\n\n\nRepo names SHOULD be all lowercase with hyphens (-) to separate words where appropriate.\n\n\nInternal-only libraries SHOULD be prefixed with \"graze-\".\n\n\nIt is RECOMMENDED to follow the style guide mantained in \nagis-/git-style-guide\n.\n\n\n\n\nLanguages\n\n\n\n\nPHP\n\n\nHTML\n\n\nJavascript\n\n\nPython\n\n\nSQL\n\n\nCSS/Less\n\n\nMarkdown\n\n\nGolang\n\n\n\n\nOpen Source\n\n\n\n\nProject\n\n\nPHP\n\n\n\n\nInfrastructure\n\n\n\n\nAWS\n\n\nDocker\n\n\n\n\nVisual\n\n\n\n\nImages", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#graze-coding-standards", 
+            "text": "This document describes the coding standards of Graze across its common languages to be adhered to and enforced by the\nGraze tech team, any violation of standards must be justified by the developer and exceptions are allowed for cases\nwhere it is unavoidable, such as in the case of third-party integrations.  The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\", \"SHALL NOT\", \"SHOULD\", \"SHOULD NOT\", \"RECOMMENDED\",  \"MAY\", and\n\"OPTIONAL\" in this document are to be interpreted as described in  RFC 2119 .", 
+            "title": "Graze Coding Standards"
+        }, 
+        {
+            "location": "/#general", 
+            "text": "Indent size MUST be 4 space characters and MUST NOT be the tab character.  All files MUST end with a blank new line (the new line character).  All files MUST use the Unix LF (linefeed) line ending.  There MUST NOT be trailing whitespace.", 
+            "title": "General"
+        }, 
+        {
+            "location": "/#git", 
+            "text": "Repo names SHOULD be all lowercase with hyphens (-) to separate words where appropriate.  Internal-only libraries SHOULD be prefixed with \"graze-\".  It is RECOMMENDED to follow the style guide mantained in  agis-/git-style-guide .", 
+            "title": "Git"
+        }, 
+        {
+            "location": "/#languages", 
+            "text": "PHP  HTML  Javascript  Python  SQL  CSS/Less  Markdown  Golang", 
+            "title": "Languages"
+        }, 
+        {
+            "location": "/#open-source", 
+            "text": "Project  PHP", 
+            "title": "Open Source"
+        }, 
+        {
+            "location": "/#infrastructure", 
+            "text": "AWS  Docker", 
+            "title": "Infrastructure"
+        }, 
+        {
+            "location": "/#visual", 
+            "text": "Images", 
+            "title": "Visual"
+        }, 
+        {
+            "location": "/languages/PHP/", 
+            "text": "PHP Standards\n\n\n\n\nAll PHP code MUST adhere to the \nPSR-2 Coding Standard\n (which MUST follow the\n   \nPSR-1 Coding Standard\n).\n\n\nShort array syntax (\n[]\n instead of \narray()\n) MUST be used.\n\n\nAll PHP code MUST adhere to the \nPSR-4 Autoloading\n Standard.\n\n\nClass names MUST be declared in UpperCamelCase.\n\n\nAcronyms MUST be treated as normal words. \nHttpException\n, not \nHTTPException\n.\n\n\n\n\n\n\nVariable names MUST be declared in camelCase.\n\n\nAcronyms MUST be treated as normal words. \nxmlHttpRequest\n not \nXMLHTTPRequest\n.\n\n\n\n\n\n\nScripts MUST be named in camelCase describing their primary function.\n\n\nNon-static functions MUST NOT be called statically.\n\n\nStatic functions MUST NOT be called non-statically.\n\n\nComments SHOULD be used to provide explanation for \u201cwhy\u201d rather than \u201chow\u201d and SHOULD be used when there isn\u2019t a way\n   to make the code simpler or self-documenting.\n\n\nNested ternary operators MUST NOT be used.\n\n\nPHP file encoding must be UTF-8.\n\n\n\n\nif\n statements which span multiple lines should be split as follows:\n\n\nphp\nif ($longVariableNameNumber1\n    \n $longVariableNameNumber2\n    \n $longVariableNameNumber3\n    \n $longVariableNameNumber4\n    || $longVariableNameNumber5) {\n    // body of control structure\n}\n\n\n\n\n\n\nThere MUST NOT be any assignment or modification of variables in the expressions of \nif\n statements.\n\n\nphp\nif ($response = $request-\ngetResponse()) {\n    // not allowed\n}\n\n\n\n\n\n\nAbstract class names MUST begin with \nAbstract\n.\n\n\nphp\nabstract class AbstractGenerator {\n}\n\n\n\n\n\n\nInterface names MUST end with \nInterface\n.\n\n\nphp\ninterface GeneratorInterface {\n}\n\n\n\n\n\n\n'Not' logical operators MUST NOT have whitespace between them and the subject being negated.\n\n\nphp\n$true = !false;\n\n\n\n\n\n\nPHP DocBlock\n\n\n\n\nDocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use\n   the appropriate tags (\n@param\n, \n@return\n) to denote that. Developers making modifications to a function / method are\n   tasked with ensuring that the DocBlock is up-to-date.\n\n\nFunctions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a DocBlock\n   explaining how to use the function / method / class.\n\n\nDocBlock presenting the type MUST be present for class member variables.\n\n\n\n\nWhen a description is necessary for class member variables, the DocBlock MUST be multiline:\n\n\n```php\nclass Foo\n{\n    /*\n @var int \n/\n    protected $id;\n\n\n/**\n* The Bar used to fight the foo\n*\n* @var Bar\n*/\nprivate $bar;\n\n\n\n}\n```\n\n\n\n\n\n\nDocBlock types for scalar values MUST be one of: \nbool\n (not boolean), \nint\n (not integer), \nstring\n, \nfloat\n\n   (not double).\n\n\n\n\nDocBlock types for parameters/return values that are arrays of a single type MUST be written as: \nType[]\n. If the\n   variable is a multi-dimensional array, it MUST be represented with one set of \n[]\n per depth (\nint[][]\n for an array\n   of array of ints)\n\n\nIf the parameter/return value is an array of several types, it MUST be described in the DocBlock as \nmixed[]\n.\n\n\nIf the parameter/return value is an array that is sometimes empty, it MUST still be written as in 6)\n   (NOT \nType[]|[]\n)\n\n\n\n\nexample of a method's DocBlock\n\n\n    /**\n     * Foos the bars.\n     *\n     * @param int $barId Some number\n     * @param Bar[] $allTheBars Collection of Bar objects\n     * @return string[] List of messages\n     */\n    public function barFooer($barId, array $allTheBars) {}\n\n\n\n\nOpen Source\n\n\n\n\nExample skeleton project\n\n\nLeague standards\n\n\n\n\nChecklist\n\n\n\n\n\n\nAll code MUST adhere to the \nPSR-2\n\n   and \nPSR-4\n standards.\n\n\n\n\nThe project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported\n   PHP version (see \nversions\n).\n\n\nThe vendor name MUST be \ngraze\n. The vendor namespace MUST be \nGraze\n.\n\n\nThe project MUST contain a composer.json file.\n\n\nIt MUST contain:\n\n\nThe name of the project, this MUST match the name of the repository.\n\n\nThe name of the maintainer in the \nauthors\n section, along with the generic\n   \nGraze Developers \ndevelopers@graze.com\n author.\n\n\n\n\n\n\nIt MUST NOT contain:\n\n\nThe version of the project.\n\n\n\n\n\n\n\n\n\n\nAll library code MUST be in a directory named \nsrc/\n.\n\n\nAll tests MUST be a in a directory named \ntests/\n.\n\n\nThe project SHOULD use Scrutinizer to check and fix standards and flag code quality issues.\n\n\nThe project MUST be listed on Packagist.", 
+            "title": "PHP"
+        }, 
+        {
+            "location": "/languages/PHP/#php-standards", 
+            "text": "All PHP code MUST adhere to the  PSR-2 Coding Standard  (which MUST follow the\n    PSR-1 Coding Standard ).  Short array syntax ( []  instead of  array() ) MUST be used.  All PHP code MUST adhere to the  PSR-4 Autoloading  Standard.  Class names MUST be declared in UpperCamelCase.  Acronyms MUST be treated as normal words.  HttpException , not  HTTPException .    Variable names MUST be declared in camelCase.  Acronyms MUST be treated as normal words.  xmlHttpRequest  not  XMLHTTPRequest .    Scripts MUST be named in camelCase describing their primary function.  Non-static functions MUST NOT be called statically.  Static functions MUST NOT be called non-statically.  Comments SHOULD be used to provide explanation for \u201cwhy\u201d rather than \u201chow\u201d and SHOULD be used when there isn\u2019t a way\n   to make the code simpler or self-documenting.  Nested ternary operators MUST NOT be used.  PHP file encoding must be UTF-8.   if  statements which span multiple lines should be split as follows:  php\nif ($longVariableNameNumber1\n      $longVariableNameNumber2\n      $longVariableNameNumber3\n      $longVariableNameNumber4\n    || $longVariableNameNumber5) {\n    // body of control structure\n}    There MUST NOT be any assignment or modification of variables in the expressions of  if  statements.  php\nif ($response = $request- getResponse()) {\n    // not allowed\n}    Abstract class names MUST begin with  Abstract .  php\nabstract class AbstractGenerator {\n}    Interface names MUST end with  Interface .  php\ninterface GeneratorInterface {\n}    'Not' logical operators MUST NOT have whitespace between them and the subject being negated.  php\n$true = !false;", 
+            "title": "PHP Standards"
+        }, 
+        {
+            "location": "/languages/PHP/#php-docblock", 
+            "text": "DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use\n   the appropriate tags ( @param ,  @return ) to denote that. Developers making modifications to a function / method are\n   tasked with ensuring that the DocBlock is up-to-date.  Functions / methods / classes that are sufficiently complex (i.e. not self-documenting) SHOULD have a DocBlock\n   explaining how to use the function / method / class.  DocBlock presenting the type MUST be present for class member variables.   When a description is necessary for class member variables, the DocBlock MUST be multiline:  ```php\nclass Foo\n{\n    /*  @var int  /\n    protected $id;  /**\n* The Bar used to fight the foo\n*\n* @var Bar\n*/\nprivate $bar;  }\n```    DocBlock types for scalar values MUST be one of:  bool  (not boolean),  int  (not integer),  string ,  float \n   (not double).   DocBlock types for parameters/return values that are arrays of a single type MUST be written as:  Type[] . If the\n   variable is a multi-dimensional array, it MUST be represented with one set of  []  per depth ( int[][]  for an array\n   of array of ints)  If the parameter/return value is an array of several types, it MUST be described in the DocBlock as  mixed[] .  If the parameter/return value is an array that is sometimes empty, it MUST still be written as in 6)\n   (NOT  Type[]|[] )", 
+            "title": "PHP DocBlock"
+        }, 
+        {
+            "location": "/languages/PHP/#example-of-a-methods-docblock", 
+            "text": "/**\n     * Foos the bars.\n     *\n     * @param int $barId Some number\n     * @param Bar[] $allTheBars Collection of Bar objects\n     * @return string[] List of messages\n     */\n    public function barFooer($barId, array $allTheBars) {}", 
+            "title": "example of a method's DocBlock"
+        }, 
+        {
+            "location": "/languages/PHP/#open-source", 
+            "text": "Example skeleton project  League standards   Checklist    All code MUST adhere to the  PSR-2 \n   and  PSR-4  standards.   The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported\n   PHP version (see  versions ).  The vendor name MUST be  graze . The vendor namespace MUST be  Graze .  The project MUST contain a composer.json file.  It MUST contain:  The name of the project, this MUST match the name of the repository.  The name of the maintainer in the  authors  section, along with the generic\n    Graze Developers  developers@graze.com  author.    It MUST NOT contain:  The version of the project.      All library code MUST be in a directory named  src/ .  All tests MUST be a in a directory named  tests/ .  The project SHOULD use Scrutinizer to check and fix standards and flag code quality issues.  The project MUST be listed on Packagist.", 
+            "title": "Open Source"
+        }, 
+        {
+            "location": "/languages/HTML/", 
+            "text": "HTML\n\n\n\n\nHTML MUST be easily readable. The following guidelines are RECOMMENDED for increasing readability.\n\n\nNo more than one tag per line.\n\n\nCorrect indentation.\n\n\n\n\n\n\nHTML SHOULD be using the HTML5 doctype.\n\n\nClosing slashes MUST NOT be used on void elements. (img, br etc)\n\n\nAll tags and attributes MUST be in lowercase.\n\n\nAll attribute values MUST be enclosed by double-quotes.", 
+            "title": "HTML"
+        }, 
+        {
+            "location": "/languages/HTML/#html", 
+            "text": "HTML MUST be easily readable. The following guidelines are RECOMMENDED for increasing readability.  No more than one tag per line.  Correct indentation.    HTML SHOULD be using the HTML5 doctype.  Closing slashes MUST NOT be used on void elements. (img, br etc)  All tags and attributes MUST be in lowercase.  All attribute values MUST be enclosed by double-quotes.", 
+            "title": "HTML"
+        }, 
+        {
+            "location": "/languages/Javascript/", 
+            "text": "JavaScript\n\n\nPlease refer to the \nairbnb style guide\n for styling standards, \nin particular\n:\n\n\n\n\nVariables\n\n\njQuery\n\n\nCommas\n\n\nObjects\n\n\nArrays\n\n\nStrings\n\n\nFunctions\n\n\n\n\nImmediately-invoked function expressions (IIFE)\n\n\n\n\nMUST NOT be used for CommonJS exporting modules (built with Browserify).\n\n\nMUST be used in inline scripts and non Browserify compiled JS to avoid populating the global scope.\n\n\n\n\nExample of usage in non CommonJS modules\n\n\n(function($) {\n    console.log($);\n    // Defined as long as global jQuery object is available\n})(jQuery);\n\nconsole.log($);\n// Undefined", 
+            "title": "Javascript"
+        }, 
+        {
+            "location": "/languages/Javascript/#javascript", 
+            "text": "Please refer to the  airbnb style guide  for styling standards,  in particular :   Variables  jQuery  Commas  Objects  Arrays  Strings  Functions", 
+            "title": "JavaScript"
+        }, 
+        {
+            "location": "/languages/Javascript/#immediately-invoked-function-expressions-iife", 
+            "text": "MUST NOT be used for CommonJS exporting modules (built with Browserify).  MUST be used in inline scripts and non Browserify compiled JS to avoid populating the global scope.", 
+            "title": "Immediately-invoked function expressions (IIFE)"
+        }, 
+        {
+            "location": "/languages/Javascript/#example-of-usage-in-non-commonjs-modules", 
+            "text": "(function($) {\n    console.log($);\n    // Defined as long as global jQuery object is available\n})(jQuery);\n\nconsole.log($);\n// Undefined", 
+            "title": "Example of usage in non CommonJS modules"
+        }, 
+        {
+            "location": "/languages/Python/", 
+            "text": "Python\n\n\n\n\nPython code SHOULD conform to the \nPEP 8\n\n   and \nPEP 257\n guides.\n\n\nExceptions:\n\n\n160 column limit", 
+            "title": "Python"
+        }, 
+        {
+            "location": "/languages/Python/#python", 
+            "text": "Python code SHOULD conform to the  PEP 8 \n   and  PEP 257  guides.  Exceptions:  160 column limit", 
+            "title": "Python"
+        }, 
+        {
+            "location": "/languages/SQL/", 
+            "text": "SQL\n\n\nQuery Writing\n\n\n\n\nKeywords and functions MUST be uppercase (SELECT, WHERE, MAX, AND).\n\n\nColumn aliases MUST be lower snake_case.\n\n\n\n\nWhen the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after\n   the keyword, indented once:\n\n\nsql\nSELECT\n    first_name,\n    last_name\nFROM users\nWHERE\n    username = 'sxybill9'\n    AND email \n 'bill@microsoft.com'\n\n\n\n\n\n\nWhen a SELECT, WHERE, GROUP BY or ORDER clause only contains one element, it MAY all be written on the same line for brevity:\n\n\nsql\nSELECT\n    first_name,\n    last_name\nFROM users\nWHERE id = 321142\n\n\n\n\n\n\nWhen a statement is written within a string in PHP:\n\n\n\n\nThe query MUST start on a new line, indented once.\n\n\nA semicolon MUST NOT be added at the end of the statement.\n\n\n\n\n\n\n\n\nAll joins MUST be written like:\n\n\nsql\nINNER JOIN table_name\n    ON condition1\n    AND condition2\n\nJoins MUST NOT use the unqualified JOIN keyword.\n\n\n\n\n\n\nFunctions MAY be split across multiple lines, where each subsequent line is indented once. When doing so, the first\n   item in the list MUST be on the next line, and there MUST be only one argument per line.\n\n\nsql\nSELECT\n    CONCAT(\n        first_name,\n        ' ',\n        last_name\n    ) full_name\nFROM users\n\n\n\n\n\n\nCASE statements MAY either be written using the previous rule or on a single line:\n\n\n\n\n\n\nsplit lines\n\n\nsql\nSELECT\n    CASE\n        WHEN gender = 'M' THEN 'male'\n        WHEN gender = 'F' THEN 'female'\n        ELSE 'not provided'\n    END\n\n\n\n\n\n\nconcisely\n\n\nsql\nSELECT\n    CASE WHEN gender = 'M' THEN 'male' ELSE 'female' END\nFROM users\n\n\n\n\n\n\n\n\n\n\nSubqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the\n   FROM clause, and the closing brace MUST be on its own line along with the subquery alias:\n\n\nsql\nSELECT\n    my_subquery.*\nFROM (\n    SELECT\n        prenom first_name,\n        COUNT(*) count_names\n    FROM users\n    GROUP BY prenom\n) my_subquery", 
+            "title": "SQL"
+        }, 
+        {
+            "location": "/languages/SQL/#sql", 
+            "text": "", 
+            "title": "SQL"
+        }, 
+        {
+            "location": "/languages/SQL/#query-writing", 
+            "text": "Keywords and functions MUST be uppercase (SELECT, WHERE, MAX, AND).  Column aliases MUST be lower snake_case.   When the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after\n   the keyword, indented once:  sql\nSELECT\n    first_name,\n    last_name\nFROM users\nWHERE\n    username = 'sxybill9'\n    AND email   'bill@microsoft.com'    When a SELECT, WHERE, GROUP BY or ORDER clause only contains one element, it MAY all be written on the same line for brevity:  sql\nSELECT\n    first_name,\n    last_name\nFROM users\nWHERE id = 321142    When a statement is written within a string in PHP:   The query MUST start on a new line, indented once.  A semicolon MUST NOT be added at the end of the statement.     All joins MUST be written like:  sql\nINNER JOIN table_name\n    ON condition1\n    AND condition2 \nJoins MUST NOT use the unqualified JOIN keyword.    Functions MAY be split across multiple lines, where each subsequent line is indented once. When doing so, the first\n   item in the list MUST be on the next line, and there MUST be only one argument per line.  sql\nSELECT\n    CONCAT(\n        first_name,\n        ' ',\n        last_name\n    ) full_name\nFROM users    CASE statements MAY either be written using the previous rule or on a single line:    split lines  sql\nSELECT\n    CASE\n        WHEN gender = 'M' THEN 'male'\n        WHEN gender = 'F' THEN 'female'\n        ELSE 'not provided'\n    END    concisely  sql\nSELECT\n    CASE WHEN gender = 'M' THEN 'male' ELSE 'female' END\nFROM users      Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the\n   FROM clause, and the closing brace MUST be on its own line along with the subquery alias:  sql\nSELECT\n    my_subquery.*\nFROM (\n    SELECT\n        prenom first_name,\n        COUNT(*) count_names\n    FROM users\n    GROUP BY prenom\n) my_subquery", 
+            "title": "Query Writing"
+        }, 
+        {
+            "location": "/languages/CSS/", 
+            "text": "CSS / Less\n\n\n\n\nWords in file names MUST be separated with hyphens (-).\n\n\nCSS3 is RECOMMENDED.\n\n\nSelectors MUST be in hyphen case. (.button-blue).\n\n\nSelectors MUST be on a single line, with a space after the last selector, followed by an opening brace. A selector\n   MUST end with a closing brace that is un-indented and on a separate line. A blank line MUST be placed between each\n   block of selectors.\n\n\nThere MUST only be one property:value pair per line.\n\n\nCSS blocks SHOULD adhere to the CSS Property Order.\n\n\nThere MUST always be a space after a property's colon (e.g., display: block; and not display:block;).\n\n\nProperty declaration lines MUST end with a semi-colon.\n\n\nFor multiple, comma-separated selectors, each selector MUST be on its own line.\n\n\nAttribute selectors, like input[type=\"text\"] MUST always wrap the attribute's value in double quotes, for\n   consistency and safety.\n\n\nAttribute selectors MUST only be used where absolutely necessary (e.g., form controls) and MUST be avoided on custom\n   components for performance and explicitness.\n\n\nSeries of classes for a component MUST include a base class (e.g., .component) and use the base class as a prefix\n   for modifier and sub-components (e.g., .component-lg).", 
+            "title": "CSS/Less"
+        }, 
+        {
+            "location": "/languages/CSS/#css-less", 
+            "text": "Words in file names MUST be separated with hyphens (-).  CSS3 is RECOMMENDED.  Selectors MUST be in hyphen case. (.button-blue).  Selectors MUST be on a single line, with a space after the last selector, followed by an opening brace. A selector\n   MUST end with a closing brace that is un-indented and on a separate line. A blank line MUST be placed between each\n   block of selectors.  There MUST only be one property:value pair per line.  CSS blocks SHOULD adhere to the CSS Property Order.  There MUST always be a space after a property's colon (e.g., display: block; and not display:block;).  Property declaration lines MUST end with a semi-colon.  For multiple, comma-separated selectors, each selector MUST be on its own line.  Attribute selectors, like input[type=\"text\"] MUST always wrap the attribute's value in double quotes, for\n   consistency and safety.  Attribute selectors MUST only be used where absolutely necessary (e.g., form controls) and MUST be avoided on custom\n   components for performance and explicitness.  Series of classes for a component MUST include a base class (e.g., .component) and use the base class as a prefix\n   for modifier and sub-components (e.g., .component-lg).", 
+            "title": "CSS / Less"
+        }, 
+        {
+            "location": "/languages/Markdown/", 
+            "text": "Markdown\n\n\n\n\nMarkdown should conform to the base standards of\n    \nmarkdownlint\n except for:\n\n\nMD013\n -\n    line length is up to 120 characters, and \ntables\n and \ncode_blocks\n are excluded from the rule", 
+            "title": "Markdown"
+        }, 
+        {
+            "location": "/languages/Markdown/#markdown", 
+            "text": "Markdown should conform to the base standards of\n     markdownlint  except for:  MD013  -\n    line length is up to 120 characters, and  tables  and  code_blocks  are excluded from the rule", 
+            "title": "Markdown"
+        }, 
+        {
+            "location": "/languages/Golang/", 
+            "text": "Golang\n\n\n\n\nAll code MUST be automatically formatted using \ngofmt\n.\n\n\nAll code SHOULD pass the checks carried out by \ngo lint\n.", 
+            "title": "Golang"
+        }, 
+        {
+            "location": "/languages/Golang/#golang", 
+            "text": "All code MUST be automatically formatted using  gofmt .  All code SHOULD pass the checks carried out by  go lint .", 
+            "title": "Golang"
+        }, 
+        {
+            "location": "/open-source/OpenSource/", 
+            "text": "Open Source Project Standards\n\n\n\n\nThe name of the project repository MUST be all lowercase and use hyphens to separate words.\n\n\nThe project MUST contain a README.md file.\n\n\nIt MUST contain:\n\n\nA description of the project.\n\n\nInstallation instructions.\n\n\nUsage instructions.\n\n\nLicense information.\n\n\n\n\n\n\nIt SHOULD contain:\n\n\nBadge to show current build status.\n\n\n\n\n\n\nIt COULD contain:\n\n\nBadges to show other relevant project statuses such as project version, code coverage, etc.\n\n\n\n\n\n\n\n\n\n\nThe project MUST contain a CONTRIBUTING.md file.\n\n\nIt MUST contain:\n\n\nHow to report an issue.\n\n\nHow to open a PR.\n\n\nThe minimum requirements for a PR to be merged (testing etc).\n\n\nHow to setup a development environment.\n\n\nHow to run tests.\n\n\n\n\n\n\n\n\n\n\nThe project MUST contain a LICENSE.md file.\n\n\nSource code SHOULD begin with a copyright message and link to the LICENSE file.\n\n\nThe project MUST contain a CHANGELOG.md file, following the conventions laid out here:\n   \nkeepachangelog\n\n\nThe project SHOULD use Travis CI to automatically run unit tests on branches and PRs.\n\n\nThe project SHOULD use Docker for development, testing and execution.", 
+            "title": "Project"
+        }, 
+        {
+            "location": "/open-source/OpenSource/#open-source-project-standards", 
+            "text": "The name of the project repository MUST be all lowercase and use hyphens to separate words.  The project MUST contain a README.md file.  It MUST contain:  A description of the project.  Installation instructions.  Usage instructions.  License information.    It SHOULD contain:  Badge to show current build status.    It COULD contain:  Badges to show other relevant project statuses such as project version, code coverage, etc.      The project MUST contain a CONTRIBUTING.md file.  It MUST contain:  How to report an issue.  How to open a PR.  The minimum requirements for a PR to be merged (testing etc).  How to setup a development environment.  How to run tests.      The project MUST contain a LICENSE.md file.  Source code SHOULD begin with a copyright message and link to the LICENSE file.  The project MUST contain a CHANGELOG.md file, following the conventions laid out here:\n    keepachangelog  The project SHOULD use Travis CI to automatically run unit tests on branches and PRs.  The project SHOULD use Docker for development, testing and execution.", 
+            "title": "Open Source Project Standards"
+        }, 
+        {
+            "location": "/infrastructure/AWS/", 
+            "text": "AWS\n\n\nDNS Names\n\n\nDNS Records MUST adhere to the following pattern\n\n\n(instance).aws_service.(az).(region).service.environment.namespace\n\n\n\n\n\n\ninstance\n SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.\n\n\naws_service\n MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be\n   as specified as in the \nBoto3 Library\n.\n\n\naz\n OPTIONALLY can refer to a specific Availability Zone. This may indicate a design problem in the service.\n\n\nregion\n OPTIONALLY can refer to a specific region.\n\n\nservice\n MUST refer to the specific service.\n\n\nenvironment\n MUST refer to the environment the service is deployed into (\ndev\n, \nstage\n, \ntest\n, \nlive\n).\n\n\nnamespace\n MUST be a valid TLD.\n\n\n\n\nExample DNS Records:\n\n\nexampledb.rds.eu-west-1.example-service.environment.example.com\nelasticache.us-west-1.second-service.environment.example.com\n\n\n\n\nObject Names in AWS\n\n\n\n\nThe name of an Object in AWS must convey the same information at the DNS record, however availability zone and\n   region SHOULD NOT be included as this information is conveyed by interaction with the object.\n\n\nThe Object name is ordered naturally so that it is read from left to right (inverse of the DNS name).\n\n\nBy convention the namespace is assumed to be the standard TLD. Exceptions MAY be made for third party services.\n\n\nObjects MUST be UpperCamelCase and acronyms MUST be Capitalised.\n\n\n\n\nExample Object Names:\n\n\nEnvironmentExampleServiceRDSExampleDB\nEnvironmentSecondServiceElastiCache\nThirdPartyLiveMonitoringEC2", 
+            "title": "AWS"
+        }, 
+        {
+            "location": "/infrastructure/AWS/#aws", 
+            "text": "", 
+            "title": "AWS"
+        }, 
+        {
+            "location": "/infrastructure/AWS/#dns-names", 
+            "text": "DNS Records MUST adhere to the following pattern  (instance).aws_service.(az).(region).service.environment.namespace   instance  SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.  aws_service  MUST refer to the specific AWS service that is being used, the correct name of a AWS service MUST be\n   as specified as in the  Boto3 Library .  az  OPTIONALLY can refer to a specific Availability Zone. This may indicate a design problem in the service.  region  OPTIONALLY can refer to a specific region.  service  MUST refer to the specific service.  environment  MUST refer to the environment the service is deployed into ( dev ,  stage ,  test ,  live ).  namespace  MUST be a valid TLD.   Example DNS Records:  exampledb.rds.eu-west-1.example-service.environment.example.com\nelasticache.us-west-1.second-service.environment.example.com", 
+            "title": "DNS Names"
+        }, 
+        {
+            "location": "/infrastructure/AWS/#object-names-in-aws", 
+            "text": "The name of an Object in AWS must convey the same information at the DNS record, however availability zone and\n   region SHOULD NOT be included as this information is conveyed by interaction with the object.  The Object name is ordered naturally so that it is read from left to right (inverse of the DNS name).  By convention the namespace is assumed to be the standard TLD. Exceptions MAY be made for third party services.  Objects MUST be UpperCamelCase and acronyms MUST be Capitalised.   Example Object Names:  EnvironmentExampleServiceRDSExampleDB\nEnvironmentSecondServiceElastiCache\nThirdPartyLiveMonitoringEC2", 
+            "title": "Object Names in AWS"
+        }, 
+        {
+            "location": "/infrastructure/Docker/", 
+            "text": "Docker\n\n\nBased on the \nDocker guidelines\n\n\nGeneral\n\n\n\n\nA \n.dockerignore\n file SHOULD be used - This will ensure the amount of data sent to the docker daemon will be minimal.\n\n\nEach container SHOULD have a single concern.\n\n\n\n\nDockerfile\n\n\n\n\nMulti-line arguments SHOULD be sorted.\n\n\nThe number of layers SHOULD be kept to a minimum.\n\n\n\n\nA single \nRUN\n command can contain many commands:\n\n\n\n\n\n\nUse \n\\\n and \n for multiple commands, with \n on the new line:\n\n\nDockerfile\nRUN cmd \\\n    \n cmd2\n\n\n\n\n\n\nWhen adding build time packages, remove them in the same \nRUN\n command:\n\n\nDockerfile\nRUN apk add --virtual .deps \\\n        gcc make \\\n    \n make \\\n    \n ./configure \\\n    \n apl del .deps \\\n    \n rm -rf /path/to/installer\n\n\n\n\n\n\nYou SHOULD use \nset -xe\n to print commands and stop on any errors as the first command\n\n\nDockerfile\nRUN set -xe \\\n    \n do stuff \\\n    \n tidy\n\n\n\n\n\n\n\n\n\n\nMultiple line \nLABEL\ns should use line-continuation characters to break lines\n\n\nDockerfile\nLABEL maintainer=\"developers@graze.com\" \\\n    license=\"MIT\"\n\n\n\n\n\n\nThe \nMAINTAINER\n command SHOULD not be used (use \nLABEL maintainer\n instead).\n\n\n\n\nThe \nLICENSE\n command SHOULD not be used (use \nLABEL license\n instead).\n\n\n\n\nLabel Schema\n labels SHOULD be used.\n\n\n\n\nIf using, a \norg.label-schema.schema-version\n label MUST be defined.\n\n\n\n\nThe \nvendor\n, \nname\n, \ndescription\n and \nvcs-url\n labels SHOULD be defined.\n\n\nDockerfile\nLABEL org.label-schema.schema-version=\"1.0\" \\\n    org.label-schema.vendor=\"graze\" \\\n    org.label-schema.name=\"project-name\" \\\n    org.label-schema.description=\"project description\" \\\n    org.label-schema.vcs-url=\"https://github.com/graze/docker-project-name\"\n\n\n\n\n\n\nThe \nvcs-ref\n and \nbuild-date\n labels SHOULD be generated. Example:\n\n\n```Dockerfile\nARG BUILD_DATE\nARG VCS_REF\n\n\nLABEL org.label-schema.vcs-ref=$VCS_REF \\\n    org.label-schema.build-date=$BUILD_DATE\n```\n\n\nshell\n~$ docker build --build-arg BUILD_DATE=$(shell date -u +\"%Y-%m-%dT%H:%M:%SZ\") \\\n      --build-arg VCS_REF=$(shell git rev-parse --short HEAD) \\\n      -t graze/project-name .\n\n\n\n\n\n\n\n\n\n\nCOPY\n SHOULD be used instead of \nADD\n for simple files.\n\n\n\n\nCMD\n SHOULD be used with the array syntax: \n[\"executable\", \"param1\", \"param2\", ...]\n.\n\n\nAll ports SHOULD be included with \nEXPOSE\n commands.\n\n\nAny volumes that are mutable or user-servicable SHOULD use a \nVOLUME\n command.", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/infrastructure/Docker/#docker", 
+            "text": "Based on the  Docker guidelines", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/infrastructure/Docker/#general", 
+            "text": "A  .dockerignore  file SHOULD be used - This will ensure the amount of data sent to the docker daemon will be minimal.  Each container SHOULD have a single concern.", 
+            "title": "General"
+        }, 
+        {
+            "location": "/infrastructure/Docker/#dockerfile", 
+            "text": "Multi-line arguments SHOULD be sorted.  The number of layers SHOULD be kept to a minimum.   A single  RUN  command can contain many commands:    Use  \\  and   for multiple commands, with   on the new line:  Dockerfile\nRUN cmd \\\n      cmd2    When adding build time packages, remove them in the same  RUN  command:  Dockerfile\nRUN apk add --virtual .deps \\\n        gcc make \\\n      make \\\n      ./configure \\\n      apl del .deps \\\n      rm -rf /path/to/installer    You SHOULD use  set -xe  to print commands and stop on any errors as the first command  Dockerfile\nRUN set -xe \\\n      do stuff \\\n      tidy      Multiple line  LABEL s should use line-continuation characters to break lines  Dockerfile\nLABEL maintainer=\"developers@graze.com\" \\\n    license=\"MIT\"    The  MAINTAINER  command SHOULD not be used (use  LABEL maintainer  instead).   The  LICENSE  command SHOULD not be used (use  LABEL license  instead).   Label Schema  labels SHOULD be used.   If using, a  org.label-schema.schema-version  label MUST be defined.   The  vendor ,  name ,  description  and  vcs-url  labels SHOULD be defined.  Dockerfile\nLABEL org.label-schema.schema-version=\"1.0\" \\\n    org.label-schema.vendor=\"graze\" \\\n    org.label-schema.name=\"project-name\" \\\n    org.label-schema.description=\"project description\" \\\n    org.label-schema.vcs-url=\"https://github.com/graze/docker-project-name\"    The  vcs-ref  and  build-date  labels SHOULD be generated. Example:  ```Dockerfile\nARG BUILD_DATE\nARG VCS_REF  LABEL org.label-schema.vcs-ref=$VCS_REF \\\n    org.label-schema.build-date=$BUILD_DATE\n```  shell\n~$ docker build --build-arg BUILD_DATE=$(shell date -u +\"%Y-%m-%dT%H:%M:%SZ\") \\\n      --build-arg VCS_REF=$(shell git rev-parse --short HEAD) \\\n      -t graze/project-name .      COPY  SHOULD be used instead of  ADD  for simple files.   CMD  SHOULD be used with the array syntax:  [\"executable\", \"param1\", \"param2\", ...] .  All ports SHOULD be included with  EXPOSE  commands.  Any volumes that are mutable or user-servicable SHOULD use a  VOLUME  command.", 
+            "title": "Dockerfile"
+        }, 
+        {
+            "location": "/visual/Images/", 
+            "text": "Images\n\n\n\n\nWords in image file names MUST be separated with hyphens (-).\n\n\nImages SHOULD be compressed to the smallest possible size without compromising on clarity.\n\n\nJPEG file format MUST be used only for an image that is or contains photography except in the case of (4).\n\n\nPNG file format MUST be used for any image requiring transparency.", 
+            "title": "Images"
+        }, 
+        {
+            "location": "/visual/Images/#images", 
+            "text": "Words in image file names MUST be separated with hyphens (-).  Images SHOULD be compressed to the smallest possible size without compromising on clarity.  JPEG file format MUST be used only for an image that is or contains photography except in the case of (4).  PNG file format MUST be used for any image requiring transparency.", 
+            "title": "Images"
+        }
+    ]
+}
