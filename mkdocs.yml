@@ -1,6 +1,7 @@
 site_name: Graze Standards
 docs_dir: standards
-theme: material
+theme:
+  name: 'material'
 
 pages:
 - Home: 'index.md'

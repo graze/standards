@@ -1,8 +1,11 @@
 language: php
+
 dist: trusty
+
 cache:
   directories:
   - "$HOME/.composer/cache/files"
+
 php:
   - 5.5
   - 5.6
@@ -14,18 +17,24 @@ php:
 
 matrix:
   fast_finish: true
+
 before_install:
 - sudo apt-get update
 - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
+
 before_script:
 - travis_retry composer update --no-interaction
 - mkdir -p cache
+
 script:
 - vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/
   examples/
 
 jobs:
   include:
-    - stage: deploy
-      php: 7.1
-      script: make docs-deploy
+  - stage: deploy
+    branch: mkdocs
+    php: 7.1
+    env:
+      secure: NzlTFf3JQ1neaBcn3PHH56IgykstgxCly5yil3Y8WBxQxnifE85uR5Kd7KUdOP3iGH+tUdpxTfhy1i+L4EOKsx9Zo4/X3Jm8AthuZAbX/iCq4D2GyI0zgzrnCBoG+MQJeiRY9PuZyDxc6WdcMnjM74kGFZddm1oeiYAm8T3p90B7nDiwHWc9hI9XUDrcz/j5r7VYo/Uj/eKOC0WW9Uo/logrGC0UCqQx0IQDBOMD7M4MjEVYUxFo1Hs5VVptqaRTwy44KokjwEKuKo9VjqG45Wod0hE/v2A2oN56BGfDH1U74aInSwFVmU/U+mVmM6RoO1NAFUzd9U34SjwrPqp3TP3pzLbC12U481NyFb2g0ae7y+n1dWhKj2h+o0Rv5jO1nPHcgsUafCVqmlks1C+mnJtVVmhMmy2D4J7SdneSdPxezlcNM6ZODu29evg3RLv3l9goZKGtJSWMgkG6Gr8sAW0NrnWzOqHdMZgSTVgWaNfy2jkddzHS+F+uzvRrBEzrfHDtgbq43DpIsldEnrj88adMjkwpnDlOFUk5qeD2VN7lFkEVqsK4ddDhdKvBmzgMQnLQjqFqQExq2KnwYAw9rdVRWN+G4NkKWePmACWJy4HmZiCQYTEYRfYlUvHVbuIa1MZTgCUDuSXS3YDkzc2CHaOClygJM4LGIkFyE4KAQyE=
+    script: make docs-deploy
