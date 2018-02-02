@@ -1,7 +1,13 @@
 site_name: Graze Standards
-docs_dir: standards
+site_description: Graze's Tech Standards
+site_author: graze.com
+repo_url: https://github.com/graze/standards
 theme:
   name: 'material'
+  custom_dir: theme
+  favicon: assets/images/favicon.ico
+  language: en
+  include_sidebar: true
 
 pages:
 - Home: 'index.md'
@@ -21,3 +27,10 @@ pages:
   - 'Docker': 'infrastructure/Docker.md'
 - Visual:
   - 'Images': 'visual/Images.md'
+
+markdown_extensions:
+  - smarty
+  - codehilite
+  - sane_lists
+  - toc:
+      permalink: true
