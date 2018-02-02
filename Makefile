@@ -1,7 +1,7 @@
 build:
 	@docker run --rm -it \
-		-v $$(pwd):/app \
-		-v ~/.composer:/tmp \
+		-v $$(pwd):/app:delegated \
+		-v ~/.composer:/tmp:delegated \
 		composer install
 
 lint: ## Check the validness of markdown/php
