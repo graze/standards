@@ -1,30 +1,42 @@
 language: php
-
 dist: trusty
-
 cache:
   directories:
-    - $HOME/.composer/cache/files
-
+  - "$HOME/.composer/cache/files"
 php:
-  - 5.5
-  - 5.6
-  - 7.0
-  - 7.1
-  - 7.2
-  - hhvm
-  - nightly
-
+- 5.5
+- 5.6
+- 7.0
+- 7.1
+- 7.2
+- hhvm
+- nightly
 matrix:
   fast_finish: true
-
 before_install:
-  - sudo apt-get update
-  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
-
+- sudo apt-get update
+- sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
 before_script:
-  - travis_retry composer update --no-interaction
-  - mkdir -p cache
-
+- travis_retry composer update --no-interaction
+- mkdir -p cache
 script:
-  - vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/ examples/
+- vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/ examples/
+- make lint-md
+stages:
+  - test
+  - name: deploy
+    if: branch = master
+jobs:
+  include:
+  - stage: deploy
+    script: make docs-build
+    deploy:
+      provider: pages
+      local-dir: site
+      skip-cleanup: true
+      keep-history: true
+      verbose: true
+      github-token:
+        secure: "aRi9tgh37tUAsnCgneeR7c00LJ6TLt6tSD/tS8d+y7MIMl+vPxTZetJQJmQ/8GO66yo5W/2PZnq1ecSA4G0R4u55r8TCNLyYDEn3z8Kyk0leNql0bQVZPhoFL8IINHQSgRhHVoxydiCO6+ZiupdFcNYO2A9QM6rJM/pUnjs2boihZODjN6hojCA7lE3wpOGyUIHk/FywF0y+0yPl9MumoTaEexz3Q5mIKQxQK+RiDcB+vKnT73+j30lx9S/wSnLk1GaOCcH+9ocQejhjAsCIuLSF+bdnBNH0iaRQnr48ARj91XIArLPPNv9hijQU9Sn0qmmceWzKaC8t/Un8hUQ55u8oVEtLmaFVcFZy/pxYEgSCIo1o5nW67afxOQyLS6rl8F4l13Ul4vllhZ3OjIhvkyWkP6I6S+P0qMgV/2ywupWAPDh6cr71Q6ktpFkBaaRaOs4hnbVuJcBy/E5cqkgQw6drco0FvutqXNAscU9pjvNrcNhtAVr4drUuPtFAk4exaJoVN5o0ZqjRD5lF3BAYyRvnivLE/sJ2iMjaSu58Aukppizsk+Lwog/So+LxCMwJok0B/teT+I8XlL44JNUbCXq0myrFOj62sd7RwF2PwXgs+dI/aDsTj96dMAkXbZtJOA1XVZREpqd5l0CoDd2oPTnr3u0UWblAal9cKnjCUNk="
+      on:
+        branch: master

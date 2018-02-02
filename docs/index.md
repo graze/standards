@@ -1,7 +1,5 @@
 # Graze Coding Standards
 
-This [documentation](https://graze.github.io/standards) is also available in mkdocs.
-
 This document describes the coding standards of Graze across its common languages to be adhered to and enforced by the
 Graze tech team, any violation of standards must be justified by the developer and exceptions are allowed for cases
 where it is unavoidable, such as in the case of third-party integrations.
@@ -24,33 +22,25 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Languages
 
-1. [PHP](docs/languages/PHP.md)
-1. [HTML](docs/languages/HTML.md)
-1. [Javascript](docs/languages/Javascript.md)
-1. [Python](docs/languages/Python.md)
-1. [SQL](docs/languages/SQL.md)
-1. [CSS/Less](docs/languages/CSS.md)
-1. [Markdown](docs/languages/Markdown.md)
-1. [Golang](docs/languages/Golang.md)
+1. [PHP](languages/PHP.md)
+1. [HTML](languages/HTML.md)
+1. [Javascript](languages/Javascript.md)
+1. [Python](languages/Python.md)
+1. [SQL](languages/SQL.md)
+1. [CSS/Less](languages/CSS.md)
+1. [Markdown](languages/Markdown.md)
+1. [Golang](languages/Golang.md)
 
 ## Open Source
 
-1. [Project](docs/open-source/OpenSource.md)
-1. [PHP](docs/languages/PHP.md#open-source)
+1. [Project](open-source/OpenSource.md)
+1. [PHP](languages/PHP.md#open-source)
 
-## Environment
+## Infrastructure
 
-1. [AWS](docs/infrastructure/AWS.md)
-1. [Docker](docs/infrastructure/Docker.md)
+1. [AWS](infrastructure/AWS.md)
+1. [Docker](infrastructure/Docker.md)
 
 ## Visual
 
-1. [Images](docs/visual/Images.md)
-
-## Development
-
-You can test the mkdocs by calling:
-
-   make docs-test
-
-This will start a development server in docker on port `8080`.
+1. [Images](visual/Images.md)

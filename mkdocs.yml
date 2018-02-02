@@ -1,0 +1,38 @@
+site_name: Graze Standards
+site_description: Graze's Tech Standards
+site_author: graze.com
+repo_url: https://github.com/graze/standards
+theme:
+  name: 'material'
+  custom_dir: theme
+  favicon: assets/images/favicon.ico
+  language: en
+  include_sidebar: true
+  palette:
+    primary: 'cyan'
+
+pages:
+- Home: 'index.md'
+- Languages:
+  - 'PHP': 'languages/PHP.md'
+  - 'HTML': 'languages/HTML.md'
+  - 'Javascript': 'languages/Javascript.md'
+  - 'Python': 'languages/Python.md'
+  - 'SQL': 'languages/SQL.md'
+  - 'CSS/Less': 'languages/CSS.md'
+  - 'Markdown': 'languages/Markdown.md'
+  - 'Golang': 'languages/Golang.md'
+- Open Source:
+  - 'Project': 'open-source/OpenSource.md'
+- Infrastructure:
+  - 'AWS': 'infrastructure/AWS.md'
+  - 'Docker': 'infrastructure/Docker.md'
+- Visual:
+  - 'Images': 'visual/Images.md'
+
+markdown_extensions:
+  - smarty
+  - codehilite
+  - sane_lists
+  - toc:
+      permalink: true
