@@ -72,10 +72,10 @@
         protected $id;
 
         /**
-            * The Bar used to fight the foo
-            *
-            * @var Bar
-            */
+         * The Bar used to fight the foo
+         *
+         * @var Bar
+         */
         private $bar;
     }
     ```
