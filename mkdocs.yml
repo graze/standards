@@ -8,6 +8,8 @@ theme:
   favicon: assets/images/favicon.ico
   language: en
   include_sidebar: true
+  palette:
+    primary: 'cyan'
 
 pages:
 - Home: 'index.md'
