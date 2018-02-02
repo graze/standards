@@ -11,7 +11,7 @@ docs-build:
 	docker run --rm -it -v $$(pwd):/docs squidfunk/mkdocs-material build
 
 docs-deploy:
-	docker run --rm -it -v ~/.ssh:/root/.ssh -v $$(pwd):/docs squidfunk/mkdocs-material gh-deploy
+	docker run --rm -it -v ~/.ssh:/root/.ssh -v $$(pwd):/docs -e GITHUB_TOKEN squidfunk/mkdocs-material gh-deploy
 
 lint: ## Check the validness of markdown/php
 lint: lint-md lint-php
