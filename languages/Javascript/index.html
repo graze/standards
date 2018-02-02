@@ -10,7 +10,11 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="Graze's Tech Standards">
       
+      
+      
+        <meta name="author" content="graze.com">
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -31,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.0">
     
     
@@ -62,6 +66,25 @@
     <svg class="md-svg">
       <defs>
         
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
         
       </defs>
     </svg>
@@ -132,6 +155,30 @@
         
       </div>
       
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/graze/standards/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
     </div>
   </nav>
 </header>
@@ -157,6 +204,28 @@
     </span>
     Graze Standards
   </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/graze/standards/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -517,8 +586,10 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/graze/standards/edit/master/docs/languages/Javascript.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
-                <h1 id="javascript">JavaScript</h1>
+                
+                <h1 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h1>
 <p>Please refer to the <a href="https://github.com/airbnb/javascript">airbnb style guide</a> for styling standards, <strong>in particular</strong>:</p>
 <ul>
 <li><a href="https://github.com/airbnb/javascript#variables">Variables</a></li>
@@ -529,20 +600,20 @@
 <li><a href="https://github.com/airbnb/javascript#strings">Strings</a></li>
 <li><a href="https://github.com/airbnb/javascript#functions">Functions</a></li>
 </ul>
-<h2 id="immediately-invoked-function-expressions-iife">Immediately-invoked function expressions (IIFE)</h2>
+<h2 id="immediately-invoked-function-expressions-iife">Immediately-invoked function expressions (IIFE)<a class="headerlink" href="#immediately-invoked-function-expressions-iife" title="Permanent link">&para;</a></h2>
 <ol>
 <li>MUST NOT be used for CommonJS exporting modules (built with Browserify).</li>
 <li>MUST be used in inline scripts and non Browserify compiled JS to avoid populating the global scope.</li>
 </ol>
-<h3 id="example-of-usage-in-non-commonjs-modules">Example of usage in non CommonJS modules</h3>
-<pre><code class="javascript">(function($) {
-    console.log($);
-    // Defined as long as global jQuery object is available
-})(jQuery);
+<h3 id="example-of-usage-in-non-commonjs-modules">Example of usage in non CommonJS modules<a class="headerlink" href="#example-of-usage-in-non-commonjs-modules" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">);</span>
+    <span class="c1">// Defined as long as global jQuery object is available</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
 
-console.log($);
-// Undefined
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">);</span>
+<span class="c1">// Undefined</span>
+</pre></div>
                 
                   
                 

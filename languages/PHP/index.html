@@ -10,7 +10,11 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="Graze's Tech Standards">
       
+      
+      
+        <meta name="author" content="graze.com">
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -31,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.0">
     
     
@@ -62,6 +66,25 @@
     <svg class="md-svg">
       <defs>
         
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
         
       </defs>
     </svg>
@@ -132,6 +155,30 @@
         
       </div>
       
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/graze/standards/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
     </div>
   </nav>
 </header>
@@ -157,6 +204,28 @@
     </span>
     Graze Standards
   </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/graze/standards/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -531,8 +600,10 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/graze/standards/edit/master/docs/languages/PHP.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
-                <h1 id="php-standards">PHP Standards</h1>
+                
+                <h1 id="php-standards">PHP Standards<a class="headerlink" href="#php-standards" title="Permanent link">&para;</a></h1>
 <ol>
 <li>All PHP code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-2/">PSR-2 Coding Standard</a> (which MUST follow the
    <a href="http://www.php-fig.org/psr/psr-1/">PSR-1 Coding Standard</a>).</li>
@@ -555,41 +626,51 @@
 <li>PHP file encoding must be UTF-8.</li>
 <li>
 <p><code>if</code> statements which span multiple lines should be split as follows:</p>
-<p><code>php
-if ($longVariableNameNumber1
+<div class="codehilite"><pre><span></span>if ($longVariableNameNumber1
     &amp;&amp; $longVariableNameNumber2
     &amp;&amp; $longVariableNameNumber3
     &amp;&amp; $longVariableNameNumber4
     || $longVariableNameNumber5) {
     // body of control structure
-}</code></p>
+}
+</pre></div>
+
+
 </li>
 <li>
 <p>There MUST NOT be any assignment or modification of variables in the expressions of <code>if</code> statements.</p>
-<p><code>php
-if ($response = $request-&gt;getResponse()) {
+<div class="codehilite"><pre><span></span>if ($response = $request-&gt;getResponse()) {
     // not allowed
-}</code></p>
+}
+</pre></div>
+
+
 </li>
 <li>
 <p>Abstract class names MUST begin with <code>Abstract</code>.</p>
-<p><code>php
-abstract class AbstractGenerator {
-}</code></p>
+<div class="codehilite"><pre><span></span>abstract class AbstractGenerator {
+}
+</pre></div>
+
+
 </li>
 <li>
 <p>Interface names MUST end with <code>Interface</code>.</p>
-<p><code>php
-interface GeneratorInterface {
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="kr">interface</span> <span class="nx">GeneratorInterface</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+
 </li>
 <li>
-<p>'Not' logical operators MUST NOT have whitespace between them and the subject being negated.</p>
-<p><code>php
-$true = !false;</code></p>
+<p>&lsquo;Not&rsquo; logical operators MUST NOT have whitespace between them and the subject being negated.</p>
+<div class="codehilite"><pre><span></span>$true = !false;
+</pre></div>
+
+
 </li>
 </ol>
-<h2 id="php-docblock">PHP DocBlock</h2>
+<h2 id="php-docblock">PHP DocBlock<a class="headerlink" href="#php-docblock" title="Permanent link">&para;</a></h2>
 <ol>
 <li>DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use
    the appropriate tags (<code>@param</code>, <code>@return</code>) to denote that. Developers making modifications to a function / method are
@@ -599,20 +680,21 @@ $true = !false;</code></p>
 <li>DocBlock presenting the type MUST be present for class member variables.</li>
 <li>
 <p>When a description is necessary for class member variables, the DocBlock MUST be multiline:</p>
-<p>```php
-class Foo
-{
-    /*<em> @var int </em>/
-    protected $id;</p>
-<pre><code>/**
-* The Bar used to fight the foo
-*
-* @var Bar
-*/
-private $bar;
-</code></pre>
-<p>}
-```</p>
+<div class="codehilite"><pre><span></span><span class="kr">class</span> <span class="nx">Foo</span>
+<span class="p">{</span>
+    <span class="cm">/** @var int */</span>
+    <span class="kr">protected</span> <span class="nx">$id</span><span class="p">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * The Bar used to fight the foo</span>
+<span class="cm">    *</span>
+<span class="cm">    * @var Bar</span>
+<span class="cm">    */</span>
+    <span class="kr">private</span> <span class="nx">$bar</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
 </li>
 <li>
 <p>DocBlock types for scalar values MUST be one of: <code>bool</code> (not boolean), <code>int</code> (not integer), <code>string</code>, <code>float</code>
@@ -625,28 +707,27 @@ private $bar;
 <li>If the parameter/return value is an array that is sometimes empty, it MUST still be written as in 6)
    (NOT <code>Type[]|[]</code>)</li>
 </ol>
-<h3 id="example-of-a-methods-docblock">example of a method's DocBlock</h3>
-<pre><code class="php">    /**
-     * Foos the bars.
-     *
-     * @param int $barId Some number
-     * @param Bar[] $allTheBars Collection of Bar objects
-     * @return string[] List of messages
-     */
-    public function barFooer($barId, array $allTheBars) {}
-</code></pre>
+<h3 id="example-of-a-methods-docblock">example of a method&rsquo;s DocBlock<a class="headerlink" href="#example-of-a-methods-docblock" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* Foos the bars.</span>
+<span class="cm">*</span>
+<span class="cm">* @param int $barId Some number</span>
+<span class="cm">* @param Bar[] $allTheBars Collection of Bar objects</span>
+<span class="cm">* @return string[] List of messages</span>
+<span class="cm">*/</span><span class="w"></span>
+public<span class="w"> </span>function<span class="w"> </span>barFooer<span class="o">(</span><span class="err">$</span>barId<span class="o">,</span><span class="w"> </span>array<span class="w"> </span><span class="err">$</span>allTheBars<span class="o">)</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
+</pre></div>
 
-<h2 id="open-source">Open Source</h2>
+
+<h2 id="open-source">Open Source<a class="headerlink" href="#open-source" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/graze/skeleton-projects">Example skeleton project</a></li>
 <li><a href="http://thephpleague.com/#quality">League standards</a></li>
-<li>
-<p><a href="http://phppackagechecklist.com/">Checklist</a></p>
-</li>
-<li>
-<p>All code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>
-   and <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> standards.</p>
-</li>
+<li><a href="http://phppackagechecklist.com/">Checklist</a></li>
+</ul>
+<ol>
+<li>All code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>
+   and <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> standards.</li>
 <li>The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported
    PHP version (see <a href="https://php.net/supported-versions.php">versions</a>).</li>
 <li>The vendor name MUST be <code>graze</code>. The vendor namespace MUST be <code>Graze</code>.</li>
@@ -667,7 +748,7 @@ private $bar;
 <li>All tests MUST be a in a directory named <code>tests/</code>.</li>
 <li>The project SHOULD use Scrutinizer to check and fix standards and flag code quality issues.</li>
 <li>The project MUST be listed on Packagist.</li>
-</ul>
+</ol>
                 
                   
                 

@@ -10,7 +10,11 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="Graze's Tech Standards">
       
+      
+      
+        <meta name="author" content="graze.com">
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -31,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.0">
     
     
@@ -62,6 +66,25 @@
     <svg class="md-svg">
       <defs>
         
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
         
       </defs>
     </svg>
@@ -132,6 +155,30 @@
         
       </div>
       
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/graze/standards/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
     </div>
   </nav>
 </header>
@@ -157,6 +204,28 @@
     </span>
     Graze Standards
   </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/graze/standards/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -505,15 +574,17 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/graze/standards/edit/master/docs/infrastructure/Docker.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
-                <h1 id="docker">Docker</h1>
+                
+                <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <p>Based on the <a href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/">Docker guidelines</a></p>
-<h2 id="general">General</h2>
+<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
 <ol>
 <li>A <code>.dockerignore</code> file SHOULD be used - This will ensure the amount of data sent to the docker daemon will be minimal.</li>
 <li>Each container SHOULD have a single concern.</li>
 </ol>
-<h2 id="dockerfile">Dockerfile</h2>
+<h2 id="dockerfile">Dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Multi-line arguments SHOULD be sorted.</li>
 <li>The number of layers SHOULD be kept to a minimum.</li>
@@ -522,34 +593,42 @@
 <ol>
 <li>
 <p>Use <code>\</code> and <code>&amp;&amp;</code> for multiple commands, with <code>&amp;&amp;</code> on the new line:</p>
-<p><code>Dockerfile
-RUN cmd \
-    &amp;&amp; cmd2</code></p>
+<div class="codehilite"><pre><span></span>RUN cmd \
+    &amp;&amp; cmd2
+</pre></div>
+
+
 </li>
 <li>
 <p>When adding build time packages, remove them in the same <code>RUN</code> command:</p>
-<p><code>Dockerfile
-RUN apk add --virtual .deps \
+<div class="codehilite"><pre><span></span>RUN apk add --virtual .deps \
         gcc make \
     &amp;&amp; make \
     &amp;&amp; ./configure \
     &amp;&amp; apl del .deps \
-    &amp;&amp; rm -rf /path/to/installer</code></p>
+    &amp;&amp; rm -rf /path/to/installer
+</pre></div>
+
+
 </li>
 <li>
 <p>You SHOULD use <code>set -xe</code> to print commands and stop on any errors as the first command</p>
-<p><code>Dockerfile
-RUN set -xe \
+<div class="codehilite"><pre><span></span>RUN set -xe \
     &amp;&amp; do stuff \
-    &amp;&amp; tidy</code></p>
+    &amp;&amp; tidy
+</pre></div>
+
+
 </li>
 </ol>
 </li>
 <li>
 <p>Multiple line <code>LABEL</code>s should use line-continuation characters to break lines</p>
-<p><code>Dockerfile
-LABEL maintainer="developers@graze.com" \
-    license="MIT"</code></p>
+<div class="codehilite"><pre><span></span>LABEL maintainer=&quot;developers@graze.com&quot; \
+    license=&quot;MIT&quot;
+</pre></div>
+
+
 </li>
 <li>
 <p>The <code>MAINTAINER</code> command SHOULD not be used (use <code>LABEL maintainer</code> instead).</p>
@@ -561,25 +640,32 @@ LABEL maintainer="developers@graze.com" \
 <li>If using, a <code>org.label-schema.schema-version</code> label MUST be defined.</li>
 <li>
 <p>The <code>vendor</code>, <code>name</code>, <code>description</code> and <code>vcs-url</code> labels SHOULD be defined.</p>
-<p><code>Dockerfile
-LABEL org.label-schema.schema-version="1.0" \
-    org.label-schema.vendor="graze" \
-    org.label-schema.name="project-name" \
-    org.label-schema.description="project description" \
-    org.label-schema.vcs-url="https://github.com/graze/docker-project-name"</code></p>
+<div class="codehilite"><pre><span></span>LABEL org.label-schema.schema-version=&quot;1.0&quot; \
+    org.label-schema.vendor=&quot;graze&quot; \
+    org.label-schema.name=&quot;project-name&quot; \
+    org.label-schema.description=&quot;project description&quot; \
+    org.label-schema.vcs-url=&quot;https://github.com/graze/docker-project-name&quot;
+</pre></div>
+
+
 </li>
 <li>
 <p>The <code>vcs-ref</code> and <code>build-date</code> labels SHOULD be generated. Example:</p>
-<p>```Dockerfile
-ARG BUILD_DATE
-ARG VCS_REF</p>
-<p>LABEL org.label-schema.vcs-ref=$VCS_REF \
+<div class="codehilite"><pre><span></span>ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.build-date=$BUILD_DATE
-```</p>
-<p><code>shell
-~$ docker build --build-arg BUILD_DATE=$(shell date -u +"%Y-%m-%dT%H:%M:%SZ") \
-      --build-arg VCS_REF=$(shell git rev-parse --short HEAD) \
-      -t graze/project-name .</code></p>
+</pre></div>
+
+
+<p>This can then be injected into the image using the <code>--build-arg</code> argument</p>
+<div class="codehilite"><pre><span></span>~$ docker build --build-arg BUILD_DATE=$(shell date -u +&quot;%Y-%m-%dT%H:%M:%SZ&quot;) \
+    --build-arg VCS_REF=$(shell git rev-parse --short HEAD) \
+    -t graze/project-name .
+</pre></div>
+
+
 </li>
 </ol>
 </li>
