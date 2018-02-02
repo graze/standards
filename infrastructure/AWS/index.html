@@ -581,12 +581,11 @@
                   <a href="https://github.com/graze/standards/edit/master/docs/infrastructure/AWS.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h1>
-<h2 id="dns-names">DNS Names<a class="headerlink" href="#dns-names" title="Permanent link">&para;</a></h2>
+                <h1 id="aws">AWS</h1>
+<h2 id="dns-names">DNS Names</h2>
 <p>DNS Records MUST adhere to the following pattern</p>
 <div class="codehilite"><pre><span></span>(instance).aws_service.(az).(region).service.environment.namespace
 </pre></div>
-
 
 <ol>
 <li><code>instance</code> SHALL be used in the case that there are multiple instances of an aws_service, e.g. seperate databases.</li>
@@ -603,8 +602,7 @@
 elasticache.us-west-1.second-service.environment.example.com
 </pre></div>
 
-
-<h2 id="object-names-in-aws">Object Names in AWS<a class="headerlink" href="#object-names-in-aws" title="Permanent link">&para;</a></h2>
+<h2 id="object-names-in-aws">Object Names in AWS</h2>
 <ol>
 <li>The name of an Object in AWS must convey the same information at the DNS record, however availability zone and
    region SHOULD NOT be included as this information is conveyed by interaction with the object.</li>

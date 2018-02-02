@@ -607,7 +607,7 @@
                   <a href="https://github.com/graze/standards/edit/master/docs/languages/PHP.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="php-standards">PHP Standards<a class="headerlink" href="#php-standards" title="Permanent link">&para;</a></h1>
+                <h1 id="php-standards">PHP Standards</h1>
 <ol>
 <li>All PHP code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-2/">PSR-2 Coding Standard</a> (which MUST follow the
    <a href="http://www.php-fig.org/psr/psr-1/">PSR-1 Coding Standard</a>).</li>
@@ -630,51 +630,46 @@
 <li>PHP file encoding must be UTF-8.</li>
 <li>
 <p><code>if</code> statements which span multiple lines should be split as follows:</p>
-<div class="codehilite"><pre><span></span>if ($longVariableNameNumber1
-    &amp;&amp; $longVariableNameNumber2
-    &amp;&amp; $longVariableNameNumber3
-    &amp;&amp; $longVariableNameNumber4
-    || $longVariableNameNumber5) {
-    // body of control structure
-}
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$longVariableNameNumber1</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$longVariableNameNumber2</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$longVariableNameNumber3</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$longVariableNameNumber4</span>
+    <span class="o">||</span> <span class="nv">$longVariableNameNumber5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// body of control structure</span>
+<span class="p">}</span>
 </pre></div>
-
 
 </li>
 <li>
 <p>There MUST NOT be any assignment or modification of variables in the expressions of <code>if</code> statements.</p>
-<div class="codehilite"><pre><span></span>if ($response = $request-&gt;getResponse()) {
-    // not allowed
-}
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$response</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getResponse</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// not allowed</span>
+<span class="p">}</span>
 </pre></div>
-
 
 </li>
 <li>
 <p>Abstract class names MUST begin with <code>Abstract</code>.</p>
-<div class="codehilite"><pre><span></span>abstract class AbstractGenerator {
-}
+<div class="codehilite"><pre><span></span><span class="k">abstract</span> <span class="k">class</span> <span class="nc">AbstractGenerator</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
-
 
 </li>
 <li>
 <p>Interface names MUST end with <code>Interface</code>.</p>
-<div class="codehilite"><pre><span></span><span class="kr">interface</span> <span class="nx">GeneratorInterface</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="k">interface</span> <span class="nx">GeneratorInterface</span> <span class="p">{</span>
 <span class="p">}</span>
 </pre></div>
 
-
 </li>
 <li>
-<p>&lsquo;Not&rsquo; logical operators MUST NOT have whitespace between them and the subject being negated.</p>
-<div class="codehilite"><pre><span></span>$true = !false;
+<p>'Not' logical operators MUST NOT have whitespace between them and the subject being negated.</p>
+<div class="codehilite"><pre><span></span><span class="nv">$true</span> <span class="o">=</span> <span class="o">!</span><span class="k">false</span><span class="p">;</span>
 </pre></div>
-
 
 </li>
 </ol>
-<h2 id="php-docblock">PHP DocBlock<a class="headerlink" href="#php-docblock" title="Permanent link">&para;</a></h2>
+<h2 id="php-docblock">PHP DocBlock</h2>
 <ol>
 <li>DocBlock for functions / methods MUST exist where the function / method has arguments or a return value and MUST use
    the appropriate tags (<code>@param</code>, <code>@return</code>) to denote that. Developers making modifications to a function / method are
@@ -684,20 +679,19 @@
 <li>DocBlock presenting the type MUST be present for class member variables.</li>
 <li>
 <p>When a description is necessary for class member variables, the DocBlock MUST be multiline:</p>
-<div class="codehilite"><pre><span></span><span class="kr">class</span> <span class="nx">Foo</span>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span>
 <span class="p">{</span>
-    <span class="cm">/** @var int */</span>
-    <span class="kr">protected</span> <span class="nx">$id</span><span class="p">;</span>
+    <span class="sd">/** @var int */</span>
+    <span class="k">protected</span> <span class="nv">$id</span><span class="p">;</span>
 
-    <span class="cm">/**</span>
-<span class="cm">     * The Bar used to fight the foo</span>
-<span class="cm">     *</span>
-<span class="cm">     * @var Bar</span>
-<span class="cm">     */</span>
-    <span class="kr">private</span> <span class="nx">$bar</span><span class="p">;</span>
+    <span class="sd">/**</span>
+<span class="sd">        * The Bar used to fight the foo</span>
+<span class="sd">        *</span>
+<span class="sd">        * @var Bar</span>
+<span class="sd">        */</span>
+    <span class="k">private</span> <span class="nv">$bar</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-
 
 </li>
 <li>
@@ -711,27 +705,29 @@
 <li>If the parameter/return value is an array that is sometimes empty, it MUST still be written as in 6)
    (NOT <code>Type[]|[]</code>)</li>
 </ol>
-<h3 id="example-of-a-methods-docblock">example of a method&rsquo;s DocBlock<a class="headerlink" href="#example-of-a-methods-docblock" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="x">/**</span>
-<span class="x"> * Foos the bars.</span>
-<span class="x"> *</span>
-<span class="x"> * @param int $barId Some number</span>
-<span class="x"> * @param Bar[] $allTheBars Collection of Bar objects</span>
-<span class="x"> * @return string[] List of messages</span>
-<span class="x"> */</span>
-<span class="x">public function barFooer($barId, array $allTheBars) {}</span>
+<h3 id="example-of-a-methods-docblock">example of a method's DocBlock</h3>
+<div class="codehilite"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * Foos the bars.</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param int   $barId      Some number</span>
+<span class="sd"> * @param Bar[] $allTheBars Collection of Bar objects</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return string[]         List of messages</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">barFooer</span><span class="p">(</span><span class="nv">$barId</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$allTheBars</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
-
-<h2 id="open-source">Open Source<a class="headerlink" href="#open-source" title="Permanent link">&para;</a></h2>
+<h2 id="open-source">Open Source</h2>
 <ul>
 <li><a href="https://github.com/graze/skeleton-projects">Example skeleton project</a></li>
 <li><a href="http://thephpleague.com/#quality">League standards</a></li>
-<li><a href="http://phppackagechecklist.com/">Checklist</a></li>
-</ul>
-<ol>
-<li>All code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>
-   and <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> standards.</li>
+<li>
+<p><a href="http://phppackagechecklist.com/">Checklist</a></p>
+</li>
+<li>
+<p>All code MUST adhere to the <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>
+   and <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> standards.</p>
+</li>
 <li>The project MUST at least depend on the lowest supported PHP version and SHOULD depend on the latest fully supported
    PHP version (see <a href="https://php.net/supported-versions.php">versions</a>).</li>
 <li>The vendor name MUST be <code>graze</code>. The vendor namespace MUST be <code>Graze</code>.</li>
@@ -752,7 +748,7 @@
 <li>All tests MUST be a in a directory named <code>tests/</code>.</li>
 <li>The project SHOULD use Scrutinizer to check and fix standards and flag code quality issues.</li>
 <li>The project MUST be listed on Packagist.</li>
-</ol>
+</ul>
                 
                   
                 

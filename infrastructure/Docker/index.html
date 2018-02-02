@@ -581,14 +581,14 @@
                   <a href="https://github.com/graze/standards/edit/master/docs/infrastructure/Docker.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+                <h1 id="docker">Docker</h1>
 <p>Based on the <a href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/">Docker guidelines</a></p>
-<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+<h2 id="general">General</h2>
 <ol>
 <li>A <code>.dockerignore</code> file SHOULD be used - This will ensure the amount of data sent to the docker daemon will be minimal.</li>
 <li>Each container SHOULD have a single concern.</li>
 </ol>
-<h2 id="dockerfile">Dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
+<h2 id="dockerfile">Dockerfile</h2>
 <ol>
 <li>Multi-line arguments SHOULD be sorted.</li>
 <li>The number of layers SHOULD be kept to a minimum.</li>
@@ -601,7 +601,6 @@
     &amp;&amp; cmd2
 </pre></div>
 
-
 </li>
 <li>
 <p>When adding build time packages, remove them in the same <code>RUN</code> command:</p>
@@ -613,7 +612,6 @@
     &amp;&amp; rm -rf /path/to/installer
 </pre></div>
 
-
 </li>
 <li>
 <p>You SHOULD use <code>set -xe</code> to print commands and stop on any errors as the first command</p>
@@ -621,7 +619,6 @@
     &amp;&amp; do stuff \
     &amp;&amp; tidy
 </pre></div>
-
 
 </li>
 </ol>
@@ -631,7 +628,6 @@
 <div class="codehilite"><pre><span></span>LABEL maintainer=&quot;developers@graze.com&quot; \
     license=&quot;MIT&quot;
 </pre></div>
-
 
 </li>
 <li>
@@ -651,7 +647,6 @@
     org.label-schema.vcs-url=&quot;https://github.com/graze/docker-project-name&quot;
 </pre></div>
 
-
 </li>
 <li>
 <p>The <code>vcs-ref</code> and <code>build-date</code> labels SHOULD be generated. Example:</p>
@@ -662,13 +657,11 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.build-date=$BUILD_DATE
 </pre></div>
 
-
 <p>This can then be injected into the image using the <code>--build-arg</code> argument</p>
 <div class="codehilite"><pre><span></span>~$ docker build --build-arg BUILD_DATE=$(shell date -u +&quot;%Y-%m-%dT%H:%M:%SZ&quot;) \
     --build-arg VCS_REF=$(shell git rev-parse --short HEAD) \
     -t graze/project-name .
 </pre></div>
-
 
 </li>
 </ol>
@@ -676,7 +669,7 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 <li>
 <p><code>COPY</code> SHOULD be used instead of <code>ADD</code> for simple files.</p>
 </li>
-<li><code>CMD</code> SHOULD be used with the array syntax: <code>["executable", "param1", "param2", ...]</code>.</li>
+<li><code>CMD</code> SHOULD be used with the array syntax: <code>[&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;, ...]</code>.</li>
 <li>All ports SHOULD be included with <code>EXPOSE</code> commands.</li>
 <li>Any volumes that are mutable or user-servicable SHOULD use a <code>VOLUME</code> command.</li>
 </ol>

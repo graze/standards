@@ -567,34 +567,32 @@
                   <a href="https://github.com/graze/standards/edit/master/docs/languages/SQL.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="sql">SQL<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h1>
-<h2 id="query-writing">Query Writing<a class="headerlink" href="#query-writing" title="Permanent link">&para;</a></h2>
+                <h1 id="sql">SQL</h1>
+<h2 id="query-writing">Query Writing</h2>
 <ol>
 <li>Keywords and functions MUST be uppercase (SELECT, WHERE, MAX, AND).</li>
 <li>Column aliases MUST be lower snake_case.</li>
 <li>
 <p>When the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after
    the keyword, indented once:</p>
-<div class="codehilite"><pre><span></span>SELECT
-    first_name,
-    last_name
-FROM users
-WHERE
-    username = &#39;sxybill9&#39;
-    AND email &lt;&gt; &#39;bill@microsoft.com&#39;
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span>
+    <span class="n">first_name</span><span class="p">,</span>
+    <span class="n">last_name</span>
+<span class="k">FROM</span> <span class="n">users</span>
+<span class="k">WHERE</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;sxybill9&#39;</span>
+    <span class="k">AND</span> <span class="n">email</span> <span class="o">&lt;&gt;</span> <span class="s1">&#39;bill@microsoft.com&#39;</span>
 </pre></div>
-
 
 </li>
 <li>
 <p>When a SELECT, WHERE, GROUP BY or ORDER clause only contains one element, it MAY all be written on the same line for brevity:</p>
-<div class="codehilite"><pre><span></span>SELECT
-    first_name,
-    last_name
-FROM users
-WHERE id = 321142
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span>
+    <span class="n">first_name</span><span class="p">,</span>
+    <span class="n">last_name</span>
+<span class="k">FROM</span> <span class="n">users</span>
+<span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">321142</span>
 </pre></div>
-
 
 </li>
 <li>
@@ -606,26 +604,24 @@ WHERE id = 321142
 </li>
 <li>
 <p>All joins MUST be written like:</p>
-<div class="codehilite"><pre><span></span>INNER JOIN table_name
-    ON condition1
-    AND condition2
+<div class="codehilite"><pre><span></span><span class="k">INNER</span> <span class="k">JOIN</span> <span class="k">table_name</span>
+    <span class="k">ON</span> <span class="n">condition1</span>
+    <span class="k">AND</span> <span class="n">condition2</span>
 </pre></div>
-
 
 <p>Joins MUST NOT use the unqualified JOIN keyword.</p>
 </li>
 <li>
 <p>Functions MAY be split across multiple lines, where each subsequent line is indented once. When doing so, the first
    item in the list MUST be on the next line, and there MUST be only one argument per line.</p>
-<div class="codehilite"><pre><span></span>SELECT
-    CONCAT(
-        first_name,
-        &#39; &#39;,
-        last_name
-    ) full_name
-FROM users
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span>
+    <span class="n">CONCAT</span><span class="p">(</span>
+        <span class="n">first_name</span><span class="p">,</span>
+        <span class="s1">&#39; &#39;</span><span class="p">,</span>
+        <span class="n">last_name</span>
+    <span class="p">)</span> <span class="n">full_name</span>
+<span class="k">FROM</span> <span class="n">users</span>
 </pre></div>
-
 
 </li>
 <li>
@@ -633,23 +629,21 @@ FROM users
 <ul>
 <li>
 <p>split lines</p>
-<div class="codehilite"><pre><span></span>SELECT
-    CASE
-        WHEN gender = &#39;M&#39; THEN &#39;male&#39;
-        WHEN gender = &#39;F&#39; THEN &#39;female&#39;
-        ELSE &#39;not provided&#39;
-    END
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span>
+    <span class="k">CASE</span>
+        <span class="k">WHEN</span> <span class="n">gender</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span> <span class="k">THEN</span> <span class="s1">&#39;male&#39;</span>
+        <span class="k">WHEN</span> <span class="n">gender</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span> <span class="k">THEN</span> <span class="s1">&#39;female&#39;</span>
+        <span class="k">ELSE</span> <span class="s1">&#39;not provided&#39;</span>
+    <span class="k">END</span>
 </pre></div>
-
 
 </li>
 <li>
 <p>concisely</p>
-<div class="codehilite"><pre><span></span>SELECT
-    CASE WHEN gender = &#39;M&#39; THEN &#39;male&#39; ELSE &#39;female&#39; END
-FROM users
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span>
+    <span class="k">CASE</span> <span class="k">WHEN</span> <span class="n">gender</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span> <span class="k">THEN</span> <span class="s1">&#39;male&#39;</span> <span class="k">ELSE</span> <span class="s1">&#39;female&#39;</span> <span class="k">END</span>
+<span class="k">FROM</span> <span class="n">users</span>
 </pre></div>
-
 
 </li>
 </ul>
@@ -657,17 +651,16 @@ FROM users
 <li>
 <p>Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the
    FROM clause, and the closing brace MUST be on its own line along with the subquery alias:</p>
-<div class="codehilite"><pre><span></span>SELECT
-    my_subquery.*
-FROM (
-    SELECT
-        prenom first_name,
-        COUNT(*) count_names
-    FROM users
-    GROUP BY prenom
-) my_subquery
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span>
+    <span class="n">my_subquery</span><span class="p">.</span><span class="o">*</span>
+<span class="k">FROM</span> <span class="p">(</span>
+    <span class="k">SELECT</span>
+        <span class="n">prenom</span> <span class="n">first_name</span><span class="p">,</span>
+        <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">count_names</span>
+    <span class="k">FROM</span> <span class="n">users</span>
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">prenom</span>
+<span class="p">)</span> <span class="n">my_subquery</span>
 </pre></div>
-
 
 </li>
 </ol>
