@@ -3,9 +3,6 @@ dist: trusty
 cache:
   directories:
   - "$HOME/.composer/cache/files"
-env:
-  global:
-    secure: Iot1O6q+DjKps9wG9ntkPuLdYycFYzk+sqU22XleEiGQgmDwW6UjCcSG736Z5+MO0h+DHgchLDSSCgxRSzW8lKIBKg1hH7M5qpP45Zxd0kIU7ptiN8i0kIcBZrRJrbRlu5BcGDocqnMUweDBzSWgbI8mP86ZpcsyllTZpvZyqjbiY2PIwS3PfMsii768G+bAjRJxB7KjfLQdMebUGwec4yU/H65Pq+ET1WCAkm7Sjjsq0mipsPYTgl2kx/feQ6qWvhnChTdEgLGdFl2G56/wVLvAyplYxbChs6IVJqS5aGOa7swF+IGokVAIkzvjq2bVWURgGlhHHmLPfAQDNewKwWiNNePe5jmjtCNQATHPuUuUZASfyF/Tof2mwOBi3ACnDA0b/aQ+/qX+KyfOZx4nrGu2dW3OG4P5frHcSA1C479NIZp4y+o0KCVmrDEvf+yxej6S3RcK93Ay3cvnY3RBnhY4NJ6DnJambqGc1y7AVtGxYQ9gmFjeKanqX8/f/qzfzM0a1unbmK+Op/kmf4kpqfwwVfjtsEXceIshbGAHYZXNY4ojGgSaY22eqnOFDRSL6TcCMVkir3Wus3ROP/reBhKdDAyWqn9CW38PAqSIdPhjHnTKGPaFqVj1B/Y089VTUIOr4GejYRiOfV1wTPS+8TEeWbcge4uTeLT8E9VoVDA=
 php:
 - 5.5
 - 5.6
@@ -37,6 +34,6 @@ jobs:
       skip-cleanup: true
       keep-history: true
       verbose: true
-      github-token: $github-token
+      secure: Iot1O6q+DjKps9wG9ntkPuLdYycFYzk+sqU22XleEiGQgmDwW6UjCcSG736Z5+MO0h+DHgchLDSSCgxRSzW8lKIBKg1hH7M5qpP45Zxd0kIU7ptiN8i0kIcBZrRJrbRlu5BcGDocqnMUweDBzSWgbI8mP86ZpcsyllTZpvZyqjbiY2PIwS3PfMsii768G+bAjRJxB7KjfLQdMebUGwec4yU/H65Pq+ET1WCAkm7Sjjsq0mipsPYTgl2kx/feQ6qWvhnChTdEgLGdFl2G56/wVLvAyplYxbChs6IVJqS5aGOa7swF+IGokVAIkzvjq2bVWURgGlhHHmLPfAQDNewKwWiNNePe5jmjtCNQATHPuUuUZASfyF/Tof2mwOBi3ACnDA0b/aQ+/qX+KyfOZx4nrGu2dW3OG4P5frHcSA1C479NIZp4y+o0KCVmrDEvf+yxej6S3RcK93Ay3cvnY3RBnhY4NJ6DnJambqGc1y7AVtGxYQ9gmFjeKanqX8/f/qzfzM0a1unbmK+Op/kmf4kpqfwwVfjtsEXceIshbGAHYZXNY4ojGgSaY22eqnOFDRSL6TcCMVkir3Wus3ROP/reBhKdDAyWqn9CW38PAqSIdPhjHnTKGPaFqVj1B/Y089VTUIOr4GejYRiOfV1wTPS+8TEeWbcge4uTeLT8E9VoVDA=
       on:
         branch: mkdocs
