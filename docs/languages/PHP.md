@@ -17,33 +17,43 @@
 1. PHP file encoding must be UTF-8.
 1. `if` statements which span multiple lines should be split as follows:
 
-        if ($longVariableNameNumber1
-            && $longVariableNameNumber2
-            && $longVariableNameNumber3
-            && $longVariableNameNumber4
-            || $longVariableNameNumber5) {
-            // body of control structure
-        }
+    ```php
+    if ($longVariableNameNumber1
+        && $longVariableNameNumber2
+        && $longVariableNameNumber3
+        && $longVariableNameNumber4
+        || $longVariableNameNumber5) {
+        // body of control structure
+    }
+    ```
 
 1. There MUST NOT be any assignment or modification of variables in the expressions of `if` statements.
 
-        if ($response = $request->getResponse()) {
-            // not allowed
-        }
+    ```php
+    if ($response = $request->getResponse()) {
+        // not allowed
+    }
+    ```
 
 1. Abstract class names MUST begin with `Abstract`.
 
-        abstract class AbstractGenerator {
-        }
+    ```php
+    abstract class AbstractGenerator {
+    }
+    ```
 
 1. Interface names MUST end with `Interface`.
 
-        interface GeneratorInterface {
-        }
+    ```php
+    interface GeneratorInterface {
+    }
+    ```
 
 1. 'Not' logical operators MUST NOT have whitespace between them and the subject being negated.
 
-        $true = !false;
+    ```php
+    $true = !false;
+    ```
 
 ## PHP DocBlock
 
@@ -55,18 +65,20 @@
 1. DocBlock presenting the type MUST be present for class member variables.
 1. When a description is necessary for class member variables, the DocBlock MUST be multiline:
 
-        class Foo
-        {
-            /** @var int */
-            protected $id;
+    ```php
+    class Foo
+    {
+        /** @var int */
+        protected $id;
 
-            /**
-             * The Bar used to fight the foo
-             *
-             * @var Bar
-             */
-            private $bar;
-        }
+        /**
+            * The Bar used to fight the foo
+            *
+            * @var Bar
+            */
+        private $bar;
+    }
+    ```
 
 1. DocBlock types for scalar values MUST be one of: `bool` (not boolean), `int` (not integer), `string`, `float`
    (not double).
@@ -83,9 +95,10 @@
 /**
  * Foos the bars.
  *
- * @param int $barId Some number
+ * @param int   $barId      Some number
  * @param Bar[] $allTheBars Collection of Bar objects
- * @return string[] List of messages
+ *
+ * @return string[]         List of messages
  */
 public function barFooer($barId, array $allTheBars) {}
 ```

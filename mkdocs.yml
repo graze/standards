@@ -31,8 +31,21 @@ pages:
   - 'Images': 'visual/Images.md'
 
 markdown_extensions:
-  - smarty
-  - codehilite
-  - sane_lists
-  - toc:
-      permalink: true
+  - markdown.extensions.tables:
+  - pymdownx.magiclink:
+  - pymdownx.tilde:
+  - pymdownx.betterem:
+  - pymdownx.superfences:
+  - pymdownx.highlight:
+      css_class: codehilite
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: True
+  - pymdownx.inlinehilite:
+  - pymdownx.emoji:
+  - pymdownx.escapeall:
+      hardbreak: True
+      nbsp: True
+  - pymdownx.tasklist:

@@ -7,69 +7,83 @@
 1. When the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after
    the keyword, indented once:
 
-        SELECT
-            first_name,
-            last_name
-        FROM users
-        WHERE
-            username = 'sxybill9'
-            AND email <> 'bill@microsoft.com'
+    ```SQL
+    SELECT
+        first_name,
+        last_name
+    FROM users
+    WHERE
+        username = 'sxybill9'
+        AND email <> 'bill@microsoft.com'
+    ```
 
 1. When a SELECT, WHERE, GROUP BY or ORDER clause only contains one element, it MAY all be written on the same line for brevity:
 
-        SELECT
-            first_name,
-            last_name
-        FROM users
-        WHERE id = 321142
+    ```SQL
+    SELECT
+        first_name,
+        last_name
+    FROM users
+    WHERE id = 321142
+    ```
 
 1. When a statement is written within a string in PHP:
     1. The query MUST start on a new line, indented once.
     1. A semicolon MUST NOT be added at the end of the statement.
 1. All joins MUST be written like:
 
-        INNER JOIN table_name
-            ON condition1
-            AND condition2
+    ```SQL
+    INNER JOIN table_name
+        ON condition1
+        AND condition2
+    ```
 
     Joins MUST NOT use the unqualified JOIN keyword.
 
 1. Functions MAY be split across multiple lines, where each subsequent line is indented once. When doing so, the first
    item in the list MUST be on the next line, and there MUST be only one argument per line.
 
-        SELECT
-            CONCAT(
-                first_name,
-                ' ',
-                last_name
-            ) full_name
-        FROM users
+    ```SQL
+    SELECT
+        CONCAT(
+            first_name,
+            ' ',
+            last_name
+        ) full_name
+    FROM users
+    ```
 
 1. CASE statements MAY either be written using the previous rule or on a single line:
     - split lines
 
-            SELECT
-                CASE
-                    WHEN gender = 'M' THEN 'male'
-                    WHEN gender = 'F' THEN 'female'
-                    ELSE 'not provided'
-                END
+        ```SQL
+        SELECT
+            CASE
+                WHEN gender = 'M' THEN 'male'
+                WHEN gender = 'F' THEN 'female'
+                ELSE 'not provided'
+            END
+        ```
 
     - concisely
 
-            SELECT
-                CASE WHEN gender = 'M' THEN 'male' ELSE 'female' END
-            FROM users
+        ```SQL
+        SELECT
+            CASE WHEN gender = 'M' THEN 'male' ELSE 'female' END
+        FROM users
+        ```
 
 1. Subqueries MUST be started on the next line and indented once; the opening brace MUST be on the same line as the
    FROM clause, and the closing brace MUST be on its own line along with the subquery alias:
 
+    ```SQL
+    SELECT
+        my_subquery.*
+    FROM (
         SELECT
-            my_subquery.*
-        FROM (
-            SELECT
-                prenom first_name,
-                COUNT(*) count_names
-            FROM users
-            GROUP BY prenom
-        ) my_subquery
+            prenom first_name,
+            COUNT(*) count_names
+        FROM users
+        GROUP BY prenom
+    ) my_subquery
+    ```
