@@ -23,14 +23,14 @@ before_script:
 - travis_retry composer update --no-interaction
 - mkdir -p cache
 script:
-- vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/
-  examples/
+- vendor/bin/phpcs -p --warning-severity=0 --cache=cache/phpcs --parallel=10 PHP/ examples/
+- make lint-md
 jobs:
   include:
   - stage: deploy
     on:
       branch: mkdocs
-    script: make docs-deploy
+    script: make docs-build
     deploy:
       provider: pages
       local-dir: site

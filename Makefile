@@ -18,7 +18,7 @@ lint: lint-md lint-php
 
 lint-md: ## Check the validness of markdown
 	@echo 'linting markdown...'
-	@docker run --rm -v $$(pwd):/data:cached gouvinb/docker-markdownlint -v *.md standards/*.md
+	@docker run --rm -v $$(pwd):/data:cached gouvinb/docker-markdownlint -v *.md docs/*.md
 
 lint-php: ## Check the validness of php
 	@echo 'linting php...'
