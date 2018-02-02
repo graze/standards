@@ -61,10 +61,10 @@
             protected $id;
 
             /**
-            * The Bar used to fight the foo
-            *
-            * @var Bar
-            */
+             * The Bar used to fight the foo
+             *
+             * @var Bar
+             */
             private $bar;
         }
 
@@ -79,14 +79,16 @@
 
 ### example of a method's DocBlock
 
-    /**
-    * Foos the bars.
-    *
-    * @param int $barId Some number
-    * @param Bar[] $allTheBars Collection of Bar objects
-    * @return string[] List of messages
-    */
-    public function barFooer($barId, array $allTheBars) {}
+```php
+/**
+ * Foos the bars.
+ *
+ * @param int $barId Some number
+ * @param Bar[] $allTheBars Collection of Bar objects
+ * @return string[] List of messages
+ */
+public function barFooer($barId, array $allTheBars) {}
+```
 
 ## Open Source
 
