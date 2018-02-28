@@ -39,7 +39,7 @@ Based on the [Docker guidelines](https://docs.docker.com/engine/userguide/eng-im
 
 1. The `MAINTAINER` command SHOULD not be used (use `LABEL maintainer` instead).
 1. The `LICENSE` command SHOULD not be used (use `LABEL license` instead).
-1. [Label Schema](label-schema.org) labels SHOULD be used.
+1. [Label Schema](http://label-schema.org/) labels SHOULD be used.
     1. If using, a `org.label-schema.schema-version` label MUST be defined.
     1. The `vendor`, `name`, `description` and `vcs-url` labels SHOULD be defined.
 
