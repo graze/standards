@@ -59,8 +59,8 @@ Based on the [Docker guidelines](https://docs.docker.com/engine/userguide/eng-im
 
         This can then be injected into the image using the `--build-arg` argument
 
-            ~$ docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-                --build-arg VCS_REF=`git rev-parse --short HEAD` \
+            ~$ docker build --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+                --build-arg VCS_REF=$(git rev-parse --short HEAD) \
                 -t graze/project-name .
 
 1. `COPY` SHOULD be used instead of `ADD` for simple files.
