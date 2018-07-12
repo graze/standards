@@ -1,100 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
      <loc>/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
      <loc>/languages/PHP/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/languages/HTML/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/languages/Javascript/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/languages/Python/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/languages/SQL/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/languages/CSS/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/languages/Markdown/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/languages/Golang/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
      <loc>/open-source/OpenSource/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
      <loc>/infrastructure/AWS/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/infrastructure/Docker/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
      <loc>/visual/Images/</loc>
-     <lastmod>2018-02-28</lastmod>
+     <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
 </urlset>
