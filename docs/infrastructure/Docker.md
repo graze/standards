@@ -37,8 +37,8 @@ Based on the [Docker guidelines](https://docs.docker.com/engine/userguide/eng-im
         LABEL maintainer="developers@graze.com" \
             license="MIT"
 
-1. The `MAINTAINER` command SHOULD not be used (use `LABEL maintainer` instead).
-1. The `LICENSE` command SHOULD not be used (use `LABEL license` instead).
+1. The `MAINTAINER` command SHOULD NOT be used (use `LABEL maintainer` instead).
+1. The `LICENSE` command SHOULD NOT be used (use `LABEL license` instead).
 1. [Label Schema](http://label-schema.org/) labels SHOULD be used.
     1. If using, a `org.label-schema.schema-version` label MUST be defined.
     1. The `vendor`, `name`, `description` and `vcs-url` labels SHOULD be defined.
@@ -59,8 +59,8 @@ Based on the [Docker guidelines](https://docs.docker.com/engine/userguide/eng-im
 
         This can then be injected into the image using the `--build-arg` argument
 
-            ~$ docker build --build-arg BUILD_DATE=$(shell date -u +"%Y-%m-%dT%H:%M:%SZ") \
-                --build-arg VCS_REF=$(shell git rev-parse --short HEAD) \
+            ~$ docker build --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+                --build-arg VCS_REF=$(git rev-parse --short HEAD) \
                 -t graze/project-name .
 
 1. `COPY` SHOULD be used instead of `ADD` for simple files.
