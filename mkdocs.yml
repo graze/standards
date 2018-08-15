@@ -11,7 +11,7 @@ theme:
   palette:
     primary: 'cyan'
 
-pages:
+nav:
 - Home: 'index.md'
 - Languages:
   - 'PHP': 'languages/PHP.md'
