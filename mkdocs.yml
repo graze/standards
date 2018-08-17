@@ -4,8 +4,8 @@ site_author: graze.com
 repo_url: https://github.com/graze/standards
 theme:
   name: 'material'
-  custom_dir: theme
-  favicon: assets/images/favicon.ico
+  custom_dir: docs/theme
+  favicon: assets/images/favicon-192x192.png
   language: en
   include_sidebar: true
   palette:
@@ -49,3 +49,5 @@ markdown_extensions:
       hardbreak: True
       nbsp: True
   - pymdownx.tasklist:
+  - toc:
+      permalink: true
