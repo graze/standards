@@ -35,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/images/favicon-192x192.png">
       <meta name="generator" content="mkdocs-1.0, mkdocs-material-3.0.3">
     
     
@@ -603,7 +603,7 @@
                   <a href="https://github.com/graze/standards/edit/master/docs/languages/Javascript.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="javascript">JavaScript</h1>
+                <h1 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h1>
 <p>Please refer to the <a href="https://github.com/airbnb/javascript">airbnb style guide</a> for styling standards, <strong>in particular</strong>:</p>
 <ul>
 <li><a href="https://github.com/airbnb/javascript#variables">Variables</a></li>
@@ -614,12 +614,12 @@
 <li><a href="https://github.com/airbnb/javascript#strings">Strings</a></li>
 <li><a href="https://github.com/airbnb/javascript#functions">Functions</a></li>
 </ul>
-<h2 id="immediately-invoked-function-expressions-iife">Immediately-invoked function expressions (IIFE)</h2>
+<h2 id="immediately-invoked-function-expressions-iife">Immediately-invoked function expressions (IIFE)<a class="headerlink" href="#immediately-invoked-function-expressions-iife" title="Permanent link">&para;</a></h2>
 <ol>
 <li>MUST NOT be used for CommonJS exporting modules (built with Browserify).</li>
 <li>MUST be used in inline scripts and non Browserify compiled JS to avoid populating the global scope.</li>
 </ol>
-<h3 id="example-of-usage-in-non-commonjs-modules">Example of usage in non CommonJS modules</h3>
+<h3 id="example-of-usage-in-non-commonjs-modules">Example of usage in non CommonJS modules<a class="headerlink" href="#example-of-usage-in-non-commonjs-modules" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">);</span>
     <span class="c1">// Defined as long as global jQuery object is available</span>
