@@ -49,8 +49,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Development
 
-You can test the mkdocs by calling:
+You can test mkdocs by calling:
 
    make docs-test
 
-This will start a development server in docker on port `8080`.
+This will start a development server in docker on port `8000`.
