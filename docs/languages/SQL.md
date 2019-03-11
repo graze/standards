@@ -5,7 +5,7 @@
 1. Keywords and functions MUST be uppercase (SELECT, WHERE, MAX, AND).
 1. Column aliases MUST be lower snake_case.
 1. When the SELECT, WHERE, GROUP BY or ORDER clauses contain more than one element, they MUST be on a new line after
-   the keyword, indented once:
+   the keyword, indented once (one indent = 4 spaces):
 
     ```SQL
     SELECT
