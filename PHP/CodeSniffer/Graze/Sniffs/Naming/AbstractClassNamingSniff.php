@@ -71,7 +71,7 @@ class AbstractClassNamingSniff implements Sniff
     {
         $tokens = $phpcsFile->getTokens();
 
-        if ($tokens[($stackPtr - 2)]['code'] === T_ABSTRACT) {
+        if ($stackPtr > 2 && $tokens[($stackPtr - 2)]['code'] === T_ABSTRACT) {
             $className = $phpcsFile->getDeclarationName($stackPtr);
 
             if (substr($className, 0, 8) !== 'Abstract') {
