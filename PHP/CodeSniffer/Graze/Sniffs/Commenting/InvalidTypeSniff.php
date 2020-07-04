@@ -50,11 +50,11 @@ class InvalidTypeSniff implements Sniff
 
         $commentEnd = $phpcsFile->findPrevious($commentToken, $stackPtr);
 
-        if (! $commentEnd) {
+        if (!$commentEnd) {
             return;
         }
 
-        if (! array_key_exists('comment_opener', $tokens[$commentEnd])) {
+        if (!array_key_exists('comment_opener', $tokens[$commentEnd])) {
             return;
         }
 

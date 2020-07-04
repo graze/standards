@@ -102,6 +102,7 @@
     <rule ref="Graze.Naming.AbstractClassNaming" />
     <rule ref="Graze.Naming.InterfaceNaming" />
     <rule ref="Graze.ControlStructures.IfVariableAssignment" />
+    <rule ref="Graze.ControlStructures.NegationNoSpaces" />
     <rule ref="Graze.ControlStructures.NestedTernary" />
     <rule ref="Graze.Files.DoubleBlankLine" />
 
