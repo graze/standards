@@ -24,5 +24,5 @@ lint-php: ## Check the validness of php
 	@echo 'linting php...'
 	@mkdir -p cache
 	@docker run --rm -it -v $$(pwd):/srv:cached graze/php-alpine:test vendor/bin/phpcs \
-		-p --warning-severity=0 --cache=cache/phpcs --parallel=10 \
+		-p --warning-severity=0 --cache=cache/phpcs --parallel=10 -s \
 		PHP/ examples/
