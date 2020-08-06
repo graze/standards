@@ -7,7 +7,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 
 class InterfaceNamingSniff implements Sniff
 {
-    const ERROR_CODE = 'graze.naming.interface';
+    const ERROR_CODE = 'Graze.Naming.InterfaceNaming';
 
     /**
      * Registers the tokens that this sniff wants to listen for.

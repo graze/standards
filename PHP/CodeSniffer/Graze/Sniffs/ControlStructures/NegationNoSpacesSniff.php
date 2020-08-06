@@ -12,7 +12,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
  */
 class NegationNoSpacesSniff implements Sniff
 {
-    const ERROR_CODE = 'graze.controlStructures.NegationNoSpaces';
+    const ERROR_CODE = 'Graze.ControlStructures.NegationNoSpaces';
 
     /**
      * @return int[]

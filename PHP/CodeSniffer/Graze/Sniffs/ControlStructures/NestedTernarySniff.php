@@ -7,7 +7,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 
 class NestedTernarySniff implements Sniff
 {
-    const ERROR_CODE = 'graze.controlStructures.nestedTernary';
+    const ERROR_CODE = 'Graze.ControlStructures.NestedTernary';
 
     /**
      * Registers the tokens that this sniff wants to listen for.
