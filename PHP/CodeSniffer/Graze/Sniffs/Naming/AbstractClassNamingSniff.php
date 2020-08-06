@@ -7,7 +7,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 
 class AbstractClassNamingSniff implements Sniff
 {
-    const ERROR_CODE = 'graze.naming.abstractClass';
+    const ERROR_CODE = 'Graze.Naming.AbstractClassNaming';
 
     /**
      * Registers the tokens that this sniff wants to listen for.

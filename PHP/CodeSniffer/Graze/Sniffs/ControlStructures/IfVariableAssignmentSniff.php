@@ -7,7 +7,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 
 class IfVariableAssignmentSniff implements Sniff
 {
-    const ERROR_CODE = 'graze.controlStructures.ifVariableAssignment';
+    const ERROR_CODE = 'Graze.ControlStructures.IfVariableAssignment';
     /**
      * Registers the tokens that this sniff wants to listen for.
      *

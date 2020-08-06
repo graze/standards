@@ -7,7 +7,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 
 class DoubleBlankLineSniff implements Sniff
 {
-    const ERROR_CODE = 'graze.files.doubleBlankLine';
+    const ERROR_CODE = 'Graze.Files.DoubleBlankLine';
 
     /**
      * Registers the tokens that this sniff wants to listen for.
