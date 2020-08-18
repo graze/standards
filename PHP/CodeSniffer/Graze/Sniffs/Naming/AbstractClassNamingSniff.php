@@ -75,7 +75,7 @@ class AbstractClassNamingSniff implements Sniff
             $className = $phpcsFile->getDeclarationName($stackPtr);
 
             if (substr($className, 0, 8) !== 'Abstract') {
-                $phpcsFile->addError('Abstract class name "%s" must be prefixed with "Abstract"', $stackPtr, static::ERROR_CODE, '', [$className]);
+                $phpcsFile->addError('Abstract class name "%s" must be prefixed with "Abstract"', $stackPtr, static::ERROR_CODE, [$className]);
             }
         }
     }
