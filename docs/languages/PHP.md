@@ -3,6 +3,24 @@
 1. All PHP code MUST adhere to the [PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/) (which MUST follow the
    [PSR-1 Coding Standard](http://www.php-fig.org/psr/psr-1/)).
 1. Short array syntax (`[]` instead of `array()`) MUST be used.
+1. Associative arrays SHOULD be formatted without spaces as follows:
+   ```
+      $translations = [
+         'and' => 'und',
+         'Biotin' => 'Biotine',
+         'Calcium' => 'Calcium',
+         'Carbohydrate' => 'Koolhydraten'
+      ];
+   ```
+   in comparison to with spaces as below
+   ```
+      $translations = [
+         'and'          => 'und',
+         'Biotin'       => 'Biotine',
+         'Calcium'      => 'Calcium',
+         'Carbohydrate' => 'Koolhydraten'
+      ];
+   ```
 1. All PHP code MUST adhere to the [PSR-4 Autoloading](http://www.php-fig.org/psr/psr-4/) Standard.
 1. Class names MUST be declared in UpperCamelCase.
     1. Acronyms MUST be treated as normal words. `HttpException`, not `HTTPException`.
