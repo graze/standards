@@ -69,11 +69,11 @@
 
 1. Class usages MUST be in alphabetical order.
    ```php
-   class SomeClassName {
-        use AbstractClass;
-        use ExampleInterface;
-        use Model;
-   }
+   use AbstractClass;
+   use ExampleInterface;
+   use Model;
+
+   class SomeClassName {}
    ```
 
 1. 'Not' logical operators MUST NOT have whitespace between them and the subject being negated.
