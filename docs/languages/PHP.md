@@ -23,9 +23,9 @@
    ```
 1. All PHP code MUST adhere to the [PSR-4 Autoloading](http://www.php-fig.org/psr/psr-4/) Standard.
 1. Class names MUST be declared in UpperCamelCase.
-    1. Acronyms MUST be treated as normal words. `HttpException`, not `HTTPException`.
+   1. Acronyms MUST be treated as normal words. `HttpException`, not `HTTPException`.
 1. Variable names MUST be declared in camelCase.
-    1. Acronyms MUST be treated as normal words. `xmlHttpRequest` not `XMLHTTPRequest`.
+   1. Acronyms MUST be treated as normal words. `xmlHttpRequest` not `XMLHTTPRequest`.
 1. Scripts MUST be named in camelCase describing their primary function.
 1. Non-static functions MUST NOT be called statically.
 1. Static functions MUST NOT be called non-statically.
@@ -66,6 +66,15 @@
     interface GeneratorInterface {
     }
     ```
+
+1. Class usages SHOULD be in alphabetical order.
+   ```php
+   use AbstractClass;
+   use ExampleInterface;
+   use Model;
+
+   class SomeClassName {}
+   ```
 
 1. 'Not' logical operators MUST NOT have whitespace between them and the subject being negated.
 
@@ -133,12 +142,12 @@ public function barFooer($barId, array $allTheBars) {}
    PHP version (see [versions](https://php.net/supported-versions.php)).
 1. The vendor name MUST be `graze`. The vendor namespace MUST be `Graze`.
 1. The project MUST contain a composer.json file.
-    1. It MUST contain:
-        1. The name of the project, this MUST match the name of the repository.
-        1. The name of the maintainer in the `authors` section, along with the generic
-           `Graze Developers <developers@graze.com>` author.
-    1. It MUST NOT contain:
-        1. The version of the project.
+   1. It MUST contain:
+      1. The name of the project, this MUST match the name of the repository.
+      1. The name of the maintainer in the `authors` section, along with the generic
+         `Graze Developers <developers@graze.com>` author.
+   1. It MUST NOT contain:
+      1. The version of the project.
 1. All library code MUST be in a directory named `src/`.
 1. All tests MUST be a in a directory named `tests/`.
 1. The project SHOULD use Scrutinizer to check and fix standards and flag code quality issues.
