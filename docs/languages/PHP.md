@@ -67,7 +67,7 @@
     }
     ```
 
-1. Class usages MUST be in alphabetical order.
+1. Class usages SHOULD be in alphabetical order.
    ```php
    use AbstractClass;
    use ExampleInterface;
