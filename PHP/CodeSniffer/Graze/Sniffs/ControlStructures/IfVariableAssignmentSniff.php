@@ -25,7 +25,7 @@ class IfVariableAssignmentSniff implements Sniff
      * @return int[]
      * @see    Tokens.php
      */
-    public function register()
+    public function register(): array
     {
         return [
             T_IF
