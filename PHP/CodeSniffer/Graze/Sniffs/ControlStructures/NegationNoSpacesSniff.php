@@ -17,7 +17,7 @@ class NegationNoSpacesSniff implements Sniff
     /**
      * @return int[]
      */
-    public function register()
+    public function register(): array
     {
         return [
             T_BOOLEAN_NOT

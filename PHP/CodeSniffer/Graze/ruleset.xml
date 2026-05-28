@@ -79,7 +79,10 @@
     <!-- Code MUST use an indent of 4 spaces. -->
     <rule ref="Generic.WhiteSpace.ScopeIndent">
         <properties>
-            <property name="ignoreIndentationTokens" type="array" value="T_COMMENT,T_DOC_COMMENT"/>
+            <property name="ignoreIndentationTokens" type="array">
+                <element value="T_COMMENT"/>
+                <element value="T_DOC_COMMENT"/>
+            </property>
         </properties>
     </rule>
 
@@ -96,7 +99,6 @@
     <rule ref="Generic.PHP.DeprecatedFunctions" />
     <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
     <!--<rule ref="Generic.Formatting.SpaceAfterCast" />-->
-    <rule ref="Generic.Functions.CallTimePassByReference" />
 
     <!-- Graze Sniffs -->
     <rule ref="Graze.Naming.AbstractClassNaming" />

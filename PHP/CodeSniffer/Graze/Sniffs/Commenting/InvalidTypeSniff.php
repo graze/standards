@@ -29,7 +29,7 @@ class InvalidTypeSniff implements Sniff
      * </code>
      * @return int[]
      */
-    public function register()
+    public function register(): array
     {
         return [
             T_FUNCTION,
